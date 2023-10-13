@@ -1,0 +1,142 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup()" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_vigie_centre_day, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <events onloadcomplete="action(loader); js(hotelbeach());"/>
+
+
+	
+<!--	<scene name="scene_vigie_bar_nuit" nameid="scene_vigie_bar_nuit" etablissement="Monte-Carlo Beach" dossier="beach" galeriephoto="oui" galerievideo="non" info="oui" title="La Vigie Bar &amp; Restaurant" onstart="" thumburl="panos/vigie_bar_nuit.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/vigie_bar_nuit.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/vigie_bar_nuit.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/vigie_bar_nuit.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		
+		
+		
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="96.658" atv="-1.975" linkedscene="scene_vigie_resto"  tooltip="Restaurant Night"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="83" atv="-1.975" linkedscene="scene_vigie_centre_day"  tooltip="Restaurant Day"/>
+		<hotspot name="spot6" style="skin_hotspotstyle" ath="8" atv="3" linkedscene="scene_vigie_lounge_day"  tooltip="Lounge Day"/>
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="91.423" atv="-37.763" onclick="action(beach150m)" tooltip="Monte-Carlo Beach - Seaside View" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="110" atv="-9"  onclick="action(olympic)" tooltip="Olympic Pool" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="130" atv="-5.810" onclick="action(beach_lobby)" tooltip="Monte-Carlo Beach - Lobby"/>
+
+	</scene>
+-->
+	<scene name="scene_vigie_centre_day" nameid="scene_vigie_bar_nuit" etablissement="Monte-Carlo Beach" dossier="beach" galeriephoto="oui" galerievideo="non" info="oui" infourl= "MCBeach-lavigie.pdf" title="La Vigie Lounge &amp; Restaurant" onstart="" thumburl="panos/vigie_centre_day.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/vigie_centre_day.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/vigie_centre_day.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/vigie_centre_day.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<!--<hotspot name="spot1" style="skin_hotspotstyle" ath="-100" atv="-1.975" linkedscene="scene_vigie_resto"  tooltip="Restaurant Night"/>
+		<hotspot name="spot6" style="skin_hotspotstyle" ath="68" atv="3" linkedscene="scene_vigie_lounge_day"  tooltip="Lounge Day"/>
+		<hotspot name="spot7" style="skin_hotspotstyle" ath="12" atv="0" linkedscene="scene_vigie_bar_nuit"  tooltip="Lounge Bar"/>-->
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="-138" atv="-3.468"  onclick="action(olympic)" tooltip="Olympic-Size Pool" />
+		<hotspot name="spot5" style="skin_hotspotstyle3" ath="-132.420" atv="-3.716" onclick="action(beach_lobby)" tooltip="Lobby" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-175" atv="-37.763" onclick="action(beach150m)" tooltip="Monte-Carlo Beach - Seaside View" />
+
+	</scene>
+
+	<!--<scene name="scene_vigie_lounge_day"  nameid="scene_vigie_bar_nuit" etablissement="Monte-Carlo Beach" dossier="beach" galeriephoto="oui" galerievideo="non" info="oui" title="La Vigie Lounge &amp; Restaurant" onstart="" thumburl="panos/vigie_lounge_day.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/vigie_lounge_day.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/vigie_lounge_day.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/vigie_lounge_day.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+		
+<plugin name="trait" url="trait.jpg" align="middletop" y="75" x="-40" keep="false" scaleX="0.8"/>
+<plugin name="jour" url="sun.png" align="middletop" scale="0.8" y="10" x="-40" keep="false" handcursor="false" />
+<plugin name="moon" url="moon.png" align="middletop" scale="0.8" y="15" x="40" keep="false" onclick=" loadscene(scene_vigie_lounge_nuit, null, KEEPVIEW , SLIDEBLEND(1.0, 90.0, 0.5, linear)); tween(plugin[trait].x,40);" />
+		
+		
+		
+		
+		
+		
+		<hotspot name="spot7" style="skin_hotspotstyle" ath="-12" atv="-7" linkedscene="scene_vigie_bar_nuit"  tooltip="Lounge Bar"/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-72" atv="-5" linkedscene="scene_vigie_resto"  tooltip="Restaurant Night"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-78" atv="-5" linkedscene="scene_vigie_centre_day"  tooltip="Restaurant Day"/>
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-120.888" atv="-30.262" onclick="action(beach150m)" tooltip="Monte-Carlo Beach - Seaside View"  />
+		
+
+	</scene>
+	
+	
+	<scene name="scene_vigie_lounge_nuit"  nameid="scene_vigie_bar_nuit" etablissement="Monte-Carlo Beach" dossier="beach" galeriephoto="oui" galerievideo="non" info="oui" title="La Vigie Lounge &amp; Restaurant" onstart="" thumburl="panos/vigie_lounge_nuit.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/vigie_lounge_nuit.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/vigie_lounge_nuit.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/vigie_lounge_nuit.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+		
+		
+<plugin name="trait" url="trait.jpg" align="middletop" y="75" x="40" keep="false" scaleX="0.8"/>
+<plugin name="jour" url="sun.png" align="middletop" scale="0.8" y="10" x="-40" keep="false" onclick="loadscene(scene_vigie_lounge_day,null, KEEPVIEW , SLIDEBLEND(1.0, -90.0, 0.5, linear)); tween(plugin[trait].x,-40);" />
+<plugin name="moon" url="moon.png" align="middletop" scale="0.8" y="15" x="40" keep="false" handcursor="false"/>
+
+		
+		<hotspot name="spot7" style="skin_hotspotstyle" ath="-12" atv="-7" linkedscene="scene_vigie_bar_nuit"  tooltip="Lounge Bar"/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-71" atv="-6" linkedscene="scene_vigie_resto"  tooltip="Restaurant Night"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-78" atv="-7" linkedscene="scene_vigie_centre_day"  tooltip="Restaurant Day"/>
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-120.888" atv="-30.262" onclick="action(beach150m)" tooltip="Monte-Carlo Beach - Seaside View"  />
+	</scene>
+
+	
+	<scene name="scene_vigie_resto"  nameid="scene_vigie_bar_nuit" etablissement="Monte-Carlo Beach" dossier="beach" galeriephoto="oui" galerievideo="non" info="oui" title="La Vigie Lounge &amp; Restaurant" onstart="" thumburl="panos/vigie_resto.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/vigie_resto.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/vigie_resto.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/vigie_resto.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="30" atv="-4" linkedscene="scene_vigie_centre_day"  tooltip="Restaurant Day"/>
+		
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="135" atv="-30.262" onclick="action(beach150m)" tooltip="Monte-Carlo Beach - Seaside View"  />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="166" atv="-5.564" onclick="action(olympic)" tooltip="Olympic Pool" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="167" atv="-2" onclick="action(beach_lobby)" tooltip="Monte-Carlo Beach - Lobby" />
+
+	</scene>-->
+
+</krpano>

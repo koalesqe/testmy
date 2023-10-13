@@ -1,0 +1,75 @@
+
+
+<krpano version="1.17.1" title="Virtual Tour"  onstart="startup();" basedir="%HTMLPATH%">
+
+
+
+	<include url="../../skin.xml" /> 
+
+
+
+	<action name="startup">
+
+    loadscene(scene_baypoolout, null, MERGE, BLEND(1));
+
+	</action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+	
+
+	
+
+ 
+
+
+
+		
+
+		
+
+		<scene name="scene_baypoolout" nameid="scene_poolaccueil" title="Outdoor Swimming Pool" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non" onstart="" thumburl="panos/baypoolout.tiles/thumb.jpg" lat="" lng="" heading="">
+
+
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+
+
+		<preview url="panos/baypoolout.tiles/preview.jpg" />
+
+
+
+		<image>
+
+			<cube url="panos/baypoolout.tiles/pano_%s.jpg" />
+
+			<mobile>
+
+				<cube url="panos/baypoolout.tiles/mobile_%s.jpg" />
+
+			</mobile>
+
+		</image>
+
+
+
+		<!-- place your scene hotspots here -->
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-33.916" atv="1.048"  onclick="action(pool_in);" tooltip="Indoor Swimming Pool"/>
+
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="90.379" atv="-5.227"  onclick="action(bluebay)" tooltip="Blue Bay" />
+
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="152.229" atv="1.874"  onclick="action(lagon)" tooltip="Sandy-Bottom Lagoon 1" />
+
+		<hotspot name="aeriallagoon" style="skin_hotspotstyle" ath="128.149" atv="-10" onclick="action(lagonmat)" tooltip="Sandy-Bottom Lagoon 2"  />
+
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="160.708" atv="-4.321" onclick="action(mediterraneen);" tooltip="Jardin Méditerranéen" />
+
+
+
+
+
+	</scene>
+
+	
+
+</krpano>

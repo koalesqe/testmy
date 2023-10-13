@@ -1,0 +1,1923 @@
+<krpano>
+
+
+
+   <events onloadcomplete="action(loader);"/>
+
+
+
+   <action name="loader">
+
+         js(timer5());  
+
+		 js(cacherpictos());
+
+    </action>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<!-- mouse / keyboard(button) control settings - http://krpano.com/docu/xml/#control.advanced -->
+
+	<control mousetype="moveto"
+
+	         zoomtocursor="false"
+
+	         zoomoutcursor="false"
+
+	         mouseaccelerate="1.0"
+
+	         mousespeed="10.0"
+
+	         mousefriction="0.8"
+
+	         mousefovchange="1.0"
+
+	         keybaccelerate="0.09"
+
+	         keybfriction="0.94"
+
+	         keybfovchange="0.25"
+
+	         fovspeed="3.0"
+
+	         fovfriction="0.9"
+
+	         bouncinglimits="true"
+
+	         touchfriction="0.9"
+
+	         />
+
+
+
+<!-- Skin Hotspot Style (the hotspots need a 'linkedscene' attribute to be clickable) -->
+
+	<style name="skin_hotspotstyle" url="spot0.png" alturl="spot0.png" scale="0.55" edge="top" oy="0" crop="if(device.html5, 0|0|40|40, 0|0|65|65)" frame="0" lastframe="9" frameheight="65" framewidth="65" onloaded="hotspot_animate();" devices="desktop"
+
+	       distorted="false" 
+
+	       onclick="if(linkedscene, tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,MERGE,BLEND(1)); skin_updatescroll(); );"
+
+	       onover="if(linkedscene, get(linkedscene[xml.scene].title, tooltip));
+
+		   copy(layer[tooltip].html, tooltip);
+
+	               set(layer[tooltip].visible, true);
+
+	               tween(layer[tooltip].alpha, 1.0, 0.2); 
+
+	               asyncloop(hovering, copy(layer[tooltip].x,mouse.stagex); copy(layer[tooltip].y,mouse.stagey); ); " 
+
+	       onout="tween(layer[tooltip].alpha, 0.0, 0.25, default, set(layer[tooltip].visible,false), copy(layer[tooltip].x,mouse.stagex); copy(layer[tooltip].y,mouse.stagey); );"
+
+		   ondown="tween(layer[tooltip].alpha, 0.0, 0.25, default, set(layer[tooltip].visible,false)"
+
+	       
+
+	       />
+
+		   
+
+		   <!-- Skin Hotspot Style (the hotspots need a 'linkedscene' attribute to be clickable) -->
+
+	<style name="skin_hotspotstyle2" url="spot0.png" alturl="spot0.png" scale="0.55" edge="top" oy="0" crop="if(device.html5, 0|0|40|40, 0|0|65|65)" frame="0" lastframe="9" frameheight="65" framewidth="65" onloaded="hotspot_animate();" devices="desktop"
+
+	       distorted="false" 
+
+	       onclick="if(linkedscene, tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,MERGE,BLEND(1)); skin_updatescroll(); );"
+
+	       onover="if(linkedscene, get(linkedscene[xml.scene].title, tooltip));
+
+		   copy(layer[tooltip].html, tooltip);
+
+	               set(layer[tooltip].visible, true);
+
+	               tween(layer[tooltip].alpha, 1.0, 0.2); 
+
+	               asyncloop(hovering, copy(layer[tooltip].x,mouse.stagex); copy(layer[tooltip].y,mouse.stagey); ); " 
+
+	       onout="tween(layer[tooltip].alpha, 0.0, 0.25, default, set(layer[tooltip].visible,false), copy(layer[tooltip].x,mouse.stagex); copy(layer[tooltip].y,mouse.stagey); );"
+
+		   ondown="tween(layer[tooltip].alpha, 0.0, 0.25, default, set(layer[tooltip].visible,false)"
+
+	       
+
+	       />
+
+		   
+
+		   	   <!-- Skin Hotspot Style (the hotspots need a 'linkedscene' attribute to be clickable) -->
+
+	<style name="skin_hotspotstyle3" url="spot0.png" alturl="spot0.png" scale="0.55" edge="top" oy="0" crop="if(device.html5, 0|0|40|40, 0|0|65|65)" frame="0" lastframe="9" frameheight="65" framewidth="65" onloaded="hotspot_animate();" devices="desktop"
+
+	       distorted="false" 
+
+	       onclick="if(linkedscene, tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,MERGE,BLEND(1)); skin_updatescroll(); );"
+
+	       onover="if(linkedscene, get(linkedscene[xml.scene].title, tooltip));
+
+		   copy(layer[tooltip].html, tooltip);
+
+	               set(layer[tooltip].visible, true);
+
+	               tween(layer[tooltip].alpha, 1.0, 0.2); 
+
+	               asyncloop(hovering, copy(layer[tooltip].x,mouse.stagex); copy(layer[tooltip].y,mouse.stagey); ); " 
+
+	       onout="tween(layer[tooltip].alpha, 0.0, 0.25, default, set(layer[tooltip].visible,false), copy(layer[tooltip].x,mouse.stagex); copy(layer[tooltip].y,mouse.stagey); );"
+
+		   ondown="tween(layer[tooltip].alpha, 0.0, 0.25, default, set(layer[tooltip].visible,false)"
+
+	       
+
+	       />
+
+		   
+
+		   	   <!-- Skin Hotspot Style (the hotspots need a 'linkedscene' attribute to be clickable) -->
+
+	<style name="skin_hotspotstyle4" url="spot0.png" alturl="spot0.png" scale="0.55" edge="top" oy="0" crop="if(device.html5, 0|0|40|40, 0|0|65|65)" frame="0" lastframe="9" frameheight="65" framewidth="65" onloaded="hotspot_animate();" devices="desktop"
+
+	       distorted="false" 
+
+	       onclick="if(linkedscene, tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,MERGE,BLEND(1)); skin_updatescroll(); );"
+
+	       onover="if(linkedscene, get(linkedscene[xml.scene].title, tooltip));
+
+		   copy(layer[tooltip].html, tooltip);
+
+	               set(layer[tooltip].visible, true);
+
+	               tween(layer[tooltip].alpha, 1.0, 0.2); 
+
+	               asyncloop(hovering, copy(layer[tooltip].x,mouse.stagex); copy(layer[tooltip].y,mouse.stagey); ); " 
+
+	       onout="tween(layer[tooltip].alpha, 0.0, 0.25, default, set(layer[tooltip].visible,false), copy(layer[tooltip].x,mouse.stagex); copy(layer[tooltip].y,mouse.stagey); );"
+
+		   ondown="tween(layer[tooltip].alpha, 0.0, 0.25, default, set(layer[tooltip].visible,false)"
+
+	       
+
+	       />
+
+		   
+
+		   <!-- Skin Hotspot Style (the hotspots need a 'linkedscene' attribute to be clickable) -->
+
+	<style name="skin_hotspotstyle" url="spot0.png" alturl="spot0.png" scale="0.55" edge="middle" oy="0" crop="if(device.html5, 0|0|40|40, 0|0|65|65)" frame="0" lastframe="9" frameheight="65" framewidth="65" onloaded="hotspot_animate(); all_tooltip();" devices="tablet|mobile"
+
+	       distorted="false" 
+
+	       onclick="if(linkedscene, tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,MERGE,BLEND(1)); skin_updatescroll(); );"
+
+	       />
+
+		   
+
+	<style name="skin_hotspotstyle2" url="spot0.png" alturl="spot0.png" scale="0.55" edge="middle" oy="0" crop="if(device.html5, 0|0|40|40, 0|0|65|65)" frame="0" lastframe="9" frameheight="65" framewidth="65" onloaded="hotspot_animate(); all_tooltip2();" devices="tablet|mobile"
+
+	       distorted="false" 
+
+	       onclick="if(linkedscene, tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,MERGE,BLEND(1)); skin_updatescroll(); );"
+
+
+
+	       />	
+
+		   
+
+		   <style name="skin_hotspotstyle3" url="spot0.png" alturl="spot0.png" scale="0.55" edge="middle" oy="0" crop="if(device.html5, 0|0|40|40, 0|0|65|65)" frame="0" lastframe="9" frameheight="65" framewidth="65" onloaded="hotspot_animate(); all_tooltip3();" devices="tablet|mobile"
+
+	       distorted="false" 
+
+	       onclick="if(linkedscene, tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,MERGE,BLEND(1)); skin_updatescroll(); );"
+
+
+
+	       />	
+
+		   
+
+		   <style name="skin_hotspotstyle4" url="spot0.png" alturl="spot0.png" scale="0.55" edge="middle" oy="0" crop="if(device.html5, 0|0|40|40, 0|0|65|65)" frame="0" lastframe="9" frameheight="65" framewidth="65" onloaded="hotspot_animate(); all_tooltip4();" devices="tablet|mobile"
+
+	       distorted="false" 
+
+	       onclick="if(linkedscene, tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,MERGE,BLEND(1)); skin_updatescroll(); );"
+
+
+
+	       />
+
+
+
+		 <action name="hotspot_animate">
+
+		inc(frame,1,get(lastframe),0);
+
+		mul(ypos,frame,frameheight);
+
+		txtadd(crop,'0|',get(ypos),'|',get(framewidth),'|',get(frameheight));
+
+		delayedcall(0.10, if(loaded, hotspot_animate() ) );
+
+	</action>
+
+	
+
+	
+
+	  <style name="tooltip"
+
+	       onover="copy(layer[tooltip].html, tooltip);
+
+	               set(layer[tooltip].visible, true);
+
+	               tween(layer[tooltip].alpha, 1.0, 0.2); 
+
+	               asyncloop(hovering, copy(layer[tooltip].x,mouse.stagex); copy(layer[tooltip].y,mouse.stagey); ); " 
+
+	       onout="tween(layer[tooltip].alpha, 0.0, 0.25, default, set(layer[tooltip].visible,false), copy(layer[tooltip].x,mouse.stagex); copy(layer[tooltip].y,mouse.stagey); );"
+
+		   ondown="tween(layer[tooltip].alpha, 0.0, 0.25, default, set(layer[tooltip].visible,false)"
+
+	       />
+
+		   
+
+		   
+
+		   <layer name="tooltip" keep="true" zorder="200"
+
+	       url="%SWFPATH%/plugins/textfield.swf"
+
+	      fadeintime="1" fadetime="1"
+
+	       visible="false" alpha="0"
+
+	       enabled="false"
+
+	       align="lefttop"
+
+	       edge="bottom"
+
+	       oy="-5"
+
+	       width="auto"
+
+	       autoheight="true"
+
+	       background="true" backgroundcolor="0xcb9b13" backgroundalpha="1"
+
+	       border="true" bordercolor="0xFFFFFF" borderalpha="1.0"
+
+	       borderwidth="1.0" roundedge="5"
+
+	       shadow="1" shadowrange="4.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="1.0"
+
+	       textshadow="1" textshadowrange="3.0" textshadowangle="90" textshadowcolor="0x000000" textshadowalpha="0.5"
+
+	       css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:light; font-size:14px;"
+
+	       html=""
+
+	       />  
+
+		   
+
+		   <action name="all_tooltip">
+
+    txtadd(tooltipname, 'tooltip_', get(name));
+
+    addplugin(get(tooltipname));
+
+    txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']');
+
+    set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf');
+
+    set(plugin[get(tooltipname)].align,top);
+
+    set(plugin[get(tooltipname)].edge,bottom);
+
+    set(plugin[get(tooltipname)].x,0);
+
+    set(plugin[get(tooltipname)].y,0);
+
+    set(plugin[get(tooltipname)].width,100);
+
+    set(plugin[get(tooltipname)].autoheight,true);
+
+    set(plugin[get(tooltipname)].background,false);
+
+    set(plugin[get(tooltipname)].border,false);
+
+    set(plugin[get(tooltipname)].css,'text-align:center; color:#FFFFFF; font-family:Arial; font-size:12px;');
+
+    set(plugin[get(tooltipname)].textshadow,1);
+
+    set(plugin[get(tooltipname)].textshadowrange,6.0);
+
+    set(plugin[get(tooltipname)].textshadowangle,90);
+
+    copy(plugin[get(tooltipname)].html, tooltip);
+
+    set(plugin[get(tooltipname)].enabled,false);
+
+	
+
+</action>
+
+
+
+		   <action name="all_tooltip2">
+
+    txtadd(tooltipname, 'tooltip_', get(name));
+
+    addplugin(get(tooltipname));
+
+    txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']');
+
+    set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf');
+
+    set(plugin[get(tooltipname)].align,bottom);
+
+    set(plugin[get(tooltipname)].edge,top);
+
+    set(plugin[get(tooltipname)].x,0);
+
+    set(plugin[get(tooltipname)].y,0);
+
+    set(plugin[get(tooltipname)].width,100);
+
+    set(plugin[get(tooltipname)].autoheight,true);
+
+    set(plugin[get(tooltipname)].background,false);
+
+    set(plugin[get(tooltipname)].border,false);
+
+    set(plugin[get(tooltipname)].css,'text-align:center; color:#FFFFFF; font-family:Arial; font-size:12px;');
+
+    set(plugin[get(tooltipname)].textshadow,1);
+
+    set(plugin[get(tooltipname)].textshadowrange,6.0);
+
+    set(plugin[get(tooltipname)].textshadowangle,90);
+
+    copy(plugin[get(tooltipname)].html, tooltip);
+
+    set(plugin[get(tooltipname)].enabled,false);
+
+</action>
+
+
+
+   <action name="all_tooltip3">
+
+    txtadd(tooltipname, 'tooltip_', get(name));
+
+    addplugin(get(tooltipname));
+
+    txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']');
+
+    set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf');
+
+    set(plugin[get(tooltipname)].align,right);
+
+    set(plugin[get(tooltipname)].edge,left);
+
+    set(plugin[get(tooltipname)].x,15);
+
+    set(plugin[get(tooltipname)].y,0);
+
+    set(plugin[get(tooltipname)].width,100);
+
+    set(plugin[get(tooltipname)].autoheight,true);
+
+    set(plugin[get(tooltipname)].background,false);
+
+    set(plugin[get(tooltipname)].border,false);
+
+    set(plugin[get(tooltipname)].css,'text-align:center; color:#FFFFFF; font-family:Arial; font-size:12px;');
+
+    set(plugin[get(tooltipname)].textshadow,1);
+
+    set(plugin[get(tooltipname)].textshadowrange,6.0);
+
+    set(plugin[get(tooltipname)].textshadowangle,90);
+
+    copy(plugin[get(tooltipname)].html, tooltip);
+
+    set(plugin[get(tooltipname)].enabled,false);
+
+	
+
+</action>
+
+
+
+
+
+   <action name="all_tooltip4">
+
+    txtadd(tooltipname, 'tooltip_', get(name));
+
+    addplugin(get(tooltipname));
+
+    txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']');
+
+    set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf');
+
+    set(plugin[get(tooltipname)].align,left);
+
+    set(plugin[get(tooltipname)].edge,right);
+
+    set(plugin[get(tooltipname)].x,15);
+
+    set(plugin[get(tooltipname)].y,0);
+
+    set(plugin[get(tooltipname)].width,100);
+
+    set(plugin[get(tooltipname)].autoheight,true);
+
+    set(plugin[get(tooltipname)].background,false);
+
+    set(plugin[get(tooltipname)].border,false);
+
+    set(plugin[get(tooltipname)].css,'text-align:center; color:#FFFFFF; font-family:Arial; font-size:12px;');
+
+    set(plugin[get(tooltipname)].textshadow,1);
+
+    set(plugin[get(tooltipname)].textshadowrange,6.0);
+
+    set(plugin[get(tooltipname)].textshadowangle,90);
+
+    copy(plugin[get(tooltipname)].html, tooltip);
+
+    set(plugin[get(tooltipname)].enabled,false);
+
+
+
+
+
+	
+
+</action>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--One-->
+
+
+
+<action name="one">
+
+  js(loadpano('one/one_mat/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelone());
+
+</action>
+
+<action name="one_foyer">
+
+  js(loadpano('one/foyer/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelone());
+
+</action>
+
+<action name="one_arts">
+
+  js(loadpano('one/arts/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelone());
+
+</action>
+
+<action name="cocteau">
+
+  js(loadpano('one/cocteau/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelone());
+
+</action>
+
+<action name="auditorium">
+
+  js(loadpano('one/auditorium/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelone());
+
+</action>
+
+<action name="arman">
+
+  js(loadpano('one/arman/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelone());
+
+</action>
+
+<action name="arman1">
+
+  js(loadpano('one/arman1/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelone());
+
+</action>
+
+<action name="madaonein">
+
+  js(loadpano('one/madaone/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelone());
+
+</action>	
+
+
+
+
+
+
+
+
+
+
+
+<!--thermes marins	-->	  
+
+
+
+<action name="thermesaccueil">
+
+ js(loadpano('thermes/01accueil/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelthermes());
+
+</action>
+
+
+
+<action name="baldaquin">
+
+ js(loadpano('thermes/02baldaquin/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="soins1">
+
+ js(loadpano('thermes/03soins1/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="soins2">
+
+ js(loadpano('thermes/05soins2/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="massage">
+
+ js(loadpano('thermes/04massage1/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="fitness">
+
+ js(loadpano('thermes/06fitness/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="couloir">
+
+ js(loadpano('thermes/07couloir/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="accueilvestiaires">
+
+ js(loadpano('thermes/08accueilvestiaires/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="vestiaires">
+
+ js(loadpano('thermes/09vestiaires/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="soins3">
+
+ js(loadpano('thermes/10soins3/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="hf1">
+
+ js(loadpano('thermes/11cabinehf1/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="hf2">
+
+ js(loadpano('thermes/12cabinehf2/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="resto">
+
+ js(loadpano('thermes/14resto/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="shopping">
+
+ js(loadpano('thermes/15shoping/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="cabine">
+
+ js(loadpano('thermes/16cabines/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="pooljour">
+
+ js(loadpano('thermes/17poolHBleue/tour2.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="poolnuit">
+
+ js(loadpano('thermes/17poolHBleue/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="jacuzzi">
+
+ js(loadpano('thermes/18jacuzzi/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelthermes()); 
+
+</action>
+
+
+
+<action name="jacuzzijour">
+
+ js(loadpano('thermes/18jacuzzi/tour2.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelthermes()); 
+
+</action>
+
+
+
+<action name="jacuzziday">
+
+ js(loadpano('thermes/18jacuzziday/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="thermesterrasse">
+
+ js(loadpano('thermes/19poolterrasse/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+<action name="privatecabs">
+
+ js(loadpano('thermes/16cabines/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelthermes());
+
+</action>
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+
+
+
+<!--HdParis-->
+
+
+
+<action name="hdp_lobby">
+
+  js(loadpano('hdp/lobby_hdp/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+
+
+<action name="ducasse">
+
+  js(loadpano('hdp/ducasse/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+
+
+<action name="empire">
+
+  js(loadpano('hdp/empire/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+
+
+<action name="wine">
+
+  js(loadpano('hdp/cavecouloir/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="privatewine">
+
+  js(loadpano('hdp/cavecouloir/tour2.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+
+
+<action name="louisxv">
+
+  js(loadpano('hdp/ducasse/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="grill">
+
+  js(loadpano('hdp/grill/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="grillnuit">
+
+  js(loadpano('hdp/grill/tour3.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="churchill">
+
+  js(loadpano('hdp/grill/tour2.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="spgbed7">
+
+  js(loadpano('hdp/suite_princesse_grace/HP_suite_princesse_grace_bed_7.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="spgsalon7">
+
+  js(loadpano('hdp/suite_princesse_grace/HP_suite_princesse_grace_salon_7.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="spgterrasse7">
+
+  js(loadpano('hdp/suite_princesse_grace/HP_suite_princesse_grace_salon_7_terrasse.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="spgbureau7">
+
+  js(loadpano('hdp/suite_princesse_grace/HP_suite_princesse_grace_bureau_7.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="spgpatio">
+
+  js(loadpano('hdp/suite_princesse_grace/HP_suite_princesse_grace_patio.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="spghammam">
+
+  js(loadpano('hdp/suite_princesse_grace/HP_suite_princesse_grace_hammam.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="spghammamHB">
+
+  js(loadpano('hdp/suite_princesse_grace/HP_suite_princesse_grace_hammam_HB.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="spgsalon8">
+
+  js(loadpano('hdp/suite_princesse_grace/HP_suite_princesse_grace_salon_8.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="spgdining8">
+
+  js(loadpano('hdp/suite_princesse_grace/HP_suite_princesse_grace_dining_8.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="spgbed8">
+
+  js(loadpano('hdp/suite_princesse_grace/HP_suite_princesse_grace_bed_8.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="spgsdb">
+
+  js(loadpano('hdp/suite_princesse_grace/HP_suite_princesse_grace_SdB.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="spgsam">
+
+  js(loadpano('hdp/suite_princesse_grace/HP_suite_princesse_grace_SaM_8.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>	
+
+	
+
+<action name="spgterrasseHB">
+
+  js(loadpano('hdp/suite_princesse_grace/HP_suite_princesse_grace_Terrasse_HB.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="americain">
+
+  js(loadpano('hdp/baramericain/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>	
+
+	
+
+<action name="emsherif">
+
+  js(loadpano('hdp/omer/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+	<action name="omerterrace">
+
+  js(loadpano('hdp/omer/tour2.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="patio">
+
+  js(loadpano('hdp/patio/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="rainierliving">
+
+  js(loadpano('hdp/rainier3/rainier3living.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>	
+
+
+
+<action name="rainierterrasse">
+
+  js(loadpano('hdp/rainier3/rainier3terrasse.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="rainierbed">
+
+  js(loadpano('hdp/rainier3/rainier3bed.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="rainiersam">
+
+  js(loadpano('hdp/rainier3/rainier3sam.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+	
+
+<action name="rainiersdb">
+
+  js(loadpano('hdp/rainier3/rainier3sdb.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+
+
+	<action name="wellness">
+
+  js(loadpano('hdp/wellness_sky_club/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hoteldeparis());
+
+</action>
+
+
+
+
+
+<!--Beach-->
+
+
+
+<action name="beach_lobby">
+
+  js(loadpano('beach/lobby/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelbeach());
+
+</action>
+
+
+
+<action name="elsa">
+
+  js(loadpano('beach/elsa/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelbeach());
+
+</action>
+
+
+
+<action name="elsa_terrace">
+
+  js(loadpano('beach/elsa_terrace/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelbeach());
+
+</action>
+
+
+
+<action name="olympic">
+
+  js(loadpano('beach/olympic_pool/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelbeach());
+
+</action>
+
+	
+
+	<action name="sunshine">
+
+  js(loadpano('beach/sunshine/tour2.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelbeach());
+
+</action>
+
+	
+
+<action name="vigie_resto">
+
+  js(loadpano('beach/vigie_restaurant/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelbeach());
+
+</action>
+
+
+
+<action name="deck">
+
+  js(loadpano('beach/deck/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelbeach());
+
+</action>
+	
+	<action name="beach_spa">
+
+  js(loadpano('beach/beach_spa.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelbeach());
+
+</action>
+
+	
+
+	<!--<action name="pizzeria">
+
+  js(loadpano('beach/pizzeria/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelbeach());
+
+</action>-->
+
+
+
+
+
+
+
+
+
+
+
+<!--hermitage-->
+
+
+
+<action name="lobby">
+
+  js(loadpano('hh/lobby_hermitage/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage());
+
+</action>
+
+	
+
+<action name="limun">
+
+  js(loadpano('hh/limun/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage());
+
+</action>
+
+
+
+<action name="hermitage">
+
+ js(loadpano('hh/lobby_hiver_hermitage/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage()); 
+
+</action>
+
+
+
+<action name="belleepoq">
+
+ js(loadpano('hh/belleepoq/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage());
+
+</action>
+
+
+
+<action name="crystal_terrasse">
+
+ js(loadpano('hh/crystal_terrasse/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage());
+
+</action>
+
+
+
+<action name="crystal">
+
+ js(loadpano('hh/crystalbar/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage());
+
+</action>
+
+
+
+<action name="eiffel">
+
+ js(loadpano('hh/eiffel/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage());
+
+</action>
+
+
+
+<action name="mezzanine">
+
+ js(loadpano('hh/mezzanine_eiffel/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage());
+
+</action>
+
+
+
+<action name="mezzanine_terrasse">
+
+ js(loadpano('hh/mezzanine_terrasse/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage());
+
+</action>
+
+
+
+<action name="cours">
+
+ js(loadpano('hh/cours/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage());
+
+</action>
+
+
+
+<action name="pavyllon">
+
+ js(loadpano('hh/hh_pavyllon_terrace.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage());
+
+</action>
+
+
+
+<action name="groupcheck">
+
+ js(loadpano('hh/group_check_in/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage());
+
+</action>
+
+
+
+<action name="salonhiver">
+
+ js(loadpano('hh/salonhiver/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage());
+
+</action>
+
+
+
+<action name="excelsior">
+
+ js(loadpano('hh/excelsior/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage());
+
+</action>
+
+	
+
+<action name="midi">
+
+ js(loadpano('hh/midi/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhermitage());
+
+</action>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- aériennes-->
+
+		   
+
+<action name="casino100m">
+
+ js(loadpano('aeriennes/casino100m/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelaeriennes()); 
+
+</action>
+
+
+
+<action name="hercule">
+
+ js(loadpano('aeriennes/hercule/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelaeriennes());
+
+</action>	
+
+
+
+<action name="hercule2">
+
+ js(loadpano('aeriennes/hercule/tour2.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelaeriennes());
+
+</action>			   	   
+
+		   
+
+<action name="beach150m">
+
+ js(loadpano('aeriennes/beach150m/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelaeriennes());
+
+</action>
+
+
+
+<action name="country">
+
+ js(loadpano('aeriennes/country/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelaeriennes());
+
+</action>
+
+
+
+<action name="sporting_air">
+
+ js(loadpano('aeriennes/sporting_air/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelaeriennes());
+
+</action>
+
+
+
+<action name="lagon_air">
+
+ js(loadpano('aeriennes/lagon/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelaeriennes());
+
+</action>
+
+
+
+<action name="golf">
+
+ js(loadpano('aeriennes/golf/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelaeriennes());
+
+</action>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--casinos-->
+
+
+
+
+
+
+
+<action name="atrium">
+
+  js(loadpano('casinos/atrium/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcasinos()); 
+
+</action>	
+
+
+
+<action name="blanche">
+
+  js(loadpano('casinos/blanche/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcasinos());
+
+</action>	   
+
+		  
+
+<action name="medecin">
+
+  js(loadpano('casinos/medecin/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcasinos());
+
+</action>		  
+
+		   
+
+<action name="ameriques">
+
+  js(loadpano('casinos/ameriques/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcasinos());
+
+</action>		   
+
+		   
+
+<action name="renaissance">
+
+  js(loadpano('casinos/renaissance/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcasinos());
+
+</action>	
+
+
+
+<action name="europe">
+
+  js(loadpano('casinos/europe/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcasinos());
+
+</action>	   
+
+
+
+<action name="touzet_nord">
+
+  js(loadpano('casinos/touzet_nord/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcasinos());
+
+</action>
+
+
+
+<action name="touzet_sud">
+
+  js(loadpano('casinos/touzet_sud/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcasinos());
+
+</action>
+
+
+
+<action name="salon_anglais">
+
+  js(loadpano('casinos/salon_anglais/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcasinos());
+
+</action>
+
+
+
+
+
+<action name="opera">
+
+  js(loadpano('casinos/opera/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelcasinos());
+
+</action>
+
+
+
+
+
+
+
+<!--BuddhaBar-->
+
+
+
+<action name="buddhabas">
+
+  js(loadpano('buddhabar/buddhabas/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelbuddhabar());
+
+</action>
+
+
+
+<action name="buddhahaut">
+
+  js(loadpano('buddhabar/buddhahaut/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelbuddhabar());
+
+</action>
+
+
+
+<action name="private">
+
+  js(loadpano('buddhabar/private/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelbuddhabar());
+
+</action>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Café de Paris-->
+
+
+
+<action name="cdpterrasse">
+
+  js(loadpano('cdp/cdpterrasse/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcdp());
+
+</action>
+
+
+
+<action name="cdpbrasserie">
+
+  js(loadpano('cdp/cdpbrasserie/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcdp());
+
+</action>
+
+
+
+<action name="cdphall">
+
+  js(loadpano('cdp/cdphall/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcdp());
+
+</action>
+
+
+
+<action name="verriere">
+
+  js(loadpano('cdp/verriere/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcdp());
+
+</action>
+
+
+
+<action name="bellevue">
+
+  js(loadpano('cdp/bellevue/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcdp());
+
+</action>
+
+
+
+<action name="casinocdp">
+
+  js(loadpano('cdp/casinocdp1/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcdp());
+
+</action>
+
+
+
+<action name="casinocdp2">
+
+  js(loadpano('cdp/casinocdp2/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcdp());
+
+</action>
+
+
+
+<action name="casinoterrace1">
+
+  js(loadpano('cdp/casinoterrace1/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcdp());
+
+</action>
+
+
+
+<action name="casinoterrace2">
+
+  js(loadpano('cdp/casinoterrace2/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelcdp());
+
+</action>
+
+
+
+<!--Vigie-->
+
+
+
+<action name="vigie">
+
+  js(loadpano('vigie/salon/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelvigie()); 
+
+</action>
+
+
+
+<action name="billard">
+
+  js(loadpano('vigie/billard/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelvigie()); 
+
+</action>
+
+
+
+<action name="bed2vigie">
+
+  js(loadpano('vigie/bed2/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelvigie()); 
+
+</action>
+
+
+
+<action name="diningvigie">
+
+  js(loadpano('vigie/sam/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelvigie()); 
+
+</action>
+
+
+
+<action name="sdb2">
+
+  js(loadpano('vigie/sdb2/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelvigie()); 
+
+</action>
+
+
+
+<!--jimmyz-->
+
+
+
+<action name="jimmyz">
+
+  js(loadpano('sporting/jimmyz/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelsporting()); 
+
+</action>
+
+
+
+<!--Sporting-->
+
+
+
+<action name="sporting">
+
+  js(loadpano('sporting/sporting_out/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelsporting()); 
+
+</action>
+
+	
+
+<action name="coya">
+
+  js(loadpano('sporting/coya/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelsporting()); 
+
+</action>
+
+
+
+<action name="sporting_hall">
+
+  js(loadpano('sporting/hall_sporting/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelsporting()); 
+
+</action>
+
+	
+
+	<action name="sporting_hall2">
+
+  js(loadpano('sporting/hall_sporting/tour2.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelsporting()); 
+
+</action>
+
+
+
+<action name="sporting_out">
+
+  js(loadpano('sporting/sporting_out/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelsporting()); 
+
+</action>
+
+
+
+<action name="palmiers">
+
+  js(loadpano('sporting/palmiers/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelsporting()); 
+
+</action>
+
+
+
+<action name="etoiles">
+
+  js(loadpano('sporting/etoiles/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelsporting()); 
+
+</action>
+
+
+
+
+
+
+
+<!--Rascasse-->
+
+
+
+<action name="rascasse">
+
+  js(loadpano('rascasse/rascasseetage/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelrascasse());
+
+</action>
+
+
+
+<action name="rascasse1">
+
+  js(loadpano('rascasse/rascasse1/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelrascasse());
+
+</action>
+
+
+
+<action name="rascasseext">
+
+  js(loadpano('rascasse/rascasseext/tour.xml')); js(alertFunc5()); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelrascasse());
+
+</action>
+
+
+
+
+
+<!--Monte Carlo Bay-->
+
+
+
+<action name="mcbay_lobby">
+
+  js(loadpano('mcbay/mcbay_lobby/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelmcbay()); 
+
+</action>
+
+	<action name="bay_biblio">
+
+  js(loadpano('mcbay/mcbay_bibliotheque.tiles/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelmcbay()); 
+
+</action>
+
+
+<action name="bluegin">
+
+    js(loadpano('mcbay/bluegin/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelmcbay()); 
+
+ </action>
+
+
+
+	<action name="america">
+
+  js(loadpano('mcbay/salle_america/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelmcbay());
+
+    </action>
+
+
+
+	<action name="sincerity">
+
+  js(loadpano('mcbay/sincerity/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelmcbay());
+
+    </action>
+
+	
+
+	<action name="columbia">
+
+  js(loadpano('mcbay/baycolombia/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelmcbay());
+
+    </action>
+
+	
+
+	<action name="lagonmat">
+
+  js(loadpano('mcbay/lagon_inside/tour4.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelmcbay());
+
+    </action>
+
+		   
+
+	
+
+<action name="bluebay">
+
+  js(loadpano('mcbay/bluebay/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelmcbay());
+
+</action>	
+
+	
+
+	<action name="bluebayterrace">
+
+  js(loadpano('mcbay/bluebay/tour2.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelmcbay());
+
+</action>	
+
+		   
+
+<action name="pool_in">
+
+  js(loadpano('mcbay/baypoolin/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelmcbay());
+
+</action>	
+
+
+
+<action name="pool_out">
+
+  js(loadpano('mcbay/baypoolout/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelmcbay());
+
+</action>
+
+
+
+<action name="casinomcbay">
+
+  js(loadpano('mcbay/casinomcbay/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelhotelmcbay());
+
+</action>
+
+
+
+<action name="lagon">
+
+  js(loadpano('mcbay/lagon_inside/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelmcbay());
+
+</action>
+	
+	
+<action name="orangeverte">
+
+  js(loadpano('mcbay/orange_verte/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());  js(hotelmcbay());
+
+</action>
+	
+
+	
+
+<action name="lagonfond">
+
+  js(loadpano('mcbay/lagon_inside/tour2.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelmcbay());
+
+</action>
+
+    
+
+<action name="mediterraneen">
+
+  js(loadpano('mcbay/lagon_inside/tour3.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelmcbay());
+
+</action>
+
+	
+
+	<action name="lagon_mat">
+
+  js(loadpano('mcbay/lagon_inside/tour4.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5()); js(hotelmcbay());
+
+</action>
+
+	
+
+	
+
+
+
+		  
+
+	
+
+<!--	  <contextmenu fullscreen="true" 
+
+             enterfs="Fullscreen"
+
+             exitfs="Exit Fullscreen"
+
+			 
+
+             >
+
+    <item name="Ventdautan"
+
+          caption="© Vent d'autan" 
+
+          enabled="true"
+
+          visible="true"
+
+          separator="false"
+
+          onclick="openurl(http://www.ventdautan.fr,_blank);" 
+
+          />
+
+    <item name="Christophe Bouthe"
+
+          caption="© Christophe Bouthé" 
+
+          enabled="true"
+
+          visible="true"
+
+          separator="false"
+
+          onclick="openurl(http://www.enterview.fr,_blank);" 
+
+          />
+
+  </contextmenu>-->
+
+	
+
+	
+
+	
+
+		<contextmenu versioninfo="false" fullscreen="false">
+
+			<item name="logoVDT" caption="calc:'[img src=[sq]logoVDT.png[sq] style=[sq]width:100px; height:100px; margin:0px 0px 0px 0px;[sq] /]'" separator="true" onclick="openurl('http://ventdautan.fr')" devices="html5" />
+
+		 <item name="vdt" 
+
+          caption="© Vent d'autan" 
+
+          enabled="true"
+
+          visible="true"
+
+          separator="false"
+
+          onclick="openurl(http://www.ventdautan.fr,_blank);" 
+
+          />
+
+		
+
+		<item name="logo" caption="calc:'[img src=[sq]logo_enterview.png[sq] style=[sq]width:100px; height:59px; margin:0px 0px 0px 0px;[sq] /]'" separator="true" onclick="openurl('http://enterview.fr')" devices="html5" />
+
+		 <item name="Christophe Bouthe"
+
+          caption="© Christophe Bouthé" 
+
+          enabled="true"
+
+          visible="true"
+
+          separator="false"
+
+          onclick="openurl(http://www.enterview.fr,_blank);" 
+
+          />
+
+	</contextmenu>
+
+
+
+</krpano>
+

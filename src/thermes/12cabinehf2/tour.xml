@@ -1,0 +1,32 @@
+<krpano version="1.17.1" title="Virtual Tour"  onstart="startup();" basedir="%HTMLPATH%">
+
+	<include url="../../skin.xml" /> 
+
+	<action name="startup">
+    loadscene(scene_12cabinehf2, null, MERGE, BLEND(1));
+	</action>
+	
+	 <events onloadcomplete="action(loader); js(hotelthermes());"/>
+
+
+	
+	<scene name="scene_12cabinehf2" nameid="scene_12cabinehf2" etablissement="Thermes Marins Monte-Carlo"  dossier="thermes" galeriephoto="oui" galerievideo="non" info="non" title="Women/Men Cabin - 2" onstart="" thumburl="panos/12cabinehf2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="2.324" vlookat="19.010" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/12cabinehf2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/12cabinehf2.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/12cabinehf2.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="couloir" onclick="action(couloir)" tooltip="Corridors" style="skin_hotspotstyle" ath="97.008" atv="1.804" />
+
+	</scene>
+
+
+</krpano>

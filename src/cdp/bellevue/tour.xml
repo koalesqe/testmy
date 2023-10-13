@@ -1,0 +1,138 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" />
+    
+
+    <action name="startup">
+        loadscene(scene_bellevuejour, null, MERGE, BLEND(1));
+    </action>
+	
+
+ <events onloadcomplete="action(loader); js(hotelcdp());"/>
+ 
+ 
+ 	
+
+	<plugin name="arrow" url="arrow.png" align="middleleft" x="130" y="-78" keep="true" scale="0.3"/>
+	
+	<action name="bellevue_verte">
+	loadscene(scene_bellevue_verte, null, MERGE, BLEND(1));
+	tween(plugin[arrow].y, 0, 0.5); 
+	</action>
+	
+	<action name="bellevuenuit">
+	loadscene(scene_bellenuit, null, MERGE, BLEND(1));
+	tween(plugin[arrow].y, 0, 0.5); 
+	</action>
+	
+	<action name="bellevuejour">
+	loadscene(scene_bellevuejour, null, MERGE, BLEND(1));
+	tween(plugin[arrow].y,0, 0.5); 
+	</action>
+	
+
+		<scene name="scene_bellevue_verte" nameid="scene_bellevuejour" etablissement="Café de Paris" dossier="cdp" galeriephoto="non" galerievideo="non" info = "non"  title="Salon Bellevue" onstart="" thumburl="panos/bellevue_verte.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/bellevue_verte.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/bellevue_verte.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/bellevue_verte.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+	
+	<plugin name="arrow" url="arrow.png" align="middleleft" x="130" y="0" keep="false" scale="0.3"/>
+		
+	<!--<plugin name="verte" url="verte.jpg" align="middleleft" x="10" y="-78" keep="false" scale="0.5" onclick="action(bellevue_verte)"/>
+	
+	<plugin name="nuit" url="nuit.jpg" align="middleleft" x="10" y="-0" keep="false" scale="0.5" onclick="action(bellevuenuit)"/>-->
+	
+	<plugin name="jour" url="jour.jpg" align="middleleft" x="10" y="0" keep="false" scale="0.5" onclick="action(bellevuejour)"/>
+		
+		
+		
+		
+		<hotspot name="terrace" style="skin_hotspotstyle2" ath="134.234" atv="-1.991" onclick="action(verriere)" tooltip="Salon Bellevue - Terrace" />
+		<hotspot name="lobby" style="skin_hotspotstyle" ath="140.189" atv="-1.866" onclick="action(cdphall)" tooltip="Lobby" />
+		
+
+	</scene>
+
+	
+	<scene name="scene_bellenuit" nameid="scene_bellevuejour" etablissement="Café de Paris" dossier="cdp" galeriephoto="non" galerievideo="non" info = "oui"  title="Salon Bellevue"  onstart="" thumburl="panos/bellenuit.tiles/thumb.jpg" lat="" lng="" heading="" >
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/bellenuit.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/bellenuit.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/bellenuit.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<plugin name="arrow" url="arrow.png" align="middleleft" x="130" y="0" keep="false" scale="0.3"/>
+		
+	<plugin name="verte" url="verte.jpg" align="middleleft" x="10" y="0" keep="false" scale="0.5" onclick="action(bellevue_verte)"/>
+	
+	
+		
+		
+		<plugin name="trait" url="trait.jpg" align="middletop" y="75" x="40" keep="false" scaleX="0.8"/>
+
+<plugin name="jour" url="sun.png" align="middletop" scale="0.8" y="10" x="-40" keep="false" onclick="loadscene(scene_bellevuejour,null, KEEPVIEW , SLIDEBLEND(1.0, -90.0, 0.5, linear)); tween(plugin[trait].x,-40);" />
+
+<plugin name="moon" url="moon.png" align="middletop" scale="0.8" y="15" x="40" keep="false" handcursor="false"/>
+
+<hotspot name="lobby" style="skin_hotspotstyle" ath="139.221" atv="-1.121" onclick="action(cdphall)" tooltip="Lobby" />
+<hotspot name="verriere" style="skin_hotspotstyle2" ath="130.601" atv="-1.087" onclick="action(verriere)" tooltip="Salon Bellevue - Terrace"/>
+	</scene>
+	
+	
+	
+
+	<scene name="scene_bellevuejour" nameid="scene_bellevuejour" etablissement="Café de Paris Monte-Carlo" dossier="cdp" galeriephoto="oui" galerievideo="non" info="oui"  title="Salon Bellevue" onstart="" thumburl="panos/bellevuejour.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/bellevuejour.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/bellevuejour.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/bellevuejour.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<plugin name="arrow" url="arrow.png" align="middleleft" x="130" y="0" keep="false" scale="0.3"/>
+		
+	<plugin name="verte" url="verte.jpg" align="middleleft" x="10" y="0" keep="false" scale="0.5" onclick="action(bellevue_verte)"/>
+	
+	<!--<plugin name="nuit" url="nuit.jpg" align="middleleft" x="10" y="-0" keep="false" scale="0.5" onclick="action(bellevuenuit)"/>
+	
+	<plugin name="jour" url="jour.jpg" align="middleleft" x="10" y="78" keep="false" scale="0.5" onclick="action(bellevuejour)"/>-->
+		
+		
+		<plugin name="trait" url="trait.jpg" align="middletop" y="75" x="-40" keep="false" scaleX="0.8"/>
+
+<plugin name="jour" url="sun.png" align="middletop" scale="0.8" y="10" x="-40" keep="false" handcursor="false" />
+
+<plugin name="moon" url="moon.png" align="middletop" scale="0.8" y="15" x="40" keep="false" onclick=" loadscene(scene_bellenuit, null, KEEPVIEW , SLIDEBLEND(1.0, 90.0, 0.5, linear)); tween(plugin[trait].x,40);" />
+
+<hotspot name="lobby" style="skin_hotspotstyle" ath="143.304" atv="-1.026" onclick="action(cdphall)" tooltip="Lobby" />
+<hotspot name="verriere" style="skin_hotspotstyle2" ath="133.601" atv="-1.087" onclick="action(verriere)" tooltip="Salon Bellevue - Terrace"/>
+	</scene>
+
+
+</krpano>

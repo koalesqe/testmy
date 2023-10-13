@@ -1,0 +1,36 @@
+<krpano version="1.17.1" title="Virtual Tour"  onstart="startup();" basedir="%HTMLPATH%">
+
+	<include url="../../skin.xml" /> 
+
+	<action name="startup">
+    loadscene(scene_17piscinejour, null, MERGE, BLEND(1));
+	</action>
+	
+	 <events onloadcomplete="action(loader); js(hotelthermes());"/>
+
+
+	
+	<scene name="scene_17piscinejour" nameid="scene_17piscinejour" etablissement="Thermes Marins Monte-Carlo"  dossier="thermes" galeriephoto="oui" galerievideo="non" info="non" title="Swimming Pool - Day View" onstart="" thumburl="panos/17piscinejour.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/17piscinejour.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/17piscinejour.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/17piscinejour.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="shopping" onclick="action(shopping)" tooltip="Boutique" style="skin_hotspotstyle" ath="43.283" atv="-2.407" />
+		<hotspot name="privatecabin" onclick="action(cabine)" tooltip="Private Cabins" style="skin_hotspotstyle" ath="-16.863" atv="-2.965" />
+		<hotspot name="poolnuit" onclick="action(poolnuit)" tooltip="Swimming Pool" style="skin_hotspotstyle" ath="-64.359" atv="11.614" />
+		<hotspot name="jacuzzi" onclick="action(jacuzzi)" tooltip="Solarium - Jacuzzi - By Night" style="skin_hotspotstyle" ath="-165.091" atv="-1.314" />
+		<hotspot name="terrasse" onclick="action(thermesterrasse)" tooltip="Solarium" style="skin_hotspotstyle" ath="126.801" atv="-0.700" />
+
+	</scene>
+
+
+</krpano>

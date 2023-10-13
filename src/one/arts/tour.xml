@@ -1,0 +1,124 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" /> 
+    
+
+    <action name="startup">
+
+        loadscene(scene_one_salle_des_arts_theatre, null, MERGE, BLEND(1));
+action(theatre);
+    </action>
+	
+	<events onloadcomplete="action(loader); js(hotelone());"/>
+
+
+	<action name="banquet">
+	loadscene(scene_arts_banquet, null,  KEEPVIEW , SLIDEBLEND(1.0, 90.0, 0.5, linear));
+	tween(plugin[arrow].y, 78, 0.5); 
+	</action>
+	
+	<!--<action name="reception">
+	loadscene(scene_one_salle_des_arts_reception_debout, null,  KEEPVIEW , SLIDEBLEND(1.0, 90.0, 0.5, linear));
+	tween(plugin[arrow].y, -78, 0.5); 
+	</action>-->
+	
+	<action name="theatre">
+	loadscene(scene_one_salle_des_arts_theatre, null,  KEEPVIEW , SLIDEBLEND(1.0, 90.0, 0.5, linear));
+	tween(plugin[arrow].y, 0, 0.5); 
+	</action>
+	
+	
+
+	<scene name="scene_one_salle_des_arts_theatre" nameid="scene_one_salle_des_arts_theatre" title="Salle des Arts" etablissement="One Monte-Carlo" dossier="one" galeriephoto="oui" galerievideo="non" info="oui" infourl= "ONE-Salle_des_Arts.pdf" onstart="" thumburl="panos/one_salle_des_arts_theatre.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/one_salle_des_arts_theatre.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/one_salle_des_arts_theatre.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/one_salle_des_arts_theatre.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+ <hotspot name="one_foyer" style="skin_hotspotstyle" ath="90" atv="0" onclick="action(one_foyer)" tooltip="Foyer" keep="false" />
+		<hotspot name="cocteau" style="skin_hotspotstyle" ath="180" atv="0" onclick="action(cocteau)" tooltip="Salle Jean Cocteau" keep="false" />
+		
+		
+		
+		<plugin name="banquet" url="banquet.jpg" align="middleleft" x="10" y="78" scale="0.5" onclick="action(banquet)"/>		
+	<!--<plugin name="reception" url="reception.jpg" align="middleleft" x="10" y="-78" scale="0.5" onclick="action(reception)"/>-->
+	<plugin name="theatre" url="theatre.jpg" align="middleleft" x="10" y="0" scale="0.5" shadow="1" onclick="action(theatre)"/>
+	<plugin name="arrow" url="arrow.png" align="middleleft" x="130" y="0" scale="0.3"/>
+
+	</scene>
+
+	
+	
+    <scene name="scene_arts_banquet" nameid="scene_one_salle_des_arts_theatre" title="Salle des Arts" etablissement="One Monte-Carlo" dossier="one" galeriephoto="oui" galerievideo="non" info="oui" infourl= "ONE-Salle_des_Arts.pdf" onstart="" thumburl="panos/one_salle_des_arts_banquet.tiles/thumb.jpg" lat="" lng="" heading="">
+
+
+
+     <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/one_salle_des_arts_banquet.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/one_salle_des_arts_banquet.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/one_salle_des_arts_banquet.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+
+
+        <hotspot name="one_foyer" style="skin_hotspotstyle" ath="90" atv="0" onclick="action(one_foyer); " tooltip="Foyer" keep="false" />
+		<hotspot name="cocteau" style="skin_hotspotstyle" ath="-175" atv="0" onclick="action(cocteau)" tooltip="Salle Jean Cocteau" keep="false" />
+
+		
+	<plugin name="banquet" url="banquet.jpg" align="middleleft" x="10" y="78" scale="0.5" onclick="action(banquet)"/>		
+	<!--<plugin name="reception" url="reception.jpg" align="middleleft" x="10" y="-78" scale="0.5" onclick="action(reception)"/>-->
+	<plugin name="theatre" url="theatre.jpg" align="middleleft" x="10" y="0" scale="0.5" shadow="1" onclick="action(theatre)"/>
+	<plugin name="arrow" url="arrow.png" align="middleleft" x="130" y="78" scale="0.3"/>
+		
+		
+		
+
+    </scene>
+
+
+
+
+	<!--<scene name="scene_one_salle_des_arts_reception_debout" title="Salle des Arts" etablissement="One Monte-Carlo" dossier="one" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="panos/one_salle_des_arts_reception_debout.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/one_salle_des_arts_reception_debout.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/one_salle_des_arts_reception_debout.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/one_salle_des_arts_reception_debout.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+	
+		
+ <hotspot name="one_foyer" style="skin_hotspotstyle" ath="90" atv="0" onclick="action(one_foyer)" tooltip="Foyer" keep="false" />
+		
+		
+		<plugin name="banquet" url="banquet.jpg" align="middleleft" x="10" y="-156" scale="0.5" onclick="action(banquet)"/>		
+	<plugin name="reception" url="reception.jpg" align="middleleft" x="10" y="-78" scale="0.5" onclick="action(reception)"/>
+	<plugin name="theatre" url="theatre.jpg" align="middleleft" x="10" y="0" scale="0.5" shadow="1" onclick="action(theatre)"/>
+	<plugin name="arrow" url="arrow.png" align="middleleft" x="130" y="-156" scale="0.3"/>
+
+	</scene>-->
+
+	
+
+
+</krpano>

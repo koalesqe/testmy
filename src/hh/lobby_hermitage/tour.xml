@@ -1,0 +1,175 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+
+ <action name="startup">
+
+
+        loadscene(scene_lobby_hermitage, null, MERGE, BLEND(1));
+
+
+    </action>
+
+
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+
+    <scene name="scene_lobby_hermitage" nameid="scene_lobby_hermitage" title="Beaumarchais Lobby" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="thumb.jpg" lat="" lng="" heading="" resa="oui" resaurl="https://www.montecarlosbm.com/fr/hotel-monaco/hotel-hermitage-monte-carlo">
+
+
+
+        <view hlookat="-361.082" vlookat="1.674" fovtype="MFOV" fov="112.017" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto"  />
+
+        <preview url="panos/lobby_hermitage.tiles/preview.jpg" />
+
+        <image>
+
+
+
+            <cube url="panos/lobby_hermitage.tiles/pano_%s.jpg" />
+
+
+
+            <mobile>
+
+
+
+                <cube url="panos/lobby_hermitage.tiles/mobile_%s.jpg" />
+
+
+
+            </mobile>
+
+
+
+        </image>
+
+
+     <hotspot name="spot1" style="skin_hotspotstyle" ath="0.000" atv="0.000" onclick="action(belleepoq)" tooltip="Salle Belle Epoque" />
+
+		<hotspot name="limun" style="skin_hotspotstyle" ath="0.000" atv="10.000" onclick="action(limun)" tooltip="Le Limùn" />
+
+	   <hotspot name="spot2" style="skin_hotspotstyle" ath="22" atv="0" onclick="action(hermitage)"  tooltip="Jardin d'Hiver Lobby" />
+		
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="22" atv="4" onclick="action(pavyllon);" tooltip="Pavyllon Monte-Carlo"/>
+		
+		<hotspot name="crystal" style="skin_hotspotstyle2" ath="24" atv="2" onclick="action(Crystal)" tooltip="Crystal Bar" />
+
+	    <hotspot name="spot3" style="skin_hotspotstyle" ath="-162.896" atv="-2.027" onclick="action(casino100m)" tooltip="Casino Square" />
+
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="-22" atv="0" onclick="action(poolnuit)" tooltip="Thermes Marins Monte-Carlo" />
+
+		
+
+
+
+
+
+        <GALERIE>
+
+
+
+            <PHOTO>
+
+
+
+                <TITREIMAGE>Titre image 1</TITREIMAGE>
+
+
+
+                <URLIMAGE>hdp/vue1/img/camion.jpg</URLIMAGE>
+
+
+
+            </PHOTO>
+
+
+
+            <PHOTO>
+
+
+
+                <TITREIMAGE>Titre image 2</TITREIMAGE>
+
+
+
+                <URLIMAGE>hdp/vue1/img/carre.jpg</URLIMAGE>
+
+
+
+            </PHOTO>
+
+
+
+            <PHOTO>
+
+
+
+                <TITREIMAGE>Titre image 3</TITREIMAGE>
+
+
+
+                <URLIMAGE>hdp/vue1/img/vertical.jpg</URLIMAGE>
+
+
+
+            </PHOTO>
+
+
+
+        </GALERIE>
+
+
+
+
+
+
+
+        <VIDEOPLAYER>
+
+
+
+            <TITREVIDEO>Titre video 1</TITREVIDEO>
+
+
+
+            <URLVIDEOMP4>hdp/vue1/video/video.mp4</URLVIDEOMP4>
+
+
+
+            <URLVIDEOWEBM>hdp/vue1/video/video.webm</URLVIDEOWEBM>
+
+
+
+        </VIDEOPLAYER>
+
+
+
+        
+
+
+
+        <info>
+
+
+
+            <infourl>hdp/vue1/info.html</infourl>
+
+
+
+        </info>
+
+
+
+    </scene>
+
+
+
+
+
+
+
+
+
+
+
+</krpano>

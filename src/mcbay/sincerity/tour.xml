@@ -1,0 +1,71 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+
+	<action name="startup">
+	loadscene(scene_sincerity, null, MERGE, BLEND(1));
+	</action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+	
+	
+	 <action name="mcbay_lobby">
+        js(loadpano('mcbay/mcbay_lobby/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+	
+	<scene name="scene_sincerity" nameid="salle_sincerity" title="Salon Sincerity - Group Check-in" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui"  galerievideo="non" info="oui" infourl= "MCBay-salonSincerity.pdf" onstart="" thumburl="panos/sincerity.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="55.517" vlookat="3.386" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/sincerity.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/sincerity.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/sincerity.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		 <layer name="journuit" keep="false" zorder="15"  selectable="false"
+	       url="switch.png"
+	   	          
+	       align="centertop"
+	      edge="centertop"
+		   y="15"
+		   x="0"     
+		   onclick="loadscene(scene_sincerity2, null, KEEPVIEW , SLIDEBLEND(1.0, 0.0, 0.2, linear));"/>
+		   
+		   
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="77.775" atv="-3.088" onclick="action(mcbay_lobby);" tooltip=" Lobby" />
+
+
+	</scene>
+
+	<scene name="scene_sincerity2" nameid="salle_sincerity" title="Salon Sincerity - Group Check-in" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui" infourl= "MCBay-salonSincerity.pdf" onstart="" thumburl="panos/sincerity2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/sincerity2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/sincerity2.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/sincerity2.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+			<layer name="journuit" keep="false" zorder="15"  selectable="false"
+	        url="switch.png"	              
+	        align="centertop"      
+		    edge="centertop"
+		    y="15"
+		    x="0"     
+		    onclick="loadscene(scene_sincerity, null, KEEPVIEW , SLIDEBLEND(1.0, 0.0, 0.2, linear));"      
+	       />
+		   
+		   <hotspot name="spot1" style="skin_hotspotstyle" ath="77.775" atv="-3.088" onclick="action(mcbay_lobby);" tooltip=" Lobby" />
+
+	</scene>
+
+
+</krpano>

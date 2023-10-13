@@ -1,0 +1,118 @@
+<GALERIE_PHOTO>
+
+
+
+
+<GALERIE>
+    <PHOTO>
+        <TITREIMAGE>Group Check-in Desks</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/01.Facade.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Salle Eiffel - Meeting - Plenary Room</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/02.SalleEiffel-Meeting-PlenaryRoom.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Salle Eiffel - Meeting - Plenary Room</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/03.BeaumarchaisLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Salle Eiffel - Special Event</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.SalleEiffel-SpecialEvent.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Salon Trianon</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/05.SalonTrianon.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Salon Jardin d'Hiver</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/06.SalonJardindHiver.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Salon Gustave</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/07.SalonGustave.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Salon Gustave - Coffee Break</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/08.SalonGustave-CoffeeBreak.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Salon Costa 1-2</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/09.SalonCosta12.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/meeting-banqueting/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+</GALERIE>
+<VIDEOPLAYER>
+    <TITREVIDEO>Titre video 1</TITREVIDEO>
+    <URLVIDEOMP4>hdp/cavecouloir/video/video.mp4</URLVIDEOMP4>
+    <URLVIDEOWEBM>hdp/cavecouloir/video/video.webm</URLVIDEOWEBM>
+</VIDEOPLAYER>
+        
+          
+
+
+
+</GALERIE_PHOTO>

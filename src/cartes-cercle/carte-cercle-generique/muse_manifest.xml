@@ -1,0 +1,35 @@
+<manifest alg="2" build="2015.2.1.352" opt="true" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive" exportTarget="other" domain="carte-cercle-generique.com" resolutions="1x" timestamp="1478272583178">
+  <folder name="css">
+    <file name="site_global.css" crc="3916556066"/>
+    <file name="index.css" crc="186253003" ref="index"/>
+    <file name="carte_cercle_hp_hh_bh.css" crc="4290460236" ref="carte_cercle_hp_hh_bh"/>
+    <file name="carte_cercle_bay.css" crc="402351116" ref="carte_cercle_bay"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="169078940" ref="index:carte_cercle_bay:carte_cercle_hp_hh_bh"/>
+    <file name="museutils.js" crc="3851988764" ref="index:carte_cercle_bay:carte_cercle_hp_hh_bh"/>
+    <file name="whatinput.js" crc="86476730" ref="index:carte_cercle_bay:carte_cercle_hp_hh_bh"/>
+    <file name="museconfig.js" crc="169177150" ref="index:carte_cercle_bay:carte_cercle_hp_hh_bh"/>
+    <file name="jquery.watch.js" crc="3842844514" ref="index:carte_cercle_bay:carte_cercle_hp_hh_bh"/>
+    <file name="require.js" crc="4108833657" ref="index:carte_cercle_bay:carte_cercle_hp_hh_bh"/>
+  </folder>
+  <folder name="images">
+    <file name="indoor-outdoor pool-bd.jpg" crc="327359802" seo="true" ref="index"/>
+    <file name="indoor-outdoor pool-bd-u428.png" crc="3911953344" ref="carte_cercle_bay"/>
+    <file name="casinos-bd.jpg" crc="4115597224" seo="true" ref="index"/>
+    <file name="golf-bd.jpg" crc="495499617" seo="true" ref="index:carte_cercle_bay:carte_cercle_hp_hh_bh"/>
+    <file name="country-club-bd.jpg" crc="133021597" seo="true" ref="index:carte_cercle_bay:carte_cercle_hp_hh_bh"/>
+    <file name="beach-bd.jpg" crc="106418666" seo="true" ref="index:carte_cercle_hp_hh_bh"/>
+    <file name="lagon-bd.jpg" crc="301411531" seo="true" ref="index:carte_cercle_bay"/>
+    <file name="thermes-bd.jpg" crc="491537471" seo="true" ref="index:carte_cercle_hp_hh_bh"/>
+    <file name="casinos-bd-u588.png" crc="3918779665" ref="carte_cercle_bay"/>
+    <file name="casinos-bd-u616.png" crc="3918779665" ref="carte_cercle_hp_hh_bh"/>
+    <file name="credit-card.png" crc="3945615035" seo="true" ref="index:carte_cercle_bay:carte_cercle_hp_hh_bh"/>
+    <file name="navette.png" crc="419591595" seo="true" ref="index:carte_cercle_bay:carte_cercle_hp_hh_bh"/>
+    <file name="bandeau-eclusive.png" crc="97187704" seo="true" ref="index"/>
+    <file name="carte-cercle.jpg" crc="53774172" seo="true" ref="index:carte_cercle_bay:carte_cercle_hp_hh_bh"/>
+  </folder>
+  <file name="index.html" crc="426222462" seo="true" mt="1478272527800" redirect="true"/>
+  <file name="carte_cercle_bay.html" crc="185270199" seo="true" mt="1478272129931" redirect="true"/>
+  <file name="carte_cercle_hp_hh_bh.html" crc="3788334253" seo="true" mt="1478272106765" redirect="true"/>
+</manifest>

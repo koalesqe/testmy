@@ -1,0 +1,80 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+    <include url="../../skin.xml" />
+
+
+    <action name="startup">
+        loadscene(scene_coya_out, null, MERGE, BLEND(1));
+    </action>
+
+    <events onloadcomplete="action(loader); js(hotelsporting()); js(setprogress());" />
+																					
+
+	<scene name="scene_coya_out" nameid="scene_coya_out" etablissement="Sporting Monte-Carlo" dossier="coya" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-Coya.pdf" title="COYA Monte-Carlo - Terrace" onstart="" thumburl="panos/coya_out.tiles/thumb.jpg" lat="" lng="" heading="" >
+
+		<view hlookat="121.517" vlookat="4.272" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/coya_out.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/coya_out.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/coya_out.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle2" ath="-147.044" atv="-3.128" linkedscene="scene_coya_dining" tooltip="Private Banqueting Room"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-156.677" atv="-2.491" linkedscene="scene_coya_lounge"  tooltip="Salon Members"/>
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-69.385" atv="-2.849" onclick="action(sporting_hall)"  tooltip="Sporting Monte-Carlo Lobby" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="84.619" atv="-47.844"  onclick="action(sporting_air)"  tooltip="Aerial view - Sporting Monte-Carlo"  />
+	</scene>																					
+																					
+																					
+																					
+	
+	<scene name="scene_coya_dining" nameid="scene_coya_out" etablissement="Sporting Monte-Carlo" dossier="coya" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-Coya.pdf" title="COYA Monte-Carlo - Private Banqueting Room" onstart="" thumburl="panos/coya_out.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="4.904" vlookat="13.748" fovtype="MFOV" fov="108.762" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/coya_dining.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/coya_dining.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/coya_dining.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="108.805" atv="-3.605" linkedscene="scene_coya_out"  tooltip="Terrace"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-101" atv="0" linkedscene="scene_coya_lounge" tooltip="Salon Members" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="1.300" atv="-2.800" onclick="action(sporting_hall)"  tooltip="Sporting Monte-Carlo Lobby" />
+
+	</scene>
+
+	<scene name="scene_coya_lounge" nameid="scene_coya_out" etablissement="Sporting Monte-Carlo" dossier="coya" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-Coya.pdf" title="COYA Monte-Carlo - Salon Members" onstart="" thumburl="panos/coya_out.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="93.427" vlookat="20.445" fovtype="MFOV" fov="105.952" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/coya_lounge.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/coya_lounge.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/coya_lounge.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="141.444" atv="-1.772" onclick="action(sporting_hall)"  tooltip="Sporting Monte-Carlo Lobby" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-137.431" atv="-3.272" linkedscene="scene_coya_dining"  tooltip="Private Banqueting Room"/>
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-116.432" atv="-1.762" linkedscene="scene_coya_out"  tooltip="Terrace"/>
+
+	</scene>
+
+
+
+
+</krpano>

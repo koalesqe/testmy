@@ -1,0 +1,35 @@
+<krpano  title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" />
+    
+
+    <action name="startup">
+        loadscene(scene_touzet_nord, null, MERGE, BLEND(1));
+    </action>
+	
+	<events onloadcomplete="action(loader); js(hotelcasinos());"/>
+	<scene name="scene_touzet_nord" nameid="touzet_nord" etablissement="Casino de Monte-Carlo"  dossier="casinos" galeriephoto="oui" galerievideo="non" info="non" title="Salle Touzet Nord" onstart="" thumburl="panos/touzet_nord.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-122.121" vlookat="2.349" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/touzet_nord.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/touzet_nord.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/touzet_nord.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-177.036" atv="-4.314" onclick="action(medecin)" tooltip="Salle Médecin"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="130.739" atv="-2.723" onclick="action(salon_anglais)" tooltip="Salon Anglais"/>
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-51.317" atv="-5.094" onclick="action(touzet_sud)" tooltip="Salle Touzet Sud"/>
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="-7.632" atv="-2.759" onclick="action(ameriques)" tooltip="Salle des Amériques"/>
+
+	</scene>
+
+
+
+</krpano>

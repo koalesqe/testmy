@@ -1,0 +1,62 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_suite238, null, MERGE, BLEND(1));
+
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+
+    
+
+    
+
+
+
+
+
+
+	<scene name="scene_suite238" nameid="scene_suite238" title="Prestige Superior Room - Sea View - 238" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="http://www.montecarlobay.com/luxury-rooms-suites/rooms/prestige-superior-roomsea-view/">
+
+		<view hlookat="-148.272" vlookat="12.002" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/suite2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/suite2.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/suite2.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+<hotspot name="spot1" style="skin_hotspotstyle" ath="-77.084" atv="5.046" linkedscene="scene_suite2sdb" tooltip="Prestige Superior Room - Sea View - 238 - Bathroom" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+
+	</scene>
+	
+	
+	  	<scene name="scene_suite2sdb"  nameid="scene_suite238" title="Prestige Superior Room - Sea View - 238" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non" onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="http://www.montecarlobay.com/luxury-rooms-suites/rooms/prestige-superior-roomsea-view/">
+
+		<view hlookat="333.859" vlookat="8.310" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/suite2sdb.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/suite2sdb.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/suite2sdb.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+
+
+<hotspot name="spot1" style="skin_hotspotstyle" ath="121.141" atv="4.503" linkedscene="scene_suite238" tooltip="Prestige Superior Room - Sea View - 238" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" /> 
+
+
+	</scene>
+	
+
+
+</krpano>

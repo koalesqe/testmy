@@ -1,0 +1,1322 @@
+@-ms-viewport {
+	width: device-width;
+}
+
+@media only screen and (min-device-width:800px) {
+	html {
+		overflow: hidden;
+	}
+}
+
+html {
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #FFFFFF;
+	background-color: #FFFFFF;
+	/*background-image:url(img/fond.png);
+	background-repeat:repeat;*/
+	perspective: 300px;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+h1 {
+	display: block;
+	font-size: 2em;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
+}
+
+.galeries{
+	position: absolute;
+	z-index: 51;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+}
+html {
+	height: 100%;
+}
+hr {
+	border: 1px solid #ffce00;
+}
+#global {
+	width: 100%;
+	min-height: 1000px;
+	background: white;
+}
+#krpanoDIV {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+}
+#top,
+#bottom,
+#left,
+#right,
+#galerie-but{
+	position: absolute;
+	display: inline;
+	z-index: 50;
+}
+#bandeau {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	background-color: black;
+}
+#top {
+	position: absolute;
+	left: 40px;
+	top: 15px;
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-image: url(img/but_menu.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+}
+#bottom {
+	z-index: 51;
+	top: 15px;
+	left: 100px;
+	width: 100px;
+	height: 50px;
+	display: block;
+	background-image: url(img/vignettes-but.png);
+	background-size: 64px 30px;
+	background-repeat: no-repeat;
+}
+.close-bottom {
+	position: absolute;
+	z-index: 53;
+	top: 15px;
+	left: 40px;
+	width: 30px;
+	height: 30px;
+	display: block;
+}
+#left {
+	left: 3%;
+	top: 50%;
+	display: block;
+	width: 150px;
+}
+#right {
+	position: absolute;
+	right: 20px;
+	bottom: 15px;
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-image: url(img/plus-but.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+}
+
+#galerie-but {
+   position: absolute;
+	right: 70px;
+	bottom: 15px;
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-image: url(img/photo-but.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+}
+
+#titre {
+	bottom: 30px;
+	left: 150px;
+	position: absolute;
+	display: inline;
+	z-index: 50;
+	font-family: sans-serif;
+	font-size: 18px;
+	color: #fff;
+}
+#titre span {
+	font-size: 24px;
+	color: #000000;
+}
+#slider1 {
+	position: absolute;
+	z-index: 50;
+}
+.slide {
+	position: absolute;
+	z-index: 50;
+}
+#logo-sbm {
+	position: absolute;
+	z-index: 50;
+	left: 200px;
+	top: 0;
+	width: 150px;
+	margin-bottom: 50px;
+}
+.cadre-vignettes {
+	display: inline-block;
+	position: relative;
+	z-index: 52;
+	width: 45%;
+	height: 100vw;
+	text-align: center;
+	top: 10px;
+	overflow-y: auto;
+	margin-left: 2%;
+	margin-right: 2%;
+	float: left;
+	transition: box-shadow 0.3s ease-in-out;
+	-webkit-transition: .1s ease-in-out;
+	transition: .1s ease-in-out;
+	max-height:85%;
+}
+.cadre-vignettes-center {
+	display: block;
+	position: relative;
+	z-index: 52;
+	width: 80vw;
+	text-align: center;
+	top: 10px;
+	height: 80vw;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	transition: box-shadow 0.3s ease-in-out;
+	-webkit-transition: .1s ease-in-out;
+	transition: .1s ease-in-out;
+	overflow-y: auto;
+	max-height:85%;
+}
+.vignettes {
+	position: relative;
+	display: block;
+	display: inline-block;
+	z-index: 50;
+	margin: 5px;
+	background-color: #ffffff;
+	text-align: center;
+	padding: 5px;
+	vertical-align: top;
+}
+.vignettes:hover {
+   transform: scale(1.05);
+
+}
+
+
+
+
+
+
+
+
+.legende {
+	font-family: arial;
+	font-size: 10px;
+	color: darkgray;
+	text-align: center;
+	margin-top: -1px;
+	margin-bottom: -1px;
+	max-width: 90px;
+	height: 30px;
+}
+.vignettes img {
+	width: 90px;
+	height: 50px;
+}
+.lesetablissements {
+	position: absolute;
+	top: 90px;
+	width: 90%;
+	left: 5%;
+	right: 5%;
+	text-align: center;
+	float:
+}
+.separation {
+	font-family: arial;
+	font-size: 16px;
+	color: white;
+	margin-top: 30px;
+}
+.boutons {
+	position: absolute;
+	z-index: 50;
+	right: 30px;
+	top: 20px;
+}
+.video,
+.photo,
+.info,
+.resa,
+.fullscreen,
+.partage {
+	position: relative;
+	z-index: 68;
+	display: inline-block;
+	float: left;
+	margin-left: 10px;
+}
+#video {
+	background-image: url(img/video-but.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+}
+.photo {
+	background-image: url(img/photo-but.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+}
+.info {
+	background-image: url(img/info-but.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+}
+.resa {
+	background-image: url(img/resa-but.png);
+	background-size: 180px 30px;
+	background-repeat: no-repeat;
+	width: 180px;
+	height: 30px;
+}
+.fullscreen {
+	background-image: url(img/fullscrenn-on-but.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+}
+.partage {
+	background-image: url(img/partage-but.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+}
+#infos-complementaires {
+	position: absolute;
+	z-index: 50;
+	right: 100px;
+	bottom: 20px;
+}
+.infos-complementaires {
+	/*display: inline-block;*/
+
+	position: relative;
+	float: left;
+}
+#twitter,
+#facebook,
+#google,
+#instagram,
+#linkedin,
+#vimeo {
+	width: 30px;
+	height: 30px;
+	margin-left: 10px;
+	margin-top: 60px;
+}
+#twitter {
+	background-image: url(img/social-twitter.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+}
+#twitter:hover {
+	background-image: url(img/social-twitter-hover.png);
+}
+
+#instagram {
+	background-image: url(img/social-instagram.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+}
+#instagram:hover {
+	background-image: url(img/social-instagram-hover.png);
+}
+
+#linkedin {
+	background-image: url(img/social-linkedin.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+}
+#linkedin:hover {
+	background-image: url(img/social-linkedin-hover.png);
+}
+
+#facebook {
+	background-image: url(img/social-facebook.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+}
+#facebook:hover {
+	background-image: url(img/social-facebook-hover.png);
+}
+#google {
+	background-image: url(img/social-google.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+}
+#google:hover {
+	background-image: url(img/social-google-hover.png);
+}
+#vimeo {
+	background-image: url(img/social-vimeo.png);
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+}
+#vimeo:hover {
+	background-image: url(img/social-vimeo-hover.png);
+}
+#separation {
+	margin-left: 10px;
+	width: 1px;
+	height: 80px;
+	margin-top: 17px;
+}
+#carte-cerlce {
+	width: 170;
+	height: 100px;
+	margin-left: 10px;
+	margin-top: 15px;
+}
+#credits {
+	text-align: left;
+	margin-left: 25px;
+	width: 200px;
+	color: black;
+	font-size: 14px;
+	font-family: sans-serif;
+}
+#credits span {
+	color: #CC991B;
+}
+
+
+/*----------  MENU ETABLISSEMENT  ---------------*/
+
+#lightbox {
+	display: block;
+	position: absolute;
+	z-index: 51;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	background-color: hsla(0, 0%, 0%, 0.80);
+}
+#lightbox2 {
+	height: 60vw;
+}
+.logohotel {
+	top: 40px;
+	position: relative;
+	z-index: 53;
+	color: white;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+#enveloppe {
+	position: absolute;
+	z-index: 50;
+	width: 100vw;
+	height: 14vw;
+	margin: 0;
+	margin-top: 125px;
+	background-color: black;
+	text-align: center;
+	padding-top: 13px;
+	padding-bottom: 10px;
+}
+
+#bandeau-slider {
+	position: absolute;
+	z-index: 51;
+	width: 211%;
+	background-color: black;
+}
+
+.arrow-left {
+	position: relative;
+	display: inline-block;
+	float: left;
+	height: 14vw;
+	z-index: 52;
+	background-color: black;
+	text-align: right;
+}
+.arrow-right {
+	position: relative;
+	display: inline-block;
+	float: right;
+	z-index: 52;
+	height: 14vw;
+	background-color: black;
+	text-align: left;
+}
+.arrow-left img {
+	position: relative;
+	margin-top: 15px;
+	margin-right: 10px;
+	height: 80%;
+}
+.arrow-right img {
+	position: relative;
+	margin-top: 14px;
+	margin-left: 10px;
+	height: 80%;
+}
+
+
+
+
+.etablissement {
+	width: 12.8vw;
+	/* 20% of the viewport width */
+
+	height: 12.8vw;
+	transition: box-shadow 0.1s ease-in-out;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .1s ease-in-out;
+	transition: .1s ease-in-out;
+}
+.etablissement:hover {
+	transform: scale(1.03);
+	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+
+
+.images {
+	position: relative;
+	display: inline-block;
+	width: 12.8vw auto;
+	/* 20% of the viewport width */
+
+	height: 12.8vw;
+	margin: 0.20%;
+
+
+	text-align: center;
+}
+
+
+
+
+
+
+.logotitre{
+	position: absolute;
+	z-index: 51;
+	bottom: 30px;
+	left: 30px;
+	width: 100px;
+	height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+/* jssor slider bullet navigator skin 01 css */
+
+/*
+		.jssorb01 div           (normal)
+		.jssorb01 div:hover     (normal mouseover)
+		.jssorb01 .av           (active)
+		.jssorb01 .av:hover     (active mouseover)
+		.jssorb01 .dn           (mousedown)
+		*/
+.jssorb01 {
+	position: absolute;
+	top: 150px;
+}
+.jssorb01 div,
+.jssorb01 div:hover,
+.jssorb01 .av {
+	position: absolute;
+	/* size of bullet elment */
+
+	width: 12px;
+	height: 12px;
+	filter: alpha(opacity=70);
+	opacity: .7;
+	overflow: hidden;
+	cursor: pointer;
+	border: #000 1px solid;
+}
+.jssorb01 div {
+	background-color: gray;
+}
+.jssorb01 div:hover,
+.jssorb01 .av:hover {
+	background-color: #d3d3d3;
+}
+.jssorb01 .av {
+	background-color: #fff;
+}
+.jssorb01 .dn,
+.jssorb01 .dn:hover {
+	background-color: #555555;
+}
+
+/* jssor slider arrow navigator skin 02 css */
+
+/*
+		.jssora02l                  (normal)
+		.jssora02r                  (normal)
+		.jssora02l:hover            (normal mouseover)
+		.jssora02r:hover            (normal mouseover)
+		.jssora02l.jssora02ldn      (mousedown)
+		.jssora02r.jssora02rdn      (mousedown)
+		*/
+.jssora02l,
+.jssora02r {
+	display: block;
+	position: absolute;
+	/* size of arrow element */
+
+	width: 55px;
+	height: 55px;
+	cursor: pointer;
+	background: url('img/a02.png') no-repeat;
+	overflow: hidden;
+}
+.jssora02l {
+	background-position: -3px -33px;
+}
+.jssora02r {
+	background-position: -63px -33px;
+}
+.jssora02l:hover {
+	background-position: -123px -33px;
+}
+.jssora02r:hover {
+	background-position: -183px -33px;
+}
+.jssora02l.jssora02ldn {
+	background-position: -3px -33px;
+}
+.jssora02r.jssora02rdn {
+	background-position: -63px -33px;
+}
+
+
+.menu-galerie-photo {
+	display: block;
+	position: absolute;
+	z-index: 51;
+	width: 100%;
+	height: 100%;
+	background-color: hsla(0, 0%, 0%, 0.80);
+}
+
+.menu-galerie-photo {
+	text-align: center;
+	display: table-cell;
+  vertical-align: middle;
+}
+
+#galerie-menu-hotel {
+   width:931px;
+	margin: 0;
+	padding: 0;
+}
+
+#galerie-menu-etablissements {
+	z-index: 51;
+	width: 100%;
+	height: 20%;;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.galerie-hotel {
+	display: block;
+	position: relative;
+	float: left;
+	width: 25%;
+	height: 100%;
+	text-align: center;
+}
+
+
+.menu_general_galeries_photos{
+	position: absolute;
+	z-index: 51;
+	width: 100%;
+	height: 100%;
+	background-color: hsla(0, 0%, 0%, 0.80);
+}
+
+#galeries_photos-container{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-196.25px 0 0 -465px;
+	width:931px;
+	height:392.5px;
+
+	padding: 0;
+}
+.galerie-menu-hotel{
+	width:931px;
+	margin: 0;
+	padding: 0;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+.logohotel-menu {
+	position: relative;
+	float: left;
+	list-style:none;
+	margin: 0;
+	padding: 0;
+	margin-right:10px;
+
+}
+.logohotel-menu:last-child {
+   margin-right:0px;
+}
+
+.logohotel-menu img {
+	width: 225px;
+	height: 225px;
+	transition: all .2s ease-in-out;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  transition: box-shadow 0.3s ease-in-out;
+	  -webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.logohotel-menu img:hover {
+	width: 225px;
+	height: 225px;
+	transform: scale(1.1);
+	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+
+
+}
+
+
+.logohotel-menu-bas {
+	position: relative;
+	float: left;
+	list-style:none;
+   margin-top: 60px;
+	margin-right:10px;
+	padding: 0;
+}
+.logohotel-menu-bas:last-child {
+   margin-right:0px;
+}
+.logohotel-menu-bas img {
+	width: 107.5px;
+	height: 107.5px;
+	 transition: box-shadow 0.3s ease-in-out;
+	  -webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.logohotel-menu-bas img:hover {
+	width: 107.5px;
+	height: 107.5px;
+	transform: scale(1.1);
+	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+
+}
+
+
+
+
+.galerie-menu-etablissement {
+	display: block;
+	position: relative;
+	float: left;
+	width: 12.5%;
+	height: 50%;
+	text-align: center;
+
+}
+
+
+
+.thematique {
+	text-align: center;
+	color: white;
+	height: 7%;
+
+}
+
+.helper {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+
+
+
+
+.swiper-container {
+	position: absolute;
+	z-index: 55;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background-color: rgb(8, 8, 8);
+}
+
+
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.swiper-slide img {
+	display: inline-block;
+	position: absolute;
+	max-width: 80%;
+	max-height: 80%;
+	top: 10%;
+	left: 10%;
+	border-radius: 3px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.9);
+}
+.swiper-slide img:empty {
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+#fermerphoto,
+#fermer-menu-photo,
+.fermer-menu-photo,
+#fermervideo {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 30px;
+	right: 30px;
+	z-index: 55;
+}
+
+
+
+.galerie-hotel-ok {
+	 color:#FFFFFF;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-210px 0 0 -460px;
+	width:920px;
+	height:420px;
+}
+
+.logohotelgalerie {
+	display: block;
+	position: relative;
+	float: left;
+	width: 400px;
+	height: 400px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.thematique-hotel {
+   display: inline-block;
+	float: left;
+	width: 400px;
+	height: 46px;
+	margin-left: 10px;
+	margin-top: 10px;
+	padding-top: 26px;
+	background-color: hsla(0, 0%, 39%, 0.83);
+	text-align: center;
+	vertical-align:middle;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #FFFFFF;
+	-webkit-transition: all 0.5s ease; /* Safari et Chrome */
+-moz-transition: all 0.5s ease; /* Firefox */
+-ms-transition: all 0.5s ease; /* Internet Explorer 9 */
+-o-transition: all 0.5s ease; /* Opera */
+transition: all 0.5s ease;
+}
+
+.thematique-hotel:hover {
+/* L'image est grossie de 25% */
+-webkit-transform:scale(1.04); /* Safari et Chrome */
+-moz-transform:scale(1.04); /* Firefox */
+-ms-transform:scale(1.04); /* Internet Explorer 9 */
+-o-transform:scale(1.04); /* Opera */
+transform:scale(1.04);
+background-color: hsla(46, 76%, 57%, 0.83);
+}
+
+.plans {
+	display: inline-block;
+	float: left;
+	width: 80px;
+	height: 56px;
+	margin-left: 10px;
+	margin-top: 10px;
+	padding-top: 16px;
+	background-color: hsla(0, 0%, 39%, 0.83);
+	text-align: center;
+	vertical-align: middle;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 38px;
+	color: #FFFFFF;
+
+	-webkit-transition: all 0.5s ease; /* Safari et Chrome */
+-moz-transition: all 0.5s ease; /* Firefox */
+-ms-transition: all 0.5s ease; /* Internet Explorer 9 */
+-o-transition: all 0.5s ease; /* Opera */
+transition: all 0.5s ease;
+}
+
+
+.plans:hover {
+	background-color: hsla(46, 76%, 57%, 0.83);
+}
+
+.plans-hide {
+   display: inline-block;
+	float: left;
+	width: 90px;
+	height: 46px;
+	margin-left: 10px;
+	margin-top: 10px;
+	padding-top: 26px;
+	background-color: hsla(0, 0%, 39%, 0);
+	text-align: center;
+	vertical-align:middle;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #FFFFFF;
+	-webkit-transition: all 0.5s ease; /* Safari et Chrome */
+-moz-transition: all 0.5s ease; /* Firefox */
+-ms-transition: all 0.5s ease; /* Internet Explorer 9 */
+-o-transition: all 0.5s ease; /* Opera */
+transition: all 0.5s ease;
+}
+
+
+
+
+.retour-menu-photo {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 30px;
+	left: 30px;
+	z-index: 53;
+}
+
+
+
+
+
+.legendeswiper {
+	display: flex;
+	color: azure;
+	font-size: 14px;
+	position: relative;
+	z-index: 54;
+	bottom: 30px;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	top: 45%;
+}
+.videoplayer {
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	margin-left: -480px;
+	/* la moitié de 400px*/
+
+	z-index: 52;
+	width: 960px;
+	height: 640px;
+	margin-top: 50vh;
+	/* poussé de la moitié de hauteur de viewport */
+
+	transform: translateY(-50%);
+	/* tiré de la moitié de sa propre hauteur */
+}
+#containervideo {
+	position: absolute;
+	z-index: 51;
+	width: 100%;
+	height: 100%;
+	background-color: hsla(0, 0%, 0%, 0.89);
+}
+
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%;
+	left: 50%;
+	margin-left: 60px;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+.tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}
+
+#carte-cercle-generique {
+	position: relative;
+	z-index: 55;
+	width: 100%;
+	height: 100%;
+	border: none;
+	margin: 0;
+	padding: 0;
+
+}
+
+
+
+#fermer-carte-cercle, #fermer-plans {
+	position: absolute;
+	z-index: 56;
+}
+
+#plans{
+	position: absolute;
+	z-index: 53;
+}
+
+
+@media (max-width: 768px) {
+	#bandeau-slider{
+			width: 215%;
+	}
+}
+
+@media (max-height: 768px) {
+	.menu_general_galeries_photos {
+	padding-top: 10vw;
+}
+}
+
+@media (max-width:648px) {
+ #galeries_photos-container{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-118.4375px 0 0 -300px;
+	width:600px;
+	height:236.875px;
+
+	padding: 0;
+}
+.galerie-menu-hotel{
+	width:931px;
+	margin: 0;
+	padding: 0;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+.logohotel-menu {
+	position: relative;
+	float: left;
+	list-style:none;
+	margin: 0;
+	padding: 0;
+	margin-right:5px;
+
+}
+
+
+
+	.thematique-hotel {
+   display: block;
+	float: left;
+	width: 490px;
+	height: 46px;
+	margin-left: 10px;
+	margin-top: 10px;
+	padding-top: 26px;
+	background-color: hsla(0, 0%, 39%, 0.83);
+	text-align: center;
+	vertical-align:middle;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #FFFFFF;
+
+}
+
+
+
+
+.thematique-hotel:hover {
+/* L'image est grossie de 25% */
+-webkit-transform:scale(1.04); /* Safari et Chrome */
+-moz-transform:scale(1.04); /* Firefox */
+-ms-transform:scale(1.04); /* Internet Explorer 9 */
+-o-transform:scale(1.04); /* Opera */
+transform:scale(1.04);
+	background-color: hsla(46, 76%, 57%, 0.83);
+}
+
+
+
+
+
+
+
+.logohotel-menu:last-child {
+   margin-right:0px;
+}
+
+.logohotel-menu img {
+	width: 146.25px;
+	height: 146.25px;
+}
+
+.logohotel-menu-bas {
+	position: relative;
+	float: left;
+	list-style:none;
+   margin-top: 20px;
+	margin-right:5px;
+	padding: 0;
+}
+.logohotel-menu-bas:last-child {
+   margin-right:0px;
+}
+.logohotel-menu-bas img {
+	width: 70.625px;
+	height: 70.625px;
+}
+
+	#fermerphoto,
+#fermer-menu-photo,
+.fermer-menu-photo,
+#fermervideo {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 15px;
+	right: 15px;
+	z-index: 55;
+}
+
+#titre {
+	bottom: 20px;
+	left: 150px;
+	font-size: 12px;
+}
+#titre span {
+	font-size: 16px;
+}
+
+#top {
+	left: 20px;
+	top: 15px;
+	width: 30px;
+	height: 30px;
+	background-size: 20px 20px;
+}
+
+#bottom {
+	top: 15px;
+	left: 60px;
+	width: 40px;
+	height: 20px;
+	background-size: 40px 20px;
+
+}
+
+#bottom:hover {
+	cursor: pointer;
+}
+
+	#enveloppe {
+		margin-top: 75px;
+}
+
+	#logo-sbm {
+	left: 120px;
+	top: 0;
+	width: 90px;
+	margin-bottom: 30px;
+}
+
+	#right {
+	right: 20px;
+	bottom: 15px;
+	width: 30px;
+	height: 30px;
+	background-size: 20px 20px;
+}
+
+
+.resa {
+	background-size: 120px 20px;
+	width: 120px;
+	height: 20px;
+}
+
+
+.photo, #video, .info, .fullscreen, .partage {
+	background-size: 20px 20px;
+	width: 20px;
+	height: 20px;
+}
+
+
+.galerie-hotel-ok {
+	 color:#FFFFFF;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-145px 0 0 -290px;
+	width:980px;
+	height:290px;
+}
+
+.logohotelgalerie {
+	display: block;
+	position: relative;
+	float: left;
+	width: 275px;
+	height: 275px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+
+
+.retour-menu-photo {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 20px;
+	left: 20px;
+	z-index: 53;
+}
+
+
+
+}
+
+/* SplashScreen */
+
+	#progressbox { position:absolute; z-index:1500; top:0; left:0; margin:0; right:0; bottom:0; display:flex; flex-direction:column; justify-content:center; align-items:center; }
+
+	#progressbox #progressbar { display:none; width:300px; }
+	#progressbox #progresspercent { margin-top:60px; opacity:0.5; pointer-events:none; }
+
+/* SplashScreen */
+
+	#splashscreen { position:absolute; z-index:1000; top:0; left:0; right:0; bottom:0; background-color:rgba(0,0,0,0.9); display:flex; justify-content:center; align-items:center;
+		-webkit-transition:opacity 1.5s ease; transition:opacity 1.5s ease; opacity:0; pointer-events:none; }
+	#splashscreen.visible { opacity:1; pointer-events:all; }
+	#splashscreen .splashscreen-logo { display:block; margin-bottom:60px; max-width:100%; height:auto; pointer-events:none; }
+

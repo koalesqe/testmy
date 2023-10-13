@@ -1,0 +1,73 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+
+
+
+<include url="../../skin.xml" />
+
+    
+
+
+
+    <action name="startup">
+
+        loadscene(scene_hallCdP, null, MERGE, BLEND(1));
+
+    </action>
+
+	
+
+<events onloadcomplete="action(loader); js(hotelcdp());"/>
+
+
+
+	
+
+	<scene name="scene_hallCdP" nameid="scene_hallCdP" etablissement="Café de Paris Monte-Carlo" dossier="cdp" galeriephoto="oui" galerievideo="non" info="non"   title="New Café de Paris opening in 2023 - Hall" onstart="" thumburl="panos/hallCdP.tiles/thumb.jpg" lat="" lng="" heading="">
+
+
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+
+
+		<preview url="panos/hallCdP.tiles/preview.jpg" />
+
+
+
+		<image>
+
+			<cube url="panos/hallCdP.tiles/pano_%s.jpg" />
+
+			<mobile>
+
+				<cube url="panos/hallCdP.tiles/mobile_%s.jpg" />
+
+			</mobile>
+
+		</image>
+
+
+
+		<!-- place your scene hotspots here -->
+
+		<hotspot name="casino100m" style="skin_hotspotstyle" ath="2.479" atv="-6.581"  onclick="action(casino100m)" tooltip="Casino Square"/>
+
+		<hotspot name="cdp_brasserie" style="skin_hotspotstyle" ath="-90.227" atv="0.053" onclick="action(cdpbrasserie)" tooltip="Café de Paris - Brasserie"/>
+
+		<hotspot name="casino" style="skin_hotspotstyle" ath="-177.559" atv="-3.640" onclick="action(casinocdp)" tooltip="Casino Café de Paris"/>
+
+
+
+
+
+
+	</scene>
+
+
+
+
+
+</krpano>
+

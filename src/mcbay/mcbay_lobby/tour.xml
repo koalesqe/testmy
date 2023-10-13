@@ -1,0 +1,65 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+
+ <action name="startup">
+
+
+
+        loadscene(scene_mcbay_lobby, null, MERGE, BLEND(1));
+
+
+
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+    <scene name="scene_mcbay_lobby" nameid="scene_mcbay_lobby" title="Lobby" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="thumb.jpg" lat="" lng="" heading=""  resa="oui" resaurl="https://www.montecarlosbm.com/fr/hotel-monaco/monte-carlo-bay-hotel-resort">
+
+        <view hlookat="-380.810" vlookat="0.145" fovtype="MFOV" fov="110.786" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto"  />
+
+        <preview url="preview.jpg" />
+
+        <image>
+            <cube url="pano_%s.jpg" />
+
+            <mobile>
+
+                <cube url="mobile_%s.jpg" />
+
+            </mobile>
+
+        </image>
+
+        <!--<hotspot name="spot1" style="skin_hotspotstyle" ath="125.764" atv="-3.303" onclick="action(lobby);" />-->
+
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="3.194" atv="-2"  onclick="action(bluegin);" tooltip="Blue Gin"/>
+
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="4.194" atv="-4"  onclick="action(bluebay);" tooltip="Blue Bay"/>
+
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="41.343" atv="-2.118" onclick="action(lagon);" tooltip="Sandy-Bottom Lagoon"/>
+		
+		<hotspot name="spotOV" style="skin_hotspotstyle" ath="36.111" atv="-0.906" onclick="action(orangeverte);" tooltip="L'Orange Verte"/>
+
+		<hotspot name="spot5" style="skin_hotspotstyle2" ath="75.848" atv="-0.988"  onclick="action(pool_in);" tooltip="Indoor/Outdoor Swimming Pool"/>
+
+		<hotspot name="spot6" style="skin_hotspotstyle" ath="79.320" atv="-5.098"   onclick="action(america);" tooltip="Salle America"/>
+
+		<!--<hotspot name="spot7" style="skin_hotspotstyle" ath="-96" atv="-1"   onclick="action(casinomcbay);" tooltip="Monte-Carlo Bay Casino"/>-->
+
+		<hotspot name="spot8" style="skin_hotspotstyle" ath="-81.744" atv="-0.753" onclick="action(bay_biblio);" tooltip="Espace Bibliothèque"/>
+
+		<hotspot name="spot9" style="skin_hotspotstyle4" ath="-4.380" atv="-3.042"  onclick="action(sincerity);" tooltip="Salon Sincerity - Group Check-in"/>
+
+		
+
+
+    </scene>
+
+
+
+
+
+
+
+
+
+
+
+</krpano>

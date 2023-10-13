@@ -1,0 +1,40 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> <action name="startup">
+
+        loadscene(scene_mcbay344, null, MERGE, BLEND(1));
+
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+
+
+    <action name="jacuzzi">
+ js(loadpano('hh/suite701/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+	
+<action name="hermitage_bellepoq">
+ js(loadpano('hh/hermitage_belleepoq/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+    
+
+    
+
+	
+	<scene name="scene_mcbay344"  nameid="scene_suite344" title="Deluxe Bedroom - Mountain View - 344" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="panos/mcbay344.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-351.612" vlookat="19.718" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/mcbay344.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/mcbay344.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/mcbay344.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+
+</krpano>

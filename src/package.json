@@ -1,0 +1,49 @@
+{
+    "name": "virtualtour",
+    "app_name": "virtualtour",
+    "nodejs": true,
+    "single-instance": true,
+    "webkit": {
+        "java": true,
+        "page-cache": false,
+        "plugin": true
+    },
+    "version": "0.1.0",
+    "main": "index.html",
+    "additional_trust_anchors": [],
+    "window": {
+        "toolbar": false,
+        "icon": "icone.jpg",
+        "show_in_taskbar": true,
+        "resizable": false,
+        "height": 768,
+        "fullscreen": false,
+        "kiosk": false,
+        "as_desktop": false,
+        "show": true,
+        "transparent": false,
+        "kiosk_emulation": false,
+        "always_on_top": false,
+        "width": 1024,
+        "exe_icon": "icone.jpg",
+        "visible": true,
+        "title": "virtualtour",
+        "frame": true
+    },
+    "webexe_settings": {
+        "nw_compression_level": 0,
+        "linux-x64": false,
+        "export_dir": "/Users/laurentgalaup/Desktop/VirtualTour_Export",
+        "windows-x64": true,
+        "custom_script": "",
+        "nw_version": "0.13.3",
+        "download_dir": "",
+        "windows-x32": false,
+        "sdk_build": false,
+        "force_download": false,
+        "mac-x32": false,
+        "linux-x32": false,
+        "uncompressed_folder": false,
+        "mac-x64": true
+    }
+}

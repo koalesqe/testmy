@@ -1,0 +1,107 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+
+ <action name="startup">
+
+
+
+        loadscene(scene_lobby_hiver_hermitage, null, MERGE, BLEND(1));
+
+
+
+    </action>
+
+
+
+
+
+
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+
+
+
+
+
+
+    <scene name="scene_lobby_hiver_hermitage" nameid="scene_lobby_hiver_hermitage" title="Jardin d'Hiver Lobby" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="loby_hermitage/panos/loby_hermitage.tiles/thumb.jpg" lat="" lng="" heading="" resa="oui" resaurl="https://www.montecarlosbm.com/fr/hotel-monaco/hotel-hermitage-monte-carlo">
+
+
+
+
+
+
+
+        <view hlookat="-359.277" vlookat="-0.731" fovtype="MFOV" fov="123.494" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto"  />
+
+
+
+
+
+
+
+        <preview url="panos/lobby_hiver_hermitage.tiles/preview.jpg" />
+
+
+
+
+
+
+
+        <image>
+
+
+
+            <cube url="panos/lobby_hiver_hermitage.tiles/pano_%s.jpg" />
+
+
+
+            <mobile>
+
+
+
+                <cube url="panos/lobby_hiver_hermitage.tiles/mobile_%s.jpg" />
+
+
+
+            </mobile>
+
+
+
+        </image>
+
+
+
+
+
+		<hotspot name="lobby" style="skin_hotspotstyle" ath="175.877" atv="-0.293"  onclick="action(lobby)" tooltip="Beaumarchais Lobby" />
+		
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="179" atv="-0.293" onclick="action(pavyllon);" tooltip="Pavyllon Monte-Carlo"/>
+
+		<hotspot name="eiffel" style="skin_hotspotstyle" ath="-2.752" atv="0.198" onclick="action(eiffel)" tooltip="Salle Eiffel"  />
+
+		<hotspot name="mezzanine" style="skin_hotspotstyle" ath="46.184" atv="-6.028" onclick="action(mezzanine)" tooltip="Eiffel Mezzanine"  />
+
+		<hotspot name="casino100m" style="skin_hotspotstyle" ath="135.201" atv="-2.949" onclick="action(casino100m)" tooltip="Casino Square" />
+
+    	<hotspot name="group_check" style="skin_hotspotstyle" ath="-118.325" atv="0.909" onclick="action(groupcheck)" tooltip="Group Check-in" />
+
+		<hotspot name="salonhiver" style="skin_hotspotstyle2" ath="-35.936" atv="-1.201" onclick="action(salonhiver)" tooltip="Salon Jardin d'Hiver" />
+
+		<hotspot name="miditerrace" style="skin_hotspotstyle3" ath="-32" atv="-1.201" onclick="action(midi)" tooltip="Midi Terrace" />
+
+
+
+    </scene>
+
+
+
+
+
+
+
+
+
+
+
+</krpano>

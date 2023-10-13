@@ -1,0 +1,57 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_suite1101, null, MERGE, BLEND(1));
+
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+
+    
+
+
+
+
+  	<scene name="scene_suite1101" nameid="scene_suite1101" title="Two Bedroom Suite Roquebrune" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="http://www.montecarlobay.com/luxury-rooms-suites/suites-en/two-bedroom-suite-roquebrune/">
+
+		<view hlookat="290.446" vlookat="-0.663" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/suite1101.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/suite1101.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/suite1101.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+
+
+<hotspot name="spot1" style="skin_hotspotstyle" ath="146.306" atv="5.919" linkedscene="scene_suite1101bed" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Two Bedroom Suite Roquebrune - Bedroom"/> 
+
+
+	</scene>
+
+	<scene name="scene_suite1101bed" nameid="scene_suite1101" title="Two Bedroom Suite Roquebrune" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="http://www.montecarlobay.com/luxury-rooms-suites/suites-en/two-bedroom-suite-roquebrune/">
+
+		<view hlookat="-231.746" vlookat="0.374" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/suite1101bed.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/suite1101bed.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/suite1101bed.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+<hotspot name="spot1" style="skin_hotspotstyle" ath="-151.372" atv="4.211" linkedscene="scene_suite1101" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Two Bedroom Suite Roquebrune"/>
+
+	</scene>
+	
+
+
+</krpano>

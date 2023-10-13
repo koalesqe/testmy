@@ -1,0 +1,49 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_mezzanine_terrasse, null, MERGE, BLEND(1));
+
+    </action>
+
+    
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+
+
+    <scene name="scene_mezzanine_terrasse" nameid="scene_mezzanine_terrasse" title="Eiffel Mezzanine - Terrace" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="oui"  onstart="" thumburl="thumb.jpg" lat="" lng="" heading="">
+
+
+
+        <view hlookat="-305.107" vlookat="7.965" fovtype="MFOV" fov="112.017" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto"  />
+
+
+
+        <preview url="panos/mezzanine_terrasse.tiles/preview.jpg" />
+
+
+
+        <image>
+
+            <cube url="panos/mezzanine_terrasse.tiles/pano_%s.jpg" />
+
+            <mobile>
+
+                <cube url="panos/mezzanine_terrasse.tiles/mobile_%s.jpg" />
+
+            </mobile>
+
+        </image>
+
+
+
+      <hotspot name="spot1" style="skin_hotspotstyle" ath="27.524" atv="4.052" onclick="action(mezzanine);" tooltip="Mezzanine Eiffel"/>	  
+	  <hotspot name="spot2" style="skin_hotspotstyle" ath="-94.995" atv="62.465" onclick="action(cours);" tooltip="Gustave Courtyard" />
+
+    </scene>
+
+
+
+
+
+</krpano>

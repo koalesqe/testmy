@@ -1,0 +1,59 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_suite_pagnol, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+
+
+
+  	<scene name="scene_suite_pagnol" nameid="scene_suite_pagnol" title="Diamond Suite Pagnol" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="http://www.hotelhermitagemontecarlo.com/luxury-rooms-suites/diamond-suites/one-bedroom-suite-pagnol/">
+
+		<view hlookat="-364.624" vlookat="14.429" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/suite_pagnol.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/suite_pagnol.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/suite_pagnol.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+
+
+<hotspot name="spot1" style="skin_hotspotstyle" ath="-130.622" atv="3.930" linkedscene="scene_suite_pagnol_terrasse" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Suite Pagnol - Terrace"/>
+<hotspot name="spot2" style="skin_hotspotstyle" ath="4.720" atv="-0.650" onclick="action(hermitage)" tooltip="Jardin d'Hiver Lobby" />
+
+	</scene>
+
+	<scene name="scene_suite_pagnol_terrasse" nameid="scene_suite_pagnol" title="Diamond Suite Pagnol" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non" onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="http://www.hotelhermitagemontecarlo.com/luxury-rooms-suites/diamond-suites/one-bedroom-suite-pagnol/">
+
+		<view hlookat="-17.503" vlookat="7.820" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/suite_pagnol_terrasse.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/suite_pagnol_terrasse.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/suite_pagnol_terrasse.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+<hotspot name="spot1" style="skin_hotspotstyle" ath="-20.299" atv="0.362" linkedscene="scene_suite_pagnol" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );"  tooltip="Suite Pagnol"/>
+	</scene>
+
+
+
+
+</krpano>

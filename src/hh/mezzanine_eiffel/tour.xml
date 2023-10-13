@@ -1,0 +1,44 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_mezzanine_eiffel, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+
+
+
+  	<scene name="scene_mezzanine_eiffel" nameid="scene_mezzanine_eiffel" title="Eiffel Mezzanine" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="oui"  infourl= "HH-mezzanine_eiffel.pdf" onstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="-722.086" vlookat="16.685" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/mezzanine_eiffel.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/mezzanine_eiffel.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/mezzanine_eiffel.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<hotspot name="terrace" style="skin_hotspotstyle" ath="14.401" atv="0.277" onclick="action(mezzanine_terrasse);" tooltip="Eiffel Mezzanine - Terrace"/>
+		<hotspot name="eiffel" style="skin_hotspotstyle" ath="10.172" atv="17.259" onclick="action(eiffel);" tooltip="Salle Eiffel"/>
+		<hotspot name="lobby_hiver" style="skin_hotspotstyle" ath="-14.442" atv="53.095" onclick="action(hermitage);" tooltip="Lobby Jardin d'Hiver"/>
+		<hotspot name="Groupcheck" style="skin_hotspotstyle" ath="-51.699" atv="26.907"  onclick="action(groupcheck)" tooltip="Group Check-in" />
+		<hotspot name="salonhiver" style="skin_hotspotstyle" ath="-9.249" atv="17.027" onclick="action(salonhiver)" tooltip="Salon Jardin d'Hiver" />
+		
+
+		
+		
+</scene>
+
+
+
+
+</krpano>

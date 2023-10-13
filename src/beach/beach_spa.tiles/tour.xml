@@ -1,0 +1,35 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_beach_spa, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <events onloadcomplete="action(loader); js(hotelbeach());"/>
+
+
+	
+	<scene name="scene_beach_spa" nameid="scene_beach_spa" etablissement="Monte-Carlo Beach" dossier="beach" galeriephoto="oui" galerievideo="non" info="non" title="Monte-Carlo Beach - Spa" onstart="" thumburl="thumb.jpg" lat="" lng="" heading="" resa="non" resaurl="">
+
+		<view hlookat="27.273" vlookat="11.147" fovtype="MFOV" fov="100.459" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="preview.jpg" />
+
+		<image>
+			<cube url="pano_%s.jpg" />
+			<mobile>
+				<cube url="mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-152.749" atv="3.738" onclick="action(beach_lobby);" tooltip="Lobby"/>
+		
+		
+	</scene>
+
+
+</krpano>

@@ -1,0 +1,95 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_bluebay_terrasse, null, MERGE, BLEND(1));
+
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+
+
+     <action name="mcbay_lobby">
+        js(loadpano('mcbay/mcbay_lobby/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+	
+<action name="lagon">
+  js(loadpano('mcbay/lagon_inside/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+    
+
+    
+
+
+
+
+  	<scene name="scene_bluebay" nameid="scene_bluebay" title="Blue Bay" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui" infourl= "MCBeach-blueBay.pdf" onstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="5.351" vlookat="7.645" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/bluebay.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/bluebay.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/bluebay.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+
+
+<!--<hotspot name="spot1" style="skin_hotspotstyle" ath="-18.920" atv="-1.077" linkedscene="scene_cuisine" tooltip="Blue Bay - Open Kitchen" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+-->		
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="81.758" atv="-0.362" linkedscene="scene_bluebay_terrasse" tooltip="Blue Bay - Terrace"  onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );"/>
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-83.426" atv="-0.708" onclick="action(mcbay_lobby);" tooltip=" Lobby" /> 
+
+</scene>
+	<!--
+
+	<scene name="scene_cuisine"  nameid="scene_bluebay" title="Blue Bay" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui" infourl= "MCBeach-blueBay.pdf" nstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="39.533" vlookat="0.054" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/cuisine.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/cuisine.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/cuisine.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+	
+		
+<hotspot name="spot1" style="skin_hotspotstyle" ath="31.209" atv="-1.727" linkedscene="scene_bluebay" tooltip="Blue Bay" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+
+	</scene>-->
+	
+	
+	
+	<scene name="scene_bluebay_terrasse" nameid="scene_bluebay" title="Blue Bay - Terrace" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui" infourl= "MCBeach-blueBay.pdf" onstart="" thumburl="panos/bluebay_terrasse.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-75" vlookat="4.611" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/bluebay_terrasse.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/bluebay_terrasse.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/bluebay_terrasse.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="90.621" atv="2.253"  onclick="action(lagon);" tooltip="Sandy-Bottomed Lagoon 1" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-138" atv="-1.490" linkedscene="scene_bluebay" tooltip="Blue Bay" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="42" atv="-4.419" onclick="action(mediterraneen);" tooltip="Jardin Méditerranéen" />
+		<hotspot name="spot10" style="skin_hotspotstyle2" ath="0" atv="-5" onclick="action(lagonmat)" tooltip="Sandy-Bottomed Lagoon 2" />
+
+	</scene>
+	
+
+
+
+</krpano>

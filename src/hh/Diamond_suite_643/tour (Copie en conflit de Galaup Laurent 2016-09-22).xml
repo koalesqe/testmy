@@ -1,0 +1,47 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+
+    
+
+    <action name="startup">
+
+        loadscene(Diamond_suite_643, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+
+    <action name="loader">
+         js(timer5());  
+    </action>
+
+    
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+
+
+
+  	<scene name="Diamond_suite_643" nameid="Diamond_suite_643" title="Diamond suite 643" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="-9.563" vlookat="1.877" fovtype="MFOV" fov="132.153" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Diamond_suite_643.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/Diamond_suite_643.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/Diamond_suite_643.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+
+	</scene>
+
+
+
+</krpano>

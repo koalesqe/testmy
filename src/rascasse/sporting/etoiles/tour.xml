@@ -1,0 +1,204 @@
+<krpano version="1.17.1" title="Salle des Étoiles" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" />
+    
+
+    <action name="startup">
+        loadscene(scene_show_sphere, null, MERGE, BLEND(1));
+	
+    </action>
+	
+	<events onloadcomplete="action(loader); js(hotelsporting());"/>
+	
+	
+	<action name="show">
+	loadscene(scene_show_sphere, null, MERGE, BLEND(1));
+	tween(plugin[arrow].y, -156, 0.5); 
+	</action>
+	
+	<action name="jour">
+	loadscene(scene_jour_sphere, null, MERGE, BLEND(1));
+	tween(plugin[arrow].y, -78, 0.5); 
+	</action>
+	
+	<action name="repas">
+	loadscene(scene_repas_sphere, null, MERGE, BLEND(1));
+	tween(plugin[arrow].y, 0, 0.5); 
+	</action>
+	
+	<action name="stage">
+	loadscene(scene_centre-scene_sphere, null, MERGE, BLEND(1));
+	tween(plugin[arrow].y, 78, 0.5); 
+	</action>
+	
+	<action name="mariage">
+	loadscene(scene_salle_des_etoiles_mat, null, MERGE, BLEND(1));
+	tween(plugin[arrow].y, 156, 0.5); 
+	</action>
+	
+	
+	
+	
+	
+	
+	<scene name="scene_centre-scene_sphere" nameid="scene_show_sphere" etablissement="Sporting Monte-Carlo" dossier="etoiles" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-SalledesEtoiles.pdf" title="Salle des Étoiles" onstart="" thumburl="panos/centre-scene_sphere.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-0.629" vlookat="-1.031" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/centre-scene_sphere.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/centre-scene_sphere.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/centre-scene_sphere.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+	<plugin name="show" url="show.jpg" align="middleleft" x="10" y="-156" scale="0.5" onclick="action(show)"/>
+	
+	<plugin name="jour" url="jour.jpg" align="middleleft" x="10" y="-78" scale="0.5" onclick="action(jour)"/>
+	
+	<plugin name="repas" url="repas.jpg" align="middleleft" x="10" y="0" scale="0.5" onclick="action(repas)"/>
+	
+	<plugin name="stage" url="stage.jpg" align="middleleft" x="10" y="78" scale="0.5" onclick="action(stage)"/>
+		
+	<plugin name="mariage" url="mariage.jpg" align="middleleft" x="10" y="156" scale="0.5" onclick="action(mariage)"/>	
+	
+	<plugin name="arrow" url="arrow.png" align="middleleft" x="130" y="-156" scale="0.3"/>
+
+	</scene>
+
+	<scene name="scene_jour_sphere" nameid="scene_show_sphere" etablissement="Sporting Monte-Carlo" dossier="etoiles" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-SalledesEtoiles.pdf" title="Salle des Étoiles" onstart="" thumburl="panos/jour_sphere.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-6.590" vlookat="17.653" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/jour_sphere.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/jour_sphere.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/jour_sphere.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<plugin name="show" url="show.jpg" align="middleleft" x="10" y="-156" scale="0.5" onclick="action(show)"/>
+	
+	<plugin name="jour" url="jour.jpg" align="middleleft" x="10" y="-78" scale="0.5" onclick="action(jour)"/>
+	
+	<plugin name="repas" url="repas.jpg" align="middleleft" x="10" y="0" scale="0.5" onclick="action(repas)"/>
+	
+	<plugin name="stage" url="stage.jpg" align="middleleft" x="10" y="78" scale="0.5" onclick="action(stage)"/>
+		
+	<plugin name="mariage" url="mariage.jpg" align="middleleft" x="10" y="156" scale="0.5" onclick="action(mariage)"/>	
+	
+	<plugin name="arrow" url="arrow.png" align="middleleft" x="130" y="-156" scale="0.3"/>
+		
+	<hotspot name="spot1" style="skin_hotspotstyle" ath="37.852" atv="6.329" onclick="sporting_hall()" tooltip="Lobby"/>
+	
+
+	</scene>
+
+	<scene name="scene_repas_sphere" nameid="scene_show_sphere" etablissement="Sporting Monte-Carlo" dossier="etoiles" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-SalledesEtoiles.pdf" title="Salle des Étoiles" onstart="" thumburl="panos/repas_sphere.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-8.500" vlookat="0.097" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/repas_sphere.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/repas_sphere.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/repas_sphere.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+	<plugin name="show" url="show.jpg" align="middleleft" x="10" y="-156" scale="0.5" onclick="action(show)"/>
+	
+	<plugin name="jour" url="jour.jpg" align="middleleft" x="10" y="-78" scale="0.5" onclick="action(jour)"/>
+	
+	<plugin name="repas" url="repas.jpg" align="middleleft" x="10" y="0" scale="0.5" onclick="action(repas)"/>
+	
+	<plugin name="stage" url="stage.jpg" align="middleleft" x="10" y="78" scale="0.5" onclick="action(stage)"/>
+		
+	<plugin name="mariage" url="mariage.jpg" align="middleleft" x="10" y="156" scale="0.5" onclick="action(mariage)"/>	
+	
+	<plugin name="arrow" url="arrow.png" align="middleleft" x="130" y="-156" scale="0.3"/>
+	
+	<hotspot name="spot1" style="skin_hotspotstyle" ath="39.624" atv="8.830" onclick="sporting_hall()" tooltip="Lobby"/>
+
+	</scene>
+
+	<scene name="scene_show_sphere" nameid="scene_show_sphere" etablissement="Sporting Monte-Carlo" dossier="etoiles" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-SalledesEtoiles.pdf" title="Salle des Étoiles" onstart="" thumburl="panos/show_sphere.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-1.561" vlookat="16.788" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/show_sphere.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/show_sphere.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/show_sphere.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+	<plugin name="show" url="show.jpg" align="middleleft" x="10" y="-156" scale="0.5" onclick="action(show)"/>
+	
+	<plugin name="jour" url="jour.jpg" align="middleleft" x="10" y="-78" scale="0.5" onclick="action(jour)"/>
+	
+	<plugin name="repas" url="repas.jpg" align="middleleft" x="10" y="0" scale="0.5" onclick="action(repas)"/>
+	
+	<plugin name="stage" url="stage.jpg" align="middleleft" x="10" y="78" scale="0.5" onclick="action(stage)"/>
+		
+	<plugin name="mariage" url="mariage.jpg" align="middleleft" x="10" y="156" scale="0.5" onclick="action(mariage)"/>	
+	
+	<plugin name="arrow" url="arrow.png" align="middleleft" x="130" y="-156" scale="0.3"/>
+	
+	<hotspot name="spot1" style="skin_hotspotstyle" ath="37.852" atv="6.329" onclick="sporting_hall()" tooltip="Lobby"/>
+
+	</scene>
+	
+	
+	<scene name="scene_salle_des_etoiles_mat" nameid="scene_show_sphere" etablissement="Sporting Monte-Carlo" dossier="etoiles" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-SalledesEtoiles.pdf" title="Salle des Étoiles" onstart="tween(plugin[arrow].y, 156, 0.5); " thumburl="panos/salle_des_etoiles_mat.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.444" vlookat="23.230" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/salle_des_etoiles_mat.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/salle_des_etoiles_mat.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/salle_des_etoiles_mat.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+<plugin name="show" url="show.jpg" align="middleleft" x="10" y="-156" scale="0.5" onclick="action(show)"/>
+	
+	<plugin name="jour" url="jour.jpg" align="middleleft" x="10" y="-78" scale="0.5" onclick="action(jour)"/>
+	
+	<plugin name="repas" url="repas.jpg" align="middleleft" x="10" y="0" scale="0.5" onclick="action(repas)"/>
+	
+	<plugin name="stage" url="stage.jpg" align="middleleft" x="10" y="78" scale="0.5" onclick="action(stage)"/>
+		
+	<plugin name="mariage" url="mariage.jpg" align="middleleft" x="10" y="156" scale="0.5" onclick="action(mariage)"/>	
+	
+	<plugin name="arrow" url="arrow.png" align="middleleft" x="130" y="-156" scale="0.3"/>
+		
+	
+		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="15" atv="2" onclick="sporting_hall()" tooltip="Lobby"/>
+
+	</scene>
+
+
+
+
+</krpano>

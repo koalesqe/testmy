@@ -1,0 +1,69 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+
+	<action name="startup">
+	loadscene(scene_viola, null, MERGE, BLEND(1));
+	</action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+	
+	
+	 <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+	
+	<scene name="scene_viola" nameid="scene_viola" title="Salle Viola" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui"  galerievideo="non" info="oui" infourl= "MCBay-Viola.htm" onstart="" thumburl="panos/viola/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-45.627" vlookat="0.369" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/viola/preview.jpg" />
+
+		<image>
+			<cube url="panos/viola/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/viola/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		 <layer name="journuit" keep="false" zorder="15"  selectable="false"
+	       url="switch.png"
+	   	          
+	       align="centertop"
+	      edge="centertop"
+		   y="15"
+		   x="0"     
+		   onclick="loadscene(scene_viola2, null, KEEPVIEW , SLIDEBLEND(1.0, 90.0, 0.2, linear));"/>
+		   
+		   
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-101.749" atv="0.634" onclick="action(mcbay_lobby);" tooltip=" Lobby" />
+
+
+	</scene>
+
+	<scene name="scene_viola2" nameid="scene_viola" title="Salle Viola" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui" infourl= "MCBay-Viola.htm" onstart="" thumburl="panos/viola2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/viola_ecran/preview.jpg" />
+
+		<image>
+			<cube url="panos/viola_ecran/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/viola_ecran/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+			<layer name="journuit" keep="false" zorder="15"  selectable="false"
+	        url="switch.png"	              
+	        align="centertop"      
+		    edge="centertop"
+		    y="15"
+		    x="0"     
+		    onclick="loadscene(scene_viola, null, KEEPVIEW , SLIDEBLEND(1.0, -90.0, 0.2, linear));"      
+	       />
+		   
+		   <hotspot name="spot1" style="skin_hotspotstyle" ath="-101.749" atv="0.634" onclick="action(mcbay_lobby);" tooltip=" Lobby" />
+
+	</scene>
+
+
+</krpano>

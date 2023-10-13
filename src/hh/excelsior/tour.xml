@@ -1,0 +1,31 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_excelsior, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+	
+	<scene name="scene_excelsior" nameid="scene_excelsior" title="Salon Excelsior" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="oui" infourl= "HH-salonExcelsior.pdf" onstart="" thumburl="panos/cours.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/excelsior.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/excelsior.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/excelsior.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="2.586" atv="-1.972" onclick="action(lobby);" tooltip="Beaumarchais Lobby"/>
+
+	</scene>
+
+
+</krpano>

@@ -1,0 +1,130 @@
+<krpano  title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+
+
+
+<include url="../../skin.xml" />
+
+    
+
+
+
+    <action name="startup">
+
+        loadscene(scene_hercule2, null, MERGE, BLEND(1));
+
+    </action>
+
+	
+
+	<scene name="scene_hercule" nameid="hercule" etablissement="Aerial View" dossier="aeriennes" galeriephoto="oui" galerievideo="non" info="non"  title="Monaco Harbor" onsonstart="" thumburl="panos/hercule.tiles/thumb.jpg" lat="" lng="" heading="">
+
+
+
+		<view hlookat="84.483" vlookat="16.934" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-40" vlookatmax="+90" />
+
+
+
+		<preview url="panos/hercule.tiles/preview.jpg" />
+
+
+
+		<image>
+
+			<cube url="panos/hercule.tiles/pano_%s.jpg" />
+
+			<mobile>
+
+				<cube url="panos/hercule.tiles/mobile_%s.jpg" />
+
+			</mobile>
+
+		</image>
+
+
+
+		<!-- place your scene hotspots here -->
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-62.454" atv="12.793" onclick="action(rascasseext)" tooltip="La Rascasse"/>
+
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="109.241" atv="4.391" onclick="action(poolnuit)" tooltip="Thermes Marins Monte-Carlo"/>
+
+		<hotspot name="spot3" style="skin_hotspotstyle4" ath="95.032" atv="0.799" onclick="action(hermitage)" tooltip="Hôtel Hermitage Monte-Carlo"/>
+
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="153.531" atv="-8.200" linkedscene="scene_hercule2" tooltip="Monaco Harbor"/>
+
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="109.241" atv="-4.391" onclick="action(casino100m)" tooltip="Casino Square"/>
+
+		<hotspot name="mcbay" style="skin_hotspotstyle4" ath="118.819" atv="-0.486" onclick="action(mcbay_lobby)" tooltip="Monte-Carlo Bay Hotel &amp; Resort" />
+
+		<hotspot name="beach_lobby" style="skin_hotspotstyle3" ath="126.694" atv="-0.645"  onclick="action(beach_lobby)" tooltip="Monte-Carlo Beach" />
+
+		<hotspot name="sporting" style="skin_hotspotstyle2" ath="123.424" atv="0.056"  onclick="action(sporting_out)" tooltip="Sporting Monte-Carlo"/>
+
+		<hotspot name="golf" style="skin_hotspotstyle" ath="101.044" atv="-13.061" onclick="action(golf)" tooltip="Monte-Carlo Golf Club" />
+
+		
+
+
+
+	</scene>
+
+
+
+	<scene name="scene_hercule2" nameid="hercule" etablissement="Aerial View" dossier="aeriennes" galeriephoto="oui" galerievideo="non" info="non" title="Monaco Harbor" onstart="" thumburl="panos/hercule2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+
+
+		<view hlookat="-5.235" vlookat="11.724" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-40" vlookatmax="+90" />
+
+
+
+		<preview url="panos/hercule2.tiles/preview.jpg" />
+
+
+
+		<image>
+
+			<cube url="panos/hercule2.tiles/pano_%s.jpg" />
+
+			<mobile>
+
+				<cube url="panos/hercule2.tiles/mobile_%s.jpg" />
+
+			</mobile>
+
+		</image>
+
+
+
+		<!-- place your scene hotspots here -->
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-88.733" atv="3.922" onclick="action(rascasseext)" tooltip="La Rascasse"/>
+
+		<hotspot name="spot2" style="skin_hotspotstyle2" ath="-26.885" atv="4.121" onclick="action(poolnuit)" tooltip="Thermes Marins Monte-Carlo"/>
+
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-30.121" atv="0.691" onclick="action(hermitage)" tooltip="Hôtel Hermitage Monte-Carlo"/>
+
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="0.833" atv="-1.479" onclick="action(casino100m)" tooltip="Casino Square"/>
+
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="-73.241" atv="-6.545" linkedscene="scene_hercule"  tooltip="Monaco Harbor"/>
+
+		<hotspot name="bay" style="skin_hotspotstyle4" ath="54.366" atv="-1.047" onclick="action(mcbay_lobby)" tooltip="Monte-Carlo Bay Hotel &amp; Resort"/>
+
+		<hotspot name="sporting" style="skin_hotspotstyle2" ath="59.971" atv="0.153" onclick="action(sporting_out)" tooltip="Sporting Monte-Carlo" />
+
+		<hotspot name="beach" style="skin_hotspotstyle3" ath="66.059" atv="-1.091" onclick="action(beach_lobby)" tooltip="Monte-Carlo Beach" />
+
+		<hotspot name="golf" style="skin_hotspotstyle" ath="36.282" atv="-16.281" onclick="action(golf)" tooltip="Monte-Carlo Golf Club" />
+
+
+
+	</scene>
+
+
+
+
+
+</krpano>
+

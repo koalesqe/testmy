@@ -1,0 +1,76 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+
+ <action name="startup">
+
+
+
+        loadscene(scene_crystalbar, null, MERGE, BLEND(1));
+
+
+
+    </action>
+
+
+
+  
+
+
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+
+    <scene name="scene_crystalbar" nameid="scene_crystalbar" title="Crystal Bar" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="thumb.jpg" lat="" lng="" heading="">
+
+     <view hlookat="-185.988" vlookat="16.649" fovtype="MFOV" fov="112.017" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto"  />
+
+
+        <preview url="panos/crystalbar.tiles/preview.jpg" />
+
+
+        <image>
+
+
+
+            <cube url="panos/crystalbar.tiles/pano_%s.jpg" />
+
+
+
+            <mobile>
+
+
+
+                <cube url="panos/crystalbar.tiles/mobile_%s.jpg" />
+
+
+
+            </mobile>
+
+
+
+        </image>
+
+
+
+
+
+
+
+        <hotspot name="spot1" style="skin_hotspotstyle" ath="-44.308" atv="3.194" onclick="action(lobby);" tooltip="Beaumarchais Lobby"/>
+
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-50" atv="3.5" onclick="action(pavyllon);" tooltip="Pavyllon Monte-Carlo"/>
+
+
+
+    </scene>
+
+
+
+
+
+
+
+
+
+
+
+</krpano>

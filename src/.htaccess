@@ -1,0 +1,145 @@
+ErrorDocument 404 https://montecarlovirtualtour.com
+Options +FollowSymLinks
+RewriteEngine On
+Options -Indexes
+
+### HOTEL DE PARIS
+Redirect Permanent /vuepanoramique/hotel-de-paris/lobby-interior/ https://montecarlovirtualtour.com/?pano=hdp/lobby_hdp/tour.xml
+Redirect Permanent /vuepanoramique/hotel-de-paris/salle-empire/ https://montecarlovirtualtour.com/?pano=hdp/empire/tour.xml
+Redirect Permanent /vuepanoramique/hotel-de-paris/junior-suite-440/ https://montecarlovirtualtour.com/?pano=hdp/junior_suite_440/tour.xml
+Redirect Permanent /vuepanoramique/hotel-de-paris/junior-suite-332/ https://montecarlovirtualtour.com/?pano=hdp/junior_suite_332/tour.xml
+Redirect Permanent /vuepanoramique/hotel-de-paris/simple-suite-457/ https://montecarlovirtualtour.com/?pano=hdp/Simple_suite_457/tour.xml
+Redirect Permanent /vuepanoramique/hotel-de-paris/double-suite-227/ https://montecarlovirtualtour.com/?pano=hdp/Double_suite_227_8_9/tour.xml
+Redirect Permanent /vuepanoramique/hotel-de-paris/diamond-suite-garnier/ https://montecarlovirtualtour.com/?pano=hdp/diamond_suite_garnier/tour.xml
+
+### HOTEL HERMITAGE
+Redirect Permanent /vuepanoramique/hotel-hermitage/hotel-hermitage-loddy-dhiver/ https://montecarlovirtualtour.com/?pano=hh/lobby_hiver_hermitage/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/hotel-hermitage-lobby/ https://montecarlovirtualtour.com/?pano=hh/lobby_hermitage/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/crystal-bar/ https://montecarlovirtualtour.com/?pano=hh/crystalbar/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/salle-belle-epoque/ https://montecarlovirtualtour.com/?pano=hh/belleepoq/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/salle-eiffel/ https://montecarlovirtualtour.com/?pano=hh/eiffel/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/courtyard/ https://montecarlovirtualtour.com/?pano=hh/cours/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/lobby-jardin-dhiver-etage/ https://montecarlovirtualtour.com/?pano=hh/mezzanine_eiffel/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/terrasse/	https://montecarlovirtualtour.com/?pano=hh/mezzanine_terrasse/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/bedroom-terrace-284/ https://montecarlovirtualtour.com/?pano=hh/hh284/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/bedroom-terrace-289/ https://montecarlovirtualtour.com/?pano=hh/hh289/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/simple-suite-377/ https://montecarlovirtualtour.com/?pano=hh/Junior_suite_377/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/junior-suite-530/ https://montecarlovirtualtour.com/?pano=hh/hh530/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/junior-suite-411/	https://montecarlovirtualtour.com/?pano=hh/Junior_suite_411/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/junior-suite-68/ https://montecarlovirtualtour.com/?pano=hh/hh68/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/junior-suite-211/	https://montecarlovirtualtour.com/?pano=hh/hh211/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/junior-suite-jacuzzi-67/ https://montecarlovirtualtour.com/?pano=hh/Junior_suite_67/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/one-bedroom-suite-214/ https://montecarlovirtualtour.com/?pano=hh/Junior_suite_214/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/one-bedroom-suite-301/ https://montecarlovirtualtour.com/?pano=hh/Simple_suite_exclusive_301/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/simple-suite-492/	https://montecarlovirtualtour.com/?pano=hh/Simple_suite_492/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/simple-suite-548/	https://montecarlovirtualtour.com/?pano=hh/Simple_suite_548_49_50/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/simple-suite-202203/ https://montecarlovirtualtour.com/?pano=hh/hh202_203/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/one-bedroom-suite-pagnol/	https://montecarlovirtualtour.com/?pano=hh/suite_pagnol/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/simple-suite-740/	https://montecarlovirtualtour.com/?pano=hh/Simple_suite_740/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/one-bedroom-suite-62/	https://montecarlovirtualtour.com/?pano=hh/Simple_suite_exclusive_62_63/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/diamond-suite-637/ https://montecarlovirtualtour.com/?pano=hh/Diamond_suite_637/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/diamond-suite-640/ https://montecarlovirtualtour.com/?pano=hh/Diamond_suite_640/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/diamond-suite-643/ https://montecarlovirtualtour.com/?pano=hh/Diamond_suite_643/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/penthouse-588-89-90/ https://montecarlovirtualtour.com/?pano=hh/Penthouse_588/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/diamond-suite-748/ https://montecarlovirtualtour.com/?pano=hh/hh748/tour.xml
+Redirect Permanent /vuepanoramique/hotel-hermitage/diamond-suite-761/ https://montecarlovirtualtour.com/?pano=hh/Diamond_suite_761/tour.xml
+
+### BAY
+Redirect Permanent /vuepanoramique/monte-carlo-bay/mc-bay-lobby/ https://montecarlovirtualtour.com/?pano=mcbay/mcbay_lobby/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-bay/bluegin/ https://montecarlovirtualtour.com/?pano=mcbay/bluegin/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-bay/salon-colombia/ https://montecarlovirtualtour.com/?pano=mcbay/baycolombia/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-bay/mc-bay-suite-1005/ https://montecarlovirtualtour.com/?pano=mcbay/suite1005/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-bay/duplex-suite-1001/ https://montecarlovirtualtour.com/?pano=mcbay/suite1001/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-bay/578-2/ https://montecarlovirtualtour.com/?pano=mcbay/suite1002/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-bay/mc-bay-suite-701/ https://montecarlovirtualtour.com/?pano=mcbay/suite701/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-bay/two-bedroom-suite-1101/ https://montecarlovirtualtour.com/?pano=mcbay/suite1101/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-bay/piscine-interieure/ https://montecarlovirtualtour.com/?pano=mcbay/baypoolin/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-bay/piscine-exterieure/ https://montecarlovirtualtour.com/?pano=mcbay/baypoolout/tour.xml
+
+### BEACH
+Redirect Permanent /vuepanoramique/monte-carlo-beach/monte-carlo-beach-lobby/ https://montecarlovirtualtour.com/?pano=beach/lobby/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-beach/monte-carlo-beach-terrace/ https://montecarlovirtualtour.com/?pano=beach/elsa_terrace/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-beach/olympic-pool/ https://montecarlovirtualtour.com/?pano=beach/olympic_pool/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-beach/junior-suite-40/ https://montecarlovirtualtour.com/?pano=beach/Beach-Junior-suite-40-SJM-vue-mer/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-beach/junior-suite-74/ https://montecarlovirtualtour.com/?pano=beach/Beach-Junior-suite-exclusive-74-SJE-vue-mer/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-beach/one-bedroom-suite-loft/ https://montecarlovirtualtour.com/?pano=beach/one_bedroom_suite_and_loft/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-beach/duite-duplex-59/ https://montecarlovirtualtour.com/?pano=beach/Beach-Suite-duplex-59-SSE-vue-mer/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-beach/double-suite-55/ https://montecarlovirtualtour.com/?pano=beach/Beach-Double-suite-55-SD/tour.xml
+Redirect Permanent /vuepanoramique/monte-carlo-beach/suite-sunshine-jacuzzi/ https://montecarlovirtualtour.com/?pano=beach/sunshine/tour.xml
+
+### VUES AERIENNES
+Redirect Permanent /vuepanoramique/aerial-views/casino100m/ https://montecarlovirtualtour.com/?pano=aeriennes/casino100m/tour.xml
+Redirect Permanent /vuepanoramique/aerial-views/level2/ https://montecarlovirtualtour.com/?pano=aeriennes/casino100m/tour.xml
+Redirect Permanent /vuepanoramique/aerial-views/monte-carlo-beach-sea-side-view/ https://montecarlovirtualtour.com/?pano=aeriennes/beach150m/tour.xml
+Redirect Permanent /vuepanoramique/aerial-views/sporting-monte-carlo/ https://montecarlovirtualtour.com/?pano=aeriennes/sporting_air/tour.xml
+Redirect Permanent /vuepanoramique/aerial-views/mc-bay-lagoon/ https://montecarlovirtualtour.com/?pano=aeriennes/lagon/tour.xml
+Redirect Permanent /vuepanoramique/aerial-views/monte-carlo-golf-club/ https://montecarlovirtualtour.com/?pano=aeriennes/golf/tour.xml
+
+### DINING
+Redirect Permanent /vuepanoramique/dining/cafe-de-paris-brasserie/ https://montecarlovirtualtour.com/?pano=cdp/cdpbrasserie/tour.xml
+Redirect Permanent /vuepanoramique/dining/cafe-de-paris-terrace/ https://montecarlovirtualtour.com/?pano=cdp/cdpterrasse/tour.xml
+Redirect Permanent /vuepanoramique/dining/salon-bellevue/ https://montecarlovirtualtour.com/?pano=cdp/bellevue/tour.xml
+Redirect Permanent /vuepanoramique/dining/buddha-bar/ https://montecarlovirtualtour.com/?pano=buddhabar/buddhabas/tour.xml
+Redirect Permanent /vuepanoramique/dining/buddha-bar/buddha-bar/ https://montecarlovirtualtour.com/?pano=buddhabar/buddhahaut/tour.xml
+Redirect Permanent /vuepanoramique/dining/buddha-bar/buddha-bar-private-room/ https://montecarlovirtualtour.com/?pano=buddhabar/private/tour.xml
+Redirect Permanent /vuepanoramique/dining/salle-des-etoiles/ https://montecarlovirtualtour.com/?pano=sporting/etoiles/tour.xml
+Redirect Permanent /vuepanoramique/dining/salle-des-etoiles/653-2/ https://montecarlovirtualtour.com/?pano=sporting/etoiles/tour.xml
+Redirect Permanent /vuepanoramique/dining/salle-des-etoiles/salle-des-etoiles-2/ https://montecarlovirtualtour.com/?pano=sporting/etoiles/tour.xml
+Redirect Permanent /vuepanoramique/dining/deck/ https://montecarlovirtualtour.com/?pano=beach/deck/tour.xml
+Redirect Permanent /vuepanoramique/dining/rascasse/ https://montecarlovirtualtour.com/?pano=rascasse/rascasseetage/tour.xml
+Redirect Permanent /vuepanoramique/dining/rascasse/rascasse-interieur/ https://montecarlovirtualtour.com/?pano=rascasse/rascasse1/tour.xml
+Redirect Permanent /vuepanoramique/dining/rascasse/rascasse-etage/ https://montecarlovirtualtour.com/?pano=rascasse/rascasseext/tour.xml
+Redirect Permanent /vuepanoramique/dining/vistamar-terrace/ https://montecarlovirtualtour.com/?pano=hh/vistamar/tour.xml
+Redirect Permanent /vuepanoramique/dining/salle-belle-epoque/ https://montecarlovirtualtour.com/?pano=hh/belleepoq/tour.xml
+###################################### Redirect Permanent /vuepanoramique/dining/las-brisas/ https://montecarlovirtualtour.com/?pano=hh/belleepoq/tour.xml
+Redirect Permanent /vuepanoramique/dining/louis-xv-alain-ducasse/ https://montecarlovirtualtour.com/?pano=hdp/ducasse/tour.xml
+Redirect Permanent /vuepanoramique/dining/salle-des-palmiers/ https://montecarlovirtualtour.com/?pano=sporting/palmiers/tour.xml
+
+### THERMES
+Redirect Permanent /vuepanoramique/well-beeing/accueil/ https://montecarlovirtualtour.com/?pano=thermes/01accueil/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/baldaquins/ https://montecarlovirtualtour.com/?pano=thermes/02baldaquin/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/soins-1/ https://montecarlovirtualtour.com/?pano=thermes/03soins1/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/salle-pause-cafe/ https://montecarlovirtualtour.com/?pano=thermes/04massage1/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/soins-2/ https://montecarlovirtualtour.com/?pano=thermes/05soins2/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/fitness-room/ https://montecarlovirtualtour.com/?pano=thermes/06fitness/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/couloir/ https://montecarlovirtualtour.com/?pano=thermes/07couloir/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/accueil-vestiaires/ https://montecarlovirtualtour.com/?pano=thermes/08accueilvestiaires/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/vestiaires/ https://montecarlovirtualtour.com/?pano=thermes/09vestiaires/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/soins-3/ https://montecarlovirtualtour.com/?pano=thermes/10soins3/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/cabine-hommefemme-1/ https://montecarlovirtualtour.com/?pano=thermes/11cabinehf1/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/cabine-hommefemme-2/ https://montecarlovirtualtour.com/?pano=thermes/12cabinehf2/tour.xml
+################################### Redirect Permanent /vuepanoramique/well-beeing/cryotherapie/ https://montecarlovirtualtour.com/?pano=thermes/11cabinehf2/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/restaurant/ https://montecarlovirtualtour.com/?pano=thermes/14resto/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/shopping/ https://montecarlovirtualtour.com/?pano=thermes/15shoping/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/cabines-privees/ https://montecarlovirtualtour.com/?pano=thermes/16cabines/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/piscine-jour/ https://montecarlovirtualtour.com/?pano=thermes/17poolHBleue/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/piscine-nuit/ https://montecarlovirtualtour.com/?pano=thermes/17poolHBleue/tour2.xml
+Redirect Permanent /vuepanoramique/well-beeing/jacuzzi/ https://montecarlovirtualtour.com/?pano=thermes/18jacuzzi/tour.xml
+Redirect Permanent /vuepanoramique/well-beeing/terrasse-piscine-nuit/ https://montecarlovirtualtour.com/?pano=thermes/18jacuzzi/tour.xml
+
+### SPORTS et CULTURE
+Redirect Permanent /vuepanoramique/sports-culture/mc-country-club/ https://montecarlovirtualtour.com/?pano=aeriennes/country/tour.xml
+Redirect Permanent /vuepanoramique/sports-culture/monte-carlo-golf-club/ https://montecarlovirtualtour.com/?pano=aeriennes/golf/tour.xml
+Redirect Permanent /vuepanoramique/sports-culture/water-sports/ https://montecarlovirtualtour.com/?pano=aeriennes/water/tour.xml
+Redirect Permanent /vuepanoramique/sports-culture/salle-des-etoiles/ https://montecarlovirtualtour.com/?pano=sporting/etoiles/tour.xml
+Redirect Permanent /vuepanoramique/sports-culture/salle-garnier/ https://montecarlovirtualtour.com/?pano=casinos/opera/tour.xml
+
+### CASINOS
+Redirect Permanent /vuepanoramique/vue-parnoramique-2/casino-square-by-night/ https://montecarlovirtualtour.com/?pano=casinos/opera/tour.xml
+Redirect Permanent /vuepanoramique/vue-parnoramique-2/monte-carlo-atrium/ https://montecarlovirtualtour.com/?pano=casinos/atrium/tour.xml
+Redirect Permanent /vuepanoramique/vue-parnoramique-2/salle-renaissance/ https://montecarlovirtualtour.com/?pano=casinos/renaissance/tour.xml
+Redirect Permanent /vuepanoramique/vue-parnoramique-2/salle-europe/ https://montecarlovirtualtour.com/?pano=casinos/europe/tour.xml
+Redirect Permanent /vuepanoramique/vue-parnoramique-2/salle-blanche/ https://montecarlovirtualtour.com/?pano=casinos/blanche/tour.xml
+########## TERRASSE !!!! Redirect Permanent /vuepanoramique/vue-parnoramique-2/salle-blanche/ https://montecarlovirtualtour.com/?pano=casinos/blanche/tour.xml
+Redirect Permanent /vuepanoramique/vue-parnoramique-2/salle-des-ameriques/ https://montecarlovirtualtour.com/?pano=casinos/ameriques/tour.xml
+Redirect Permanent /vuepanoramique/vue-parnoramique-2/salle-touzet-nord/ https://montecarlovirtualtour.com/?pano=casinos/touzet_nord/tour.xml
+Redirect Permanent /vuepanoramique/vue-parnoramique-2/salle-touzet-sud/ https://montecarlovirtualtour.com/?pano=casinos/touzet_sud/tour.xml
+Redirect Permanent /vuepanoramique/vue-parnoramique-2/salle-medecin/ https://montecarlovirtualtour.com/?pano=casinos/medecin/tour.xml
+Redirect Permanent /vuepanoramique/vue-parnoramique-2/salon-anglais/ https://montecarlovirtualtour.com/?pano=casinos/salon_anglais/tour.xml
+Redirect Permanent /vuepanoramique/vue-parnoramique-2/casino-cafe-de-paris/ https://montecarlovirtualtour.com/?pano=cdp/casinocdp2/tour.xml
+Redirect Permanent /vuepanoramique/vue-parnoramique-2/casino-cafe-de-paris/cafe-de-paris-casino-2/ https://montecarlovirtualtour.com/?pano=cdp/casinocdp2/tour.xml
+Redirect Permanent /vuepanoramique/vue-parnoramique-2/casino-mc-bay/ https://montecarlovirtualtour.com/?pano=mcbay/casinomcbay/tour.xml
+
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.montecarlovirtualtour\.com$
+RewriteRule ^(.*)$ https://montecarlovirtualtour.com/$1 [R=301,L]

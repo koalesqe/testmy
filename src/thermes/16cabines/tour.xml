@@ -1,0 +1,32 @@
+<krpano version="1.17.1" title="Virtual Tour"  onstart="startup();" basedir="%HTMLPATH%">
+
+		<include url="../../skin.xml" /> 
+
+	<action name="startup">
+    loadscene(scene_16cabines, null, MERGE, BLEND(1));
+	</action>
+	
+	 <events onloadcomplete="action(loader);"/>
+
+	
+	<scene name="scene_16cabines" nameid="scene_16cabines" etablissement="Thermes" dossier="thermes" galeriephoto="non" galerievideo="non" info = "non" title="Private Cabins" onstart="" thumburl="panos/16cabines.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="34.728" vlookat="0.892" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/16cabines.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/16cabines.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/16cabines.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="pooljour" onclick="action(poolnuit)" tooltip="Swimming Pool" style="skin_hotspotstyle" ath="-0.133" atv="1.071"/>
+		<hotspot name="shopping" onclick="action(shopping)" tooltip="Boutique" style="skin_hotspotstyle" ath="-86.633" atv="-1.630" />
+<hotspot name="lobby" style="skin_hotspotstyle" ath="80" atv="0"  onclick="action(lobby)" tooltip="Hôtel Hermitage Monte-Carlo" />
+	</scene>
+
+
+</krpano>

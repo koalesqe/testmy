@@ -1,0 +1,30 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_hh284, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+	
+	<scene name="scene_hh284" nameid="scene_hh284" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non" title="Deluxe Room - Garden View With Terrace - 284" onstart="" thumburl="panos/hh284.tiles/thumb.jpg" lat="" lng="" heading="" resa="oui" resaurl="http://www.hotelhermitagemontecarlo.com/luxury-rooms-suites/rooms/deluxe-room-with-a-city-view-and-terrace/">
+
+		<view hlookat="16.688" vlookat="10.106" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/hh284.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/hh284.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/hh284.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+
+</krpano>

@@ -1,0 +1,38 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_deck, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <events onloadcomplete="action(loader); js(hotelbeach());"/>
+
+
+	
+	<scene name="scene_deck" nameid="scene_deck" etablissement="Monte-Carlo Beach" dossier="beach" galeriephoto="oui" galerievideo="non" info="oui" infourl= "MCBeach-ledeck.pdf" title="Le Deck" onstart="" thumburl="thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-80" vlookat="0" fovtype="MFOV" fov="100.459" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="preview.jpg" />
+
+		<image>
+			<cube url="pano_%s.jpg" />
+			<mobile>
+				<cube url="mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="10" atv="-36.354" onclick="action(beach150m);" tooltip="Monte-Carlo Beach Seaside View"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-55" atv="-2" onclick="action(beach_lobby);" tooltip="Lobby"/>
+		<!--<hotspot name="mcbay_lobby" style="skin_hotspotstyle" ath="12" atv="-3.565" onclick="action(mcbay_lobby);" tooltip="Monte-Carlo Bay Hotel &amp; Resort" />-->
+		<hotspot name="olympic" style="skin_hotspotstyle" ath="-58" atv="-5" onclick="action(olympic);" tooltip="Olympic-Size Pool" />
+
+		
+	</scene>
+
+
+</krpano>

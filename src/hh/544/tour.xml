@@ -1,0 +1,50 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_hh544living, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+	
+	<scene name="scene_hh544living" nameid="scene_hh544living" title="Suite - Sea View - 544" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non" onstart="" thumburl="thumb.jpg" lat="" lng="" heading="" resa="oui" resaurl="">
+
+		<view hlookat="-4.411" vlookat="16.840" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="hh544living.tiles/preview.jpg" />
+
+		<image>
+			<cube url="hh544living.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="hh544living.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="bed" style="skin_hotspotstyle" ath="-105" atv="0" onclick="loadscene(scene_hh544bed, null, MERGE, BLEND(1))" tooltip="Bedroom" />
+
+	</scene>
+	
+		<scene name="scene_hh544bed" nameid="scene_hh544living" title="Suite - Sea View - 544" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non" onstart="" thumburl="thumb.jpg" lat="" lng="" heading="" resa="oui" resaurl="">
+
+		<view hlookat="-2.138" vlookat="18.978" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="hh544bed.tiles/preview.jpg" />
+
+		<image>
+			<cube url="hh544bed.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="hh544bed.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="bed" style="skin_hotspotstyle" ath="180" atv="0" onclick="loadscene(scene_hh544living, null, MERGE, BLEND(1))" tooltip="Living" />
+
+	</scene>
+
+
+</krpano>

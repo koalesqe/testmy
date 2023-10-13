@@ -1,0 +1,57 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_mcbayconference, null, MERGE, BLEND(1));
+
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+
+<action name="lobby">
+  js(loadpano('hdp/lobby_hdp/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+    
+
+    
+
+<action name="mcbay_lobby">
+        js(loadpano('mcbay/mcbay_lobby/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+    <scene name="scene_mcbayconference" nameid="scene_mcbayconference" title="Salle America - Meeting - Plenary Room" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui" infourl= "MCBay-salleAmerica.pdf" onstart="" thumburl="thumb.jpg" lat="" lng="" heading="">
+
+
+
+        <view hlookat="-0.088" vlookat="-0.917" fovtype="MFOV" fov="123.424" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto"  />
+
+
+
+        <preview url="panos/mcbayconference.tiles/preview.jpg" />
+
+
+
+        <image>
+
+            <cube url="panos/mcbayconference.tiles/pano_%s.jpg" />
+
+            <mobile>
+
+                <cube url="panos/mcbayconference.tiles/mobile_%s.jpg" />
+
+            </mobile>
+
+        </image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-149.028" atv="-1.326"  onclick="action(mcbay_lobby);" tooltip=" Lobby" />
+
+
+
+
+		
+
+    </scene>
+
+
+
+
+
+</krpano>

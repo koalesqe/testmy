@@ -1,0 +1,78 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+
+    
+
+    <action name="startup">
+
+        loadscene(scene_Diamond_suite_761, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <action name="jacuzzi">
+ js(loadpano('hh/Diamond_suite_761_jacuzzi/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());
+    </action>
+	
+<action name="hermitage_bellepoq">
+ js(loadpano('hh/hermitage_belleepoq/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());
+    </action>
+
+
+
+    <action name="loader">
+         js(timer5());  
+    </action>
+
+    
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+
+
+
+  	<scene name="scene_Diamond_suite_761" nameid="scene_Diamond_suite_761" title="Diamond suite 761" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="16.709" vlookat="9.374" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Diamond_suite_761.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/Diamond_suite_761.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/Diamond_suite_761.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+
+
+<hotspot name="spot1" url="./skin/vtourskin_mapspot.png" ath="-100.680" atv="-71.834" linkedscene="scene_Diamond_suite_761_jacuzzi" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" /> />
+
+	</scene>
+
+	<scene name="scene_Diamond_suite_761_jacuzzi" title="Diamond suite 761 jacuzzi" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="15.237" vlookat="5.056" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Diamond_suite_761_jaccuzzi.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/Diamond_suite_761_jaccuzzi.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/Diamond_suite_761_jaccuzzi.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+<hotspot name="spot1" url="./skin/vtourskin_mapspot.png" ath="-177.631" atv="15.551" linkedscene="scene_Diamond_suite_761" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+	</scene>
+
+
+
+
+</krpano>

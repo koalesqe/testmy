@@ -1,0 +1,31 @@
+<krpano version="1.17.1" title="Virtual Tour"  onstart="startup();" basedir="%HTMLPATH%">
+
+<include url="../../skin.xml" /> 
+
+
+	<action name="startup">
+
+        loadscene(scene_golfmc_sphere, null, MERGE, BLEND(1));
+
+    </action><scene name="scene_golfmc_sphere" nameid="scene_golfmc_sphere" title="Monte-Carlo Golf Club" etablissement="Aerial View" dossier="hdp" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="panos/golfmc_sphere.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="16.513" vlookat="39.921" fovtype="MFOV" fov="122.654" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/golfmc_sphere.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/golfmc_sphere.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/golfmc_sphere.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="beach150" style="skin_hotspotstyle" ath="-22.836" atv="16.055"  onclick="action(beach150m);" tooltip="Monte-Carlo Beach Seaside View" />
+		<hotspot name="sporting_air" style="skin_hotspotstyle2" ath="-10.207" atv="17.505"  onclick="action(sporting_air);" tooltip="Sporting Monte-Carlo"/>
+		<hotspot name="casino100m" style="skin_hotspotstyle" ath="15.920" atv="12.189"  onclick="action(casino100m);" tooltip="Casino Square"/>
+
+	</scene>
+
+
+</krpano>

@@ -1,0 +1,72 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+
+    
+
+    <action name="startup">
+
+        loadscene(scene_suite_pagnol, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+  
+
+
+
+    <action name="loader">
+         js(timer5());  
+    </action>
+
+    
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+
+
+
+  	<scene name="scene_suite_pagnol" nameid="scene_suite_pagnol" title="Suite Pagnol" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="-364.624" vlookat="14.429" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/suite_pagnol.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/suite_pagnol.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/suite_pagnol.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+
+
+<hotspot name="spot1" url="../vtourskin_mapspot.png" ath="-130.622" atv="3.930" linkedscene="scene_suite_pagnol_terrasse" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" /> />
+
+	</scene>
+
+	<scene name="scene_suite_pagnol_terrasse" title="Junior Suite 67" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="-17.503" vlookat="7.820" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/suite_pagnol_terrasse.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/suite_pagnol_terrasse.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/suite_pagnol_terrasse.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+<hotspot name="spot1" url="../vtourskin_mapspot.png" ath="-20.299" atv="0.362" linkedscene="scene_suite_pagnol" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+	</scene>
+
+
+
+
+</krpano>

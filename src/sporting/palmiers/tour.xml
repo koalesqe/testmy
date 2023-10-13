@@ -1,0 +1,73 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" />
+    
+
+    <action name="startup">
+        loadscene(scene_palmier1, null, MERGE, BLEND(1));
+    </action>
+<events onloadcomplete="action(loader); js(hotelsporting());"/>
+	
+	<scene name="scene_palmier1" nameid="scene_palmier1" etablissement="Sporting Monte-Carlo" dossier="sporting" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-SalledesPalmiers.pdf" title="Salle des Palmiers" onstart="" thumburl="panos/palmier1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="1.992" vlookat="12.026" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/palmier1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/palmier1.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/palmier1.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-169.589" atv="-3.345" onclick="sporting_hall()" tooltip="Lobby" />
+		
+		
+		 <layer name="journuit" keep="false" zorder="15"  selectable="false"
+	       url="switch.png"	              
+	        align="centertop"      
+		    edge="centertop"
+		    y="15"
+		    x="0"  
+		   onclick="loadscene(scene_palmier2, null, KEEPVIEW , SLIDEBLEND(1.0, 0.0, 0.2, linear));"
+	       
+	       />
+
+	</scene>
+
+	<scene name="scene_palmier2" nameid="scene_palmier1" etablissement="Sporting Monte-Carlo" dossier="sporting" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-SalledesPalmiers.pdf" title="Salle des Palmiers" onstart="" thumburl="panos/palmier2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/palmier2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/palmier2.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/palmier2.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-169.589" atv="-3.345" onclick="sporting_hall()" tooltip="Lobby" />
+		
+		
+		 <layer name="journuit" keep="false" zorder="15"  selectable="false"
+	       url="switch.png"	              
+	        align="centertop"      
+		    edge="centertop"
+		    y="15"
+		    x="0"  
+		   onclick="loadscene(scene_palmier1, null, KEEPVIEW , SLIDEBLEND(1.0, 0.0, 0.2, linear));"
+	      
+	       />
+
+	</scene>
+
+
+</krpano>

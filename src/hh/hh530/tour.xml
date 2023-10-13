@@ -1,0 +1,31 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_hh530, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+	
+	<scene name="scene_hh530" nameid="scene_hh530" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non" title="Junior Suite Family - City View - 530" onstart="" thumburl="panos/hh530.tiles/thumb.jpg" lat="" lng="" heading="" resa="oui" resaurl="http://www.hotelhermitagemontecarlo.com/luxury-rooms-suites/junior-suite/junior-suite-family/">
+
+		<view hlookat="13.446" vlookat="19.760" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/hh530.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/hh530.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/hh530.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+
+</krpano>

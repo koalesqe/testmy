@@ -1,0 +1,34 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_sporting_out, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+
+ <events onloadcomplete="action(loader); js(hotelsporting());"/>
+
+	
+	<scene name="scene_sporting_out" nameid="scene_sporting_out" etablissement="Sporting Monte-Carlo" dossier="sporting" galeriephoto="oui" galerievideo="non" info="non" title="Entrance" onstart="" thumburl="panos/sporting_out.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="202.169" vlookat="-0.087" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/sporting_out.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/sporting_out.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/sporting_out.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-120.261" atv="-24.394"  onclick="sporting_air" tooltip="Sporting Monte-Carlo - Aerial View"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-3.513" atv="-2.429"  onclick="sporting_hall" tooltip="Lobby"/>
+
+	</scene>
+
+
+</krpano>

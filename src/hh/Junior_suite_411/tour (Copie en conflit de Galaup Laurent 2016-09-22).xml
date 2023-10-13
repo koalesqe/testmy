@@ -1,0 +1,48 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+
+    
+
+    <action name="startup">
+
+        loadscene(scene_Junior_suite_411, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+
+
+    <action name="loader">
+         js(timer5());  
+    </action>
+
+    
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+
+
+
+  	<scene name="scene_Junior_suite_411" nameid="scene_Junior_suite_411" title="Junior Suite 411" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="-722.086" vlookat="16.685" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Junior_suite_411.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/Junior_suite_411.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/Junior_suite_411.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+</scene>
+
+
+
+
+</krpano>

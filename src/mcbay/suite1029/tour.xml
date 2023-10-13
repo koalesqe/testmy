@@ -1,0 +1,55 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_suite1029, null, MERGE, BLEND(1));
+
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+
+
+
+
+  	<scene name="scene_suite1029" nameid="scene_suite1029" title="Suite - Sea View - 1029" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="http://www.montecarlobay.com/luxury-rooms-suites/suites-en/suite-sea-view/">
+
+		<view hlookat="482.845" vlookat="11.245" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/suite1029.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/suite1029.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/suite1029.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+
+
+<hotspot name="spot1" style="skin_hotspotstyle" ath="-104.075" atv="9.283" linkedscene="scene_suite1029bed" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Suite - Sea View - 1029 - Bedroom"/> 
+
+
+	</scene>
+
+	<scene name="scene_suite1029bed" nameid="scene_suite1029" title="Suite - Sea View - 1029" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non" onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="http://www.montecarlobay.com/luxury-rooms-suites/suites-en/suite-sea-view/">
+
+		<view hlookat="-32.634" vlookat="7.951" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/suite1029bed.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/suite1029bed.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/suite1029bed.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+<hotspot name="spot1" style="skin_hotspotstyle" ath="133.474" atv="4.931" linkedscene="scene_suite1029" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Suite - Sea View - 1029 - Living Room"/>
+
+	</scene>
+	
+
+
+</krpano>

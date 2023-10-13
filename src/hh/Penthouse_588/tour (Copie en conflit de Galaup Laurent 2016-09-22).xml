@@ -1,0 +1,115 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+
+    
+
+    <action name="startup">
+
+        loadscene(scene_Penthouse_588, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <action name="jacuzzi">
+ js(loadpano('hh/Penthouse_588/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());
+    </action>
+	
+<action name="loader">
+         js(timer5());  
+    </action>
+
+    
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+
+
+
+  	<scene name="scene_Penthouse_588" nameid="scene_Penthouse_588" title="Penthouse 588" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="-47.263" vlookat="10.762" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/588salon.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/588salon.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/588salon.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+
+
+<hotspot name="spot1" url="./skin/vtourskin_mapspot.png" ath="132.208" atv="-1.508" linkedscene="scene_Penthouse_588_bed2" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" /> 
+<hotspot name="spot2" url="./skin/vtourskin_mapspot.png" ath="139.304" atv="8.688" linkedscene="scene_Penthouse_588_bed1" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" /> 
+<hotspot name="spot3" url="./skin/vtourskin_mapspot.png" ath="-0.490" atv="-4.765" linkedscene="scene_Penthouse_588_terrasse" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" /> 
+
+	</scene>
+
+	<scene name="scene_Penthouse_588_bed1" title="Penthouse 588" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="-34.754" vlookat="7.696" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/588bed.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/588bed.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/588bed.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+<hotspot name="spot1" url="./skin/vtourskin_mapspot.png" ath="-47.038" atv="3.630" linkedscene="scene_Penthouse_588" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+<hotspot name="spot2" url="./skin/vtourskin_mapspot.png" ath="-42.563" atv="10.249" linkedscene="scene_Penthouse_588_bed2" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+	</scene>
+	
+		<scene name="scene_Penthouse_588_bed2" title="Penthouse 588" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="-720.213" vlookat="10.548" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/588fond.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/588fond.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/588fond.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+
+
+<hotspot name="spot1" url="./skin/vtourskin_mapspot.png" ath="-172.107" atv="0.395" linkedscene="scene_Penthouse_588" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+<hotspot name="spot2" url="./skin/vtourskin_mapspot.png" ath="-172.046" atv="5.855" linkedscene="scene_Penthouse_588_bed1" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" /> 
+
+	</scene>
+
+	<scene name="scene_Penthouse_588_terrasse" title="Penthouse 588" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="15.237" vlookat="5.056" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/588terrace.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/588terrace.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/588terrace.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+<hotspot name="spot1" url="./skin/vtourskin_mapspot.png" ath="137.453" atv="12.684" linkedscene="scene_Penthouse_588" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+	</scene>
+
+
+
+
+</krpano>

@@ -1,0 +1,8 @@
+<krpano onstart="action(casino100m); " basedir="%HTMLPATH%">
+
+<include url="skin.xml" />
+
+<events onloadcomplete=" js(hotelaeriennes());"/>
+
+   
+</krpano>

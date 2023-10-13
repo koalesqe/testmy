@@ -1,0 +1,36 @@
+<krpano  title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" />
+    
+
+    <action name="startup">
+        loadscene(scene_casinoCdPterrasse1, null, MERGE, BLEND(1));
+    </action>
+	
+	<events onloadcomplete="action(loader); js(hotelccdp());"/>
+
+	
+
+	<scene name="scene_casinoCdPterrasse1" nameid="scene_casinoCdPterrasse1" title="Casino Café de Paris - Terrace" etablissement="Café de Paris Monte-Carlo" dossier="cdp" galeriephoto="oui" galerievideo="non" info="non" onstart="" thumburl="panos/casinoCdPterrasse1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-15.048" vlookat="12.152" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/casinoCdPterrasse1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/casinoCdPterrasse1.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/casinoCdPterrasse1.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-103.512" atv="-1.052" onclick="action(casinocdp)" tooltip="Casino Café de Paris"/>
+
+	</scene>
+
+	
+
+
+</krpano>

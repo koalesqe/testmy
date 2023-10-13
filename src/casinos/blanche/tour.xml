@@ -1,0 +1,102 @@
+<krpano  title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+
+
+
+<include url="../../skin.xml" />
+
+    
+
+
+
+    <action name="startup">
+
+        loadscene(scene_blanche, null, MERGE, BLEND(1));
+
+    </action>
+
+	<events onloadcomplete="action(loader); js(hotelcasinos());"/>
+
+	
+
+	<scene name="scene_blanche" nameid="blanche" etablissement="Casino de Monte-Carlo"  dossier="casinos" galeriephoto="oui" galerievideo="non" info="non" title="Salle Blanche" onstart="" thumburl="panos/blanche.tiles/thumb.jpg" lat="" lng="" heading="">
+
+
+
+		<view hlookat="1.083" vlookat="1.815" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+
+
+		<preview url="panos/blanche.tiles/preview.jpg" />
+
+
+
+		<image>
+
+			<cube url="panos/blanche.tiles/pano_%s.jpg" />
+
+			<mobile>
+
+				<cube url="panos/blanche.tiles/mobile_%s.jpg" />
+
+			</mobile>
+
+		</image>
+
+
+
+		<!-- place your scene hotspots here -->
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="44.741" atv="-2.120" linkedscene="scene_blancheterrasse" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );"  tooltip="Salle Blanche Terrace"/>
+
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-90.415" atv="-3.724" onclick="action(ameriques)" tooltip="Salle des Amériques" />
+
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-16.048" atv="-1.590" onclick="action(touzet_sud)" tooltip="Salle Touzet Sud"/>
+
+
+
+	</scene>
+
+
+
+	<scene name="scene_blancheterrasse" title="blancheterrasse" onstart="" thumburl="panos/blancheterrasse.tiles/thumb.jpg" lat="" lng="" heading="">
+
+
+
+		<view hlookat="-71.473" vlookat="-0.592" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+
+
+		<preview url="panos/blancheterrasse.tiles/preview.jpg" />
+
+
+
+		<image>
+
+			<cube url="panos/blancheterrasse.tiles/pano_%s.jpg" />
+
+			<mobile>
+
+				<cube url="panos/blancheterrasse.tiles/mobile_%s.jpg" />
+
+			</mobile>
+
+		</image>
+
+
+
+		<!-- place your scene hotspots here -->
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-152.182" atv="-10.563" linkedscene="scene_blanche"  onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );"  tooltip="Salle Blanche"/>
+
+
+
+	</scene>
+
+
+
+
+
+</krpano>
+

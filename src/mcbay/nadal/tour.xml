@@ -1,0 +1,55 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_nadal, null, MERGE, BLEND(1));
+
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+
+
+
+
+  	<scene name="scene_nadal" nameid="scene_nadal" title="Suite Nadal - Sea View - Living Room" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="https://www.montecarlosbm.com/en/hotel-monaco/monte-carlo-bay-hotel-resort/accomodation/nadal-suite">
+
+		<view hlookat="-40" vlookat="0" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="nadal_living/preview.jpg" />
+
+		<image>
+			<cube url="nadal_living/pano_%s.jpg" />
+			<mobile>
+				<cube url="nadal_living/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+
+
+<hotspot name="spot1" style="skin_hotspotstyle" ath="-77" atv="0" linkedscene="scene_nadalbed" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Bedroom"/> 
+
+
+	</scene>
+
+	<scene name="scene_nadalbed" nameid="scene_nadal" title="Suite Nadal - Sea View - Bedroom" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non" onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="https://www.montecarlosbm.com/en/hotel-monaco/monte-carlo-bay-hotel-resort/accomodation/nadal-suite">
+
+		<view hlookat="40" vlookat="0" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="nadal_bed/preview.jpg" />
+
+		<image>
+			<cube url="nadal_bed/pano_%s.jpg" />
+			<mobile>
+				<cube url="nadal_bed/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+<hotspot name="spot1" style="skin_hotspotstyle" ath="176" atv="0" linkedscene="scene_nadal" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Living Room"/>
+
+	</scene>
+	
+
+
+</krpano>

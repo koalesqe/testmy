@@ -1,0 +1,46 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" /> 
+    
+
+    <action name="startup">
+
+        loadscene(scene_arman1, null, MERGE, BLEND(1));
+
+    </action>
+	
+	<events onloadcomplete="action(loader); js(hotelone());"/>
+
+
+
+	
+    <scene name="scene_arman1" nameid="scene_arman" title="Salon Arman 1" etablissement="One Monte-Carlo" dossier="one" galeriephoto="oui" galerievideo="non" info="oui" infourl="ONE-Salle_Arman.pdf" onstart="" thumburl="thumb.jpg" lat="" lng="" heading="">
+		
+
+
+
+     <view hlookat="100" vlookat="10" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="preview.jpg" />
+
+		<image>
+			<cube url="pano_%s.jpg" />
+			<mobile>
+				<cube url="mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+
+
+        <hotspot name="one_foyer" style="skin_hotspotstyle" ath="100" atv="0" onclick="action(one_foyer); " tooltip="Foyer" keep="false" />
+
+	<plugin name="arman" url="arman.jpg" align="middleleft" x="10" y="0" scale="0.5" onclick="action(arman)"/>
+		
+
+    </scene>
+
+
+
+
+</krpano>

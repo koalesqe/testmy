@@ -1,0 +1,35 @@
+<krpano version="1.17.1" title="Virtual Tour"  onstart="startup();" basedir="%HTMLPATH%">
+
+	<include url="../../skin.xml" /> 
+
+	<action name="startup">
+    loadscene(scene_07couloir, null, MERGE, BLEND(1));
+	</action>
+	
+	 <events onloadcomplete="action(loader); js(hotelthermes());"/>
+	
+	<scene name="scene_07couloir" nameid="scene_07couloir" etablissement="Thermes Marins Monte-Carlo"  dossier="thermes" galeriephoto="oui" galerievideo="non" info="non" title="Corridors" onstart="" thumburl="panos/07couloir.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/07couloir.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/07couloir.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/07couloir.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="soins1" onclick="action(soins1)" tooltip="Treatment Room - 1" style="skin_hotspotstyle" ath="-8.416" atv="-1.227"  />
+		<hotspot name="soins2" onclick="action(soins2)" tooltip="Treatment Room - 2" style="skin_hotspotstyle2" ath="-8.618" atv="5.267"  />
+		<hotspot name="soins3" onclick="action(soins3)" tooltip="Treatment Room - 3" style="skin_hotspotstyle3" ath="8.618" atv="0.204"  />
+		<hotspot name="hf1" onclick="action(hf1)" tooltip="Women/Men Cabin - 1" style="skin_hotspotstyle" ath="-159.805" atv="-2.343"  />
+		<hotspot name="hf2" onclick="action(hf2)" tooltip="Women/Men Cabin - 2" style="skin_hotspotstyle2" ath="-159.665" atv="4.156"  />
+		<hotspot name="accueilvestiaires" onclick="action(accueilvestiaires)" tooltip="Changing Room - Front Desk" style="skin_hotspotstyle" ath="154.950" atv="2.587"  />
+
+	</scene>
+
+
+</krpano>

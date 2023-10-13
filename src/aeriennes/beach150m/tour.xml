@@ -1,0 +1,65 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" /> 
+    
+
+    <action name="startup">
+
+        loadscene(scene_beach150m, null, MERGE, BLEND(1));
+
+    </action>
+	
+	<events onloadcomplete="action(loader); js(hotelaeriennes());"/>
+
+
+
+    <scene name="scene_beach150m" nameid="scene_beach150m" title="Monte-Carlo Beach Seaside View" etablissement="Aerial View" dossier="aeriennes" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="vue1/panos/aerienne1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+
+
+        <view hlookat="-87.279" vlookat="39.394" fovtype="MFOV" fov="123.563" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-40" vlookatmax="+90" />
+
+
+
+        <preview url="panos/beach150m.tiles/preview.jpg" />
+
+
+
+        <image>
+
+            <cube url="panos/beach150m.tiles/pano_%s.jpg" />
+
+            <mobile>
+
+                <cube url="panos/beach150m.tiles/mobile_%s.jpg" />
+
+            </mobile>
+
+        </image>
+
+
+
+        <hotspot name="casino100m" style="skin_hotspotstyle" ath="30.818" atv="1.381" onclick="action(casino100m)" tooltip="Casino Square"  />
+		<hotspot name="golf" style="skin_hotspotstyle" ath="125.973" atv="-23.168" onclick="action(golf)" tooltip="Monte-Carlo Golf Club" />
+		<hotspot name="beach_lobby" style="skin_hotspotstyle3" ath="-104.411" atv="37.984" onclick="action(beach_lobby)" tooltip="Monte-Carlo Beach - Lobby" />
+		<hotspot name="beach_pool" style="skin_hotspotstyle" ath="-124.966" atv="38.292" onclick="action(olympic)" tooltip="Monte-Carlo Beach - Olympic-Size Pool" />
+		<hotspot name="vigie" style="skin_hotspotstyle" ath="-113.328" atv="19.951" onclick="action(vigie)" tooltip="Villa La Vigie" />
+		<hotspot name="mcbay_lobby" style="skin_hotspotstyle3" ath="45.039" atv="14.452" onclick="action(mcbay_lobby)" tooltip="Monte-Carlo Bay Hotel &amp; Resort" />
+		<hotspot name="airlagon" style="skin_hotspotstyle2" ath="25.181" atv="12.641" onclick="action(lagon_air)" tooltip="Monte-Carlo Bay Hotel &amp; Resort - Sandy-Bottomed Lagoon" />
+		<hotspot name="sporting_air" style="skin_hotspotstyle4" ath="20.402" atv="6.714" onclick="action(sporting_air)" tooltip="Sporting Monte-Carlo" />
+		<hotspot name="sunshine" style="skin_hotspotstyle" ath="-106.418" atv="32.642" onclick="action(sunshine)" tooltip="Monte-Carlo Beach - Diamond Suite  - Sunshine" />
+		<hotspot name="vigie_resto" style="skin_hotspotstyle2" ath="-67.137" atv="29.340" onclick="action(vigie_resto)" tooltip="La Vigie Lounge &amp; Restaurant" />
+
+		<hotspot name="deck" style="skin_hotspotstyle" ath="-138.577" atv="37.592" onclick="action(deck)" tooltip="Le Deck" />
+		
+	
+
+    </scene>
+
+	
+	
+	
+
+
+</krpano>

@@ -1,0 +1,32 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" />
+    
+
+    <action name="startup">
+        loadscene(scene_balcon, null, MERGE, BLEND(1));
+    </action> 
+	
+	<events onloadcomplete="action(loader); js(hotelvigie());"/>
+	
+	<scene name="scene_balcon" nameid="scene_balcon" etablissement="Villa La Vigie" dossier="vigie" galeriephoto="oui" galerievideo="non" info = "non" title="Bedroom Balcony" onstart="" thumburl="panos/balcon.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="41.389" vlookat="8.319" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/balcon.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/balcon.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/balcon.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="69.143" atv="-22.135" onclick="action(beach150m);" tooltip="Monte-Carlo Beach Seaside View"/> />
+
+	</scene>
+
+
+</krpano>

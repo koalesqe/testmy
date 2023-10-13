@@ -1,0 +1,71 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+
+    
+
+    <action name="startup">
+
+        loadscene(scene_Simple_suite_740, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+
+
+
+    <action name="loader">
+         js(timer5());  
+    </action>
+
+    
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+
+
+
+  	<scene name="scene_Simple_suite_740" nameid="scene_Simple_suite_740" title="Diamond suite 761" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="-3.554" vlookat="8.700" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Simple_suite_740.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/Simple_suite_740.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/Simple_suite_740.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+
+
+<hotspot name="spot1" url="./skin/vtourskin_mapspot.png" ath="133.116" atv="3.474" linkedscene="scene_Simple_suite_740_bed" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" /> />
+
+	</scene>
+
+	<scene name="scene_Simple_suite_740_bed" title="Diamond suite 740" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="">
+
+		<view hlookat="18.648" vlookat="5.524" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Simple_suite_740_bed.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/Simple_suite_740_bed.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/Simple_suite_740_bed.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+<hotspot name="spot1" url="./skin/vtourskin_mapspot.png" ath="154.073" atv="7.198" linkedscene="scene_Simple_suite_740" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+	</scene>
+
+
+
+
+</krpano>

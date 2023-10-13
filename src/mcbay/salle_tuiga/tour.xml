@@ -1,0 +1,109 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" />
+ <action name="startup">
+
+        loadscene(scene_bay_salon_tuiga, null, MERGE, BLEND(1));
+
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+
+  
+
+<action name="mcbay_lobby">
+        js(loadpano('mcbay/mcbay_lobby/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+    <scene name="scene_bay_salon_tuiga" nameid="scene_bay_salon_tuiga" title="Salle Tuiga - Meeting " etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui" infourl= "MCBay-Tuiga.htm" onstart="" thumburl="thumb.jpg" lat="" lng="" heading="">
+
+
+
+      
+<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+
+        <preview url="panos/scene_bay_salon_tuiga.tiles/preview.jpg" />
+
+
+
+        <view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/bay_salon_tuiga.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/bay_salon_tuiga.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/bay_salon_tuiga.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+
+
+
+<hotspot name="ecran" type="image" url="skin/px.jpg" edge="top"
+	 		handcursor="true"
+	 		zorder="2"
+			width="260" height="0"
+			ath="-1.5" atv="-12"
+			distorted="true"
+			enable="false"
+			rx="-8.0" ry="0.0" rz="0.0"
+	 		onclick="byeecran();"/>
+
+		<hotspot name="bouton" url="skin/play.png"
+	 		handcursor="true"
+	 		zorder="0"
+			width="40" height="40"
+			ath="-1.8" atv="-0.2"
+			
+	 		onclick="goecran();"/>
+		
+		
+		<hotspot name="x" url="skin/x.jpg" scale="0.6"
+	 		handcursor="true"
+	 		zorder="0"
+			visible="false"
+			ath="12" atv="-10.25"
+			distorted="true"
+	 		onclick="byeecran();"
+			rx="-12.0" ry="-15.0" rz="0.8"	 
+				 />
+		
+		
+	<hotspot name="video" zorder="10" edge="top" visible="false"
+         url.html5="../../plugins/videoplayer.js"
+        
+         videourl="skin/film.webm"
+         width="240" height="130"
+         ath="-1.5" atv="-11"
+         distorted="true"
+         
+         rx="-8.0" 
+         ry="0.0" 
+         rz="0.0" 
+		 pausedonstart="true"
+         loop="false"
+         volume="1.0"
+         
+		onclick="togglepause();"
+        
+         />
+		
+		
+		<action name="goecran">
+				set(hotspot[bouton].visible, false); tween(hotspot[ecran].height,150,2.0); wait(2); set(hotspot[video].visible, true); hotspot[video].play(); wait(0.5); set(hotspot[x].visible, true); tween(hotspot[x].ath, 14.4);
+		</action>	
+		
+		<action name="byeecran">
+				set(hotspot[x].visible, false); tween(hotspot[x].ath, 12); set(hotspot[bouton].visible, true); hotspot[video].stop(); wait(0.1); set(hotspot[video].visible, false); tween(hotspot[ecran].height,0,2.0); 
+		</action>	
+		
+				<hotspot name="spot1" style="skin_hotspotstyle" ath="116.673" atv="0.484"  onclick="action(mcbay_lobby);" tooltip=" Lobby" />
+
+
+    </scene>
+
+
+
+
+
+</krpano>
+

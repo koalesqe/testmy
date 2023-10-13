@@ -1,0 +1,29 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup()" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+
+	<action name="startup">
+	loadscene(scene_hermitage_terrasse_midi, null, MERGE, BLEND(1));
+	</action> <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+	
+	<scene name="scene_hermitage_terrasse_midi" nameid="scene_hermitage_terrasse_midi" title="Midi Terrace" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="oui" infourl= "HH-Terrasse-Midi.pdf" onstart="" thumburl="panos/hermitage_terrasse_midi.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="160.693" vlookat="-2.878" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/hermitage_terrasse_midi.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/hermitage_terrasse_midi.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/hermitage_terrasse_midi.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-164.419" atv="-10.566"  onclick="action(hermitage)"  tooltip="Jardin d'Hiver Lobby"  />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-55" atv="-20"  onclick="action(hercule)"  tooltip="Monaco Harbor"  />
+
+	</scene>
+
+
+</krpano>

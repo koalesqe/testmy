@@ -1,0 +1,44 @@
+<krpano version="1.17.1" title="Virtual Tour"  onstart="startup();" basedir="%HTMLPATH%">
+
+<include url="../../skin.xml" /> 
+
+	<action name="startup">
+    loadscene(scene_lagoon_sphere, null, MERGE, BLEND(1));
+	</action>
+	
+	
+	
+	
+
+	
+	<scene name="scene_lagoon_sphere" nameid="scene_lagoon_sphere" title="Monte-Carlo Bay Hotel &amp; Resort - Sandy-Bottomed Lagoon" etablissement="Aerial View" dossier="aeriennes" galeriephoto="oui" galerievideo="non" info="oui" onstart="" thumburl="panos/lagoon_sphere.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-396.824" vlookat="22.090" fovtype="MFOV" fov="122.654" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/lagoon_sphere.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/lagoon_sphere.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/lagoon_sphere.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="pool_out" style="skin_hotspotstyle" ath="79.539" atv="6.715"  onclick="action(pool_out)" tooltip="Outdoor Swimming Pool"/>
+		<hotspot name="bluebay" style="skin_hotspotstyle" ath="128.548" atv="5.956"  onclick="action(bluebay)" tooltip="Blue Bay"/>
+		<hotspot name="lagon" style="skin_hotspotstyle" ath="63.955" atv="15.933"  onclick="action(lagon)" tooltip="Sandy-bottomed Lagoon"/>
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="107.872" atv="0.744"  onclick="action(mcbay_lobby)" tooltip="Lobby"/>
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="-44.403" atv="22.036" onclick="action(lagonfond)" tooltip="Sandy-bottomed Lagoon"/>
+		<hotspot name="beach150" style="skin_hotspotstyle" ath="165.383" atv="-20.062"  onclick="action(beach150m);" tooltip="Monte-Carlo Beach Seaside View"/>
+		<hotspot name="sporting_air" style="skin_hotspotstyle" ath="-30.478" atv="-25.760" onclick="action(sporting_air);" tooltip="Sporting Monte-Carlo Aerial View"/>
+		<hotspot name="sporting_entrance" style="skin_hotspotstyle" ath="24.650" atv="1.563" onclick="action(sporting_out);" tooltip="Sporting Monte-Carlo - Entrance" />
+		<hotspot name="columbia" style="skin_hotspotstyle" ath="126.453" atv="-1.241" onclick="action(columbia);" tooltip="Salle Columbia" />
+		<hotspot name="mediterraneen" style="skin_hotspotstyle" ath="-61.036" atv="0.337" onclick="action(mediterraneen);" tooltip="Monte-Carlo Bay Hotel &amp; Resort – Jardin Méditerranéen" />
+		<hotspot name="spot10" style="skin_hotspotstyle" ath="-120" atv="9" onclick="action(lagonmat);" tooltip="Sandy-Bottomed Lagoon" />
+	</scene>
+	
+	
+
+
+</krpano>

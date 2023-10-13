@@ -1,0 +1,90 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_belleepoq, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+
+
+    <scene name="scene_belleepoq" nameid="scene_belleepoq" title="Salle Belle Epoque" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="oui" infourl= "HH-SalleBelle Epoque.pdf" onstart="" thumburl="thumb.jpg" lat="" lng="" heading="">
+
+
+
+        <view hlookat="-361.082" vlookat="1.674" fovtype="MFOV" fov="112.017" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto"  />
+
+
+
+        <preview url="panos/belleepoq.tiles/preview.jpg" />
+
+
+
+        <image>
+
+            <cube url="panos/belleepoq.tiles/pano_%s.jpg" />
+
+            <mobile>
+
+                <cube url="panos/belleepoq.tiles/mobile_%s.jpg" />
+
+            </mobile>
+
+        </image>
+        
+        <layer name="journuit" keep="false" zorder="15"  selectable="false"
+	       url="switch.png"
+	   	          
+	       align="centertop"
+	      edge="centertop"
+		   y="15"
+		   x="0"     
+		   onclick="loadscene(scene_belle_epoq_repas, null, KEEPVIEW , SLIDEBLEND(1.0, 0.0, 0.2, linear));"/>
+
+
+
+<!--        <hotspot name="spot1" style="skin_hotspotstyle" ath="0.219" atv="1.368" onclick="action(pavyllon);" tooltip="Pavyllon Monte-Carlo" />
+-->		<hotspot name="spot2" style="skin_hotspotstyle" ath="180" atv="0"  onclick="action(limun)" tooltip="Le Limùn" />
+
+    </scene>
+    
+    
+    
+    	<scene name="scene_belle_epoq_repas"  nameid="scene_belleepoq" title="Salle Belle Epoque" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="oui"  infourl= "HH-SalleBelle Epoque.pdf" onstart="" thumburl="thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/belle_epoq_repas.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/belle_epoq_repas.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/belle_epoq_repas.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		  <layer name="journuit" keep="false" zorder="15"  selectable="false"
+	       url="switch.png"
+	   	          
+	       align="centertop"
+	      edge="centertop"
+		   y="15"
+		   x="0"     
+		   onclick="loadscene(scene_belleepoq, null, KEEPVIEW , SLIDEBLEND(1.0, 0.0, 0.2, linear));"/>
+
+		
+<!--		<hotspot name="spot1" style="skin_hotspotstyle" ath="0.219" atv="1.368" onclick="action(pavyllon);" tooltip="Pavyllon - Terrace" />
+-->		<hotspot name="spot2" style="skin_hotspotstyle" ath="180" atv="0"  onclick="action(limun)" tooltip="Le Limùn" />
+
+	</scene>
+
+
+
+
+
+</krpano>

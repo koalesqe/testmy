@@ -1,0 +1,28 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" />
+    
+
+    <action name="startup">
+        loadscene(scene_bed5, null, MERGE, BLEND(1)); </action> <events onloadcomplete="action(loader); js(hotelvigie());"/>
+	
+	<scene name="scene_bed5" nameid="scene_bed5" etablissement="Villa La Vigie" dossier="vigie" galeriephoto="oui" galerievideo="non" info="non" title="Bedroom - 5" onstart="" thumburl="panos/bed5.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-43.755" vlookat="4.534" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/bed5.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/bed5.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/bed5.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+
+</krpano>

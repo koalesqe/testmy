@@ -1,0 +1,62 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+
+    
+
+    <action name="startup">
+
+        loadscene(scene_Simple_suite_exclusive_62_63, null, MERGE, BLEND(1));
+
+    </action>
+
+ 
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+
+
+
+  	<scene name="scene_Simple_suite_exclusive_62_63" nameid="scene_Simple_suite_exclusive_62_63" title="Diamond Suite With Jacuzzi - Bedroom" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="http://www.hotelhermitagemontecarlo.com/luxury-rooms-suites/diamond-suites/simple-suite-avec-jacuzzi/">
+
+		<view hlookat="-356.499" vlookat="5.518" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Simple_suite_exclusive_62_63.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/Simple_suite_exclusive_62_63.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/Simple_suite_exclusive_62_63.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+
+
+<hotspot name="spot1"  style="skin_hotspotstyle" ath="92.625" atv="-0.636" linkedscene="scene_Simple_suite_exclusive_62_63_terrasse" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Jacuzzi Terrace"/> 
+
+	</scene>
+
+	<scene name="scene_Simple_suite_exclusive_62_63_terrasse" nameid="scene_Simple_suite_exclusive_62_63" title="Diamond Suite With Jacuzzi - Terrace" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="http://www.hotelhermitagemontecarlo.com/luxury-rooms-suites/diamond-suites/simple-suite-avec-jacuzzi/">
+
+		<view hlookat="90.443" vlookat="10.930" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/Simple_suite_exclusive_62_63_terrasse.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/Simple_suite_exclusive_62_63_terrasse.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/Simple_suite_exclusive_62_63_terrasse.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+<hotspot name="spot1"  style="skin_hotspotstyle" ath="-14.949" atv="4.249" linkedscene="scene_Simple_suite_exclusive_62_63" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Bedroom"/>
+	</scene>
+
+
+
+
+</krpano>

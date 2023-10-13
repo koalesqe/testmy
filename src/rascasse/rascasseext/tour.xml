@@ -1,0 +1,36 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" />
+    
+
+    <action name="startup">
+        loadscene(scene_rascasseext, null, MERGE, BLEND(1));
+    </action>
+	
+	<events onloadcomplete="action(loader); js(hotelrascasse());"/>
+
+	<scene name="scene_rascasseext" nameid="scene_rascasseext" etablissement="La Rascasse" dossier="rascasse" galeriephoto="oui" galerievideo="non" info="oui" title="Terrace" onstart="" thumburl="panos/rascasseext.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-228.063" vlookat="3.443" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/rascasseext.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/rascasseext.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/rascasseext.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="sol" style="skin_hotspotstyle" ath="171.936" atv="-1.549" onclick="action(rascasse1)"  tooltip="Ground Floor" />
+		<hotspot name="harbor" style="skin_hotspotstyle" ath="75.546" atv="-7.107" onclick="action(hercule)"  tooltip="Monaco Harbor" />
+		<hotspot name="casino square" style="skin_hotspotstyle" ath="37.298" atv="-10.351" onclick="action(casino100m)"  tooltip="Casino Square" />
+
+
+
+	</scene>
+
+
+</krpano>

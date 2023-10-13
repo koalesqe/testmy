@@ -1,12 +1,5180 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+<head>
+	<title>Monte-Carlo Virtual Tour</title>
+
+	<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+
+	<meta property="og:url" content="https://montecarlovirtualtour.com/index.html" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Monte-Carlo Virtual Tour" />
+	<meta property="og:description" content="Découvrez la Société des Bains de Mer en 360°." />
+	<meta property="og:image" content="https://montecarlovirtualtour.com/vignette-facebook.jpg" />
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/overlay.js"></script>
+	<script src="tour.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<link rel="stylesheet" href="css/swiper.css">
+
+	<script>
+		function hideSplashScreen() {
+			$('#splashscreen').removeClass('visible');
+			}
+		function showSplashScreen() {
+			setTimeout(function() { $('#splashscreen').removeClass('visible'); }, 2000);
+			}
+	</script>
+
+</head>
+
+<body onload="showSplashScreen(); timeraspectvignette(); /* testconnectionlolo(); */ cachelogotitre();">
+
+	<!-- Splash screen -->
+
+	<a id="splashscreen" href="javascript:hideSplashScreen();" class="splashscreen visible">
+		<img class="splashscreen-logo" src="img/logo-sbm.png" alt="SBM"/>
+	</a>
+
+
+	<!-- Facebook -->
+
+	 <script>
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.8";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<!-- KR Pano -->
+
+	<div id="krpanoDIV" class="krpanoDIV"></div>
+
+	<script>
+
+		/*-------------------------------------- APPEL KRPANO -----------------------------------------------------*/
+
+		var conteneur = document.querySelector(".krpanoDIV");
+
+		/*-------------------------------------- CHARGEMENT XML DE LA VUE INITIALE ------------------------------------------------*/
+
+		
+		
+		embedpano({ 
+			xml: "tour.xml",
+			target: "krpanoDIV",
+			html5: "prefer",
+			passQueryParameters: true
+			});
+
+		/*-------------------------------------- CHARGEMENT DE LA VUE INITIALE ----------------------------------------------------*/
+
+		function krpano() {
+			return document.getElementById("krpanoSWFObject");
+		}
+
+		function loadpano(xmlname) {
+			krpano().call("loadpano(" + xmlname + ", null, REMOVESCENES, BLEND(1));");
+		}
+
+		/*-------------------------------------- CHARGEMENT DE LA VUE INITIALE ----------------------------------------------------*/
+
+		$(function () {
+			$(".scrollable").scrollable();
+		});
+
+
+	// ! \\ Bug
+
+		/*
+
+		// set the default xml file
+		viewer.addVariable("xml", "getlink.xml");
+
+		// pass all parameters from the html file to the viewer
+		viewer.passQueryParameters();
+
+		// pass the url of the html file to the viewer
+		var curhtmlpath = String(document.location);
+		curhtmlpath = curhtmlpath.substring(0,curhtmlpath.indexOf(".html")+5);
+		viewer.addVariable("js_htmlpath", curhtmlpath);
+
+		// embed and start the viewer
+		viewer.embedpano({
+			xml: "tour.xml",
+			target: "krpanoDIV",
+			html5: "prefer",
+			passQueryParameters: true
+			});
+
+		*/
+
+	// function that generates the pano url
+	function make_panourl() {
+
+		var krpano = document.getElementById("krpanoObject");
+
+		// krpano not there or not ready
+		if (!krpano || !krpano.get) return "";
+
+		// get the path of the current html file
+		var htmlpath = String(document.location);
+
+		// cut of any exsitings parameters
+		{
+			var qmark = htmlpath.indexOf("?")
+			if (qmark > 0) htmlpath = htmlpath.substring(0,qmark);
+		}
+
+		// get the current xml
+		var xml = krpano.get("xml.url");
+
+		// get the current looking directing
+		var hlookat = Number( krpano.get("view.hlookat") );
+		var vlookat = Number( krpano.get("view.vlookat") );
+		var fov     = Number( krpano.get("view.fov") );
+
+		var parameters = "?xml=" + xml + "&view.hlookat=" + hlookat.toFixed(2) + "&view.vlookat=" + vlookat.toFixed(2) + "&view.fov=" + fov.toFixed(2);
+
+		var link = document.getElementById("panourl");
+		link.href = htmlpath + parameters;
+		link.innerHTML = htmlpath + "<b>" + parameters + "</b>";
+
+		}
+
+	</script>
+
+
+<!-------------------------------------- CARTE CERCLE ------------------------------------------------>
+
+	<img src="img/close-but.png" id="fermer-carte-cercle" class="fermer-menu-photo" />
+
+	<!--<iframe id="carte-cercle-generique" class="carte-cercle" src=""></iframe>-->
+
+	<object id="carte-cercle-generique" class="carte-cercle" data="" type="text/html"></object>
+
+	<img src="img/close-but.png" id="fermer-plans" class="fermer-menu-photo" />
+	<iframe id="plans" class="galeries" src=""></iframe>
+
+
+
+	<div class="top" id="top"></div>
+
+	<div id="galerie-but"></div>
+
+	<a href="https://montecarlovirtualtour.com/" target="_self"><img id="logo-sbm" src="img/logo_SBM.png" /></a>
+
+	<div class="bottom" id="bottom" class="option-happy"></div> <img id="close-bottom" class="close-bottom" src="img/close-but.png" />
+
+	<div class="right" id="right"></div>
+
+	<!--<button class="lef" id="left">RIGHT</button>-->
+
+	<img id="logotitre" class="logotitre" src="#" />
+
+	<h1 id="titre" class="titre"></h1>
+
+
+<!-------------------------------------- CHARGEMENT ------------------------------------------------>
+
+	<div id="progressbox">
+
+		<div id="progressbar"></div>
+
+		<div id="progresspercent"><span>0</span> %</div>
+
+	</div>
+
+
+<!-------------------------------------- PICTOS COMPLEMENTAIRES ------------------------------------------------>
+
+	<div id="boutons" class="boutons">
+
+		<div id="video" class="video"></div>
+
+		<div id="photo" class="photo"></div>
+
+		<div id="info" class="info"></div>
+
+		<a href="#"  target="_blank" id="resa" class="resa"></a>
+
+		<div id="fullscreen" class="fullscreen"></div>
+
+		<a id="partage" class="partage" href='javascript:fenetreCent("https://www.facebook.com/sharer/sharer.php?u=http%3A//proto.vdt-hosting.fr/virtualtour/","fencent",480,60,"menubar=no,scrollbars=no,statusbar=no")'></a>
+
+	</div>
+
+<script language="JavaScript">
+	function fenetreCent(url,nom,largeur,hauteur,options) {
+	var haut=(screen.height-hauteur)/2;
+	var Gauche=(screen.width-largeur)/2;
+	fencent=window.open(url,nom,"top="+haut+",left="+Gauche+",width="+largeur+",height="+hauteur+","+options);
+	}
+</script>
+
+
+	<!-------------------------------------- ETABLISSEMENTS ------------------------------------------------>
+
+	<div id="enveloppe">
+
+		<div id="bandeau-slider">
+
+			<div id="slide-1" class="images"><img class="etablissement" src="img/visu_air.jpg" onclick="loadpano('aeriennes/casino100m/tour.xml'); resethotel(); hotelaeriennes(); haut(); timer7();" /></div>
+
+			<div id="slide-2" class="images"><img class="etablissement" src="img/logo_HDP.jpg" onclick="loadpano('hdp/lobby_hdp/tour.xml'); resethotel(); hoteldeparis(); haut(); timer7();" /></div>
+
+			<div id="slide-3" class="images"><img class="etablissement" src="img/logo_HH.jpg" onclick="loadpano('hh/lobby_hiver_hermitage/tour.xml'); resethotel(); hotelhermitage(); haut(); timer7();" /></div>
+
+			<div id="slide-4" class="images"><img class="etablissement" src="img/logo-Monte-CarloBay.jpg" onclick="loadpano('mcbay/mcbay_lobby/tour.xml'); resethotel(); hotelmcbay(); haut(); timer7();" /></div>
+
+			<div id="slide-5" class="images"><img class="etablissement" src="img/logo_MCBeach.jpg" onclick="loadpano('beach/lobby/tour.xml'); resethotel(); hotelbeach(); haut(); timer7();" /></div>
+			
+			<div id="slide-16" class="images"><img class="etablissement" src="img/onemontecarlo.jpg" onclick="loadpano('one/one_mat/tour.xml'); resethotel(); hotelone(); haut(); timer7();" /></div>
+
+			<div id="slide-6" class="images"><img class="etablissement" src="img/visu_sporting.jpg" onclick="loadpano('sporting/sporting_out/tour.xml'); resethotel(); hotelsporting(); haut(); timer7();" /></div>
+			
+			<div id="slide-8" class="images"><img class="etablissement" src="img/visu_cdp.jpg" onclick="loadpano('cdp/cdphall/tour.xml'); resethotel(); hotelcdp(); haut(); timer7();" /></div>
+			
+			<div id="slide-10" class="images"><img class="etablissement" src="img/visu_buddhabar.jpg" onclick="loadpano('buddhabar/buddhabas/tour.xml'); resethotel(); hotelbuddhabar(); haut(); timer7();" /></div>
+			
+			<div id="slide-11" class="images"><img class="etablissement" src="img/visu_rascasse.jpg" onclick="loadpano('rascasse/rascasseext/tour.xml'); resethotel(); hotelrascasse(); haut(); timer7();" /></div>
+		
+			<div id="slide-9" class="images"><img class="etablissement" src="img/visu_casinos.jpg" onclick="loadpano('casinos/atrium/tour.xml'); resethotel(); hotelcasinos(); haut(); timer7();" /></div>
+
+			<div id="slide-7" class="images"><img class="etablissement" src="img/logo_Thermes_Marins.jpg" onclick="loadpano('thermes/17poolHBleue/tour.xml'); resethotel(); hotelthermes(); haut(); timer7();" /></div>
+
+			<div id="slide-12" class="images"><img class="etablissement" src="img/visu_vigie.jpg" onclick="loadpano('vigie/salon/tour.xml'); resethotel(); hotelvigie(); haut(); timer7();" /></div>
+
+
+
+
+
+			<div id="slide-13" class="images"><img class="etablissement" src="img/transparent.png" /></div>
+
+			<div id="slide-14" class="images"><img class="etablissement" src="img/transparent.png" /></div>
+
+
+
+		</div>
+
+		<div id="arrow-left" class="arrow-left" style="width: 15%;"><img src="img/arrow-left.png" /></div>
+
+		<div id="arrow-left2" class="arrow-left" style="width: 15%;"><img src="img/arrow-left.png" /></div>
+
+		<div id="arrow-left3" class="arrow-left" style="width: 15%;"><img src="img/arrow-left.png" /></div>
+
+		<div id="arrow-right" class="arrow-right" style="width: 15%;"><img src="img/arrow-right.png" /></div>
+
+		<div id="arrow-right2" class="arrow-right" style="width: 15%;"><img src="img/arrow-right.png" /></div>
+
+		<div id="arrow-right3" class="arrow-right" style="width: 15%;"><img src="img/arrow-right.png" /></div>
+
+
+
+	</div>
+
+
+
+
+
+	<!-------------------------------------- INFOS COMPLEMENTAIRES ------------------------------------------------>
+
+	<div id="infos-complementaires">
+
+		<a id="linkedin" class="infos-complementaires" href="https://fr.linkedin.com/company/monte-carlo-sbm---soci-t-des-bains-de-mer" target="_blank"></a>
+
+		<a id="instagram" class="infos-complementaires" href="https://www.instagram.com/montecarlosbm/" target="_blank"></a>
+
+		<a id="twitter" class="infos-complementaires" href="https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwi82YTdqvPPAhXEuBoKHR8vB6IQFggpMAA&url=https%3A%2F%2Ftwitter.com%2Fmontecarlosbm%3Flang%3Dfr&usg=AFQjCNE5d7b7ZOvJyYD8bWViN3j7z2_6OA&sig2=eumXj0f6M-DWCrArvEagwA" target="_blank"></a>
+
+		<a id="facebook" class="infos-complementaires" href="https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwir_sahqvPPAhWGzRoKHbc7B-EQFggcMAA&url=https%3A%2F%2Fwww.facebook.com%2FMonteCarloSBM%2F&usg=AFQjCNG9m2eLOy8ThsGkKUeUE7j55G8S5g&sig2=sgc76CzrynWXad5ieYN8kQ&bvm=bv.136593572,d.d24" target="_blank"></a>
+
+		<a id="google" class="infos-complementaires" href="https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwiqk_n4qvPPAhUDQBoKHSdjCo0QFggwMAI&url=https%3A%2F%2Fplus.google.com%2F%2BMontecarlosbm&usg=AFQjCNHuYgEZzLa0ryFtBfxquuUqQepIVQ&sig2=SdsK_GHOwmR2wHafn-jE3Q&bvm=bv.136593572,d.d24" target="_blank"></a>
+
+		<a id="vimeo" class="infos-complementaires" href="https://www.youtube.com/user/SBMmonaco" target="_blank"></a>
+
+		<img id="separation" class="infos-complementaires" src="img/separation.png" />
+
+		<img id="carte-cerlce" class="infos-complementaires" src="img/carte-cercle.png" />
+
+		<img id="separation" class="infos-complementaires" src="img/separation.png" />
+
+		<p id="credits" class="infos-complementaires"> <span>Crédits photos :</span>
+
+			<br> Christophe Bouthé
+
+			<br> Laurent Galaup
+
+			<br> <span>Conception et réalisation :</span>
+
+			<br> Agence Vent d'autan </p>
+
+	</div>
+
+
+
+
+
+<!-------------------------------------- ETABLISSEMENTS ------------------------------------------------>
+
+	<!-------------------------------------- HOTEL DE PARIS------------------------------------------------>
+
+
+
+
+
+
+
+	<div id="lightbox"> </div>
+
+	<!--<img id="hoteldeparislogo" class="logohotel" src="img/logo_HDP.jpg" />-->
+
+	<h1 id="hoteldeparislogo" class="logohotel">Hôtel de Paris Monte-Carlo</h1>
+
+	<div id="hoteldeparis" class="cadre-vignettes">
+
+
+
+		<!-- Lobby -->
+
+		<h1 class="separation">Lobby &amp; Patio</h1>
+
+		<hr>
+
+		<div id="scene_lobby_hdp" class="vignettes" onclick="loadpano('hdp/lobby_hdp/tour.xml'); resethotel(); nomdelavue = 'scene_lobby_hdp'; hidelightbox();">
+
+			<img src="hdp/lobby_hdp/panos/lobby_hdp.tiles/thumb.jpg" />
+
+			<p class="legende">Lobby</p>
+
+		</div>
+
+
+
+
+
+		<div id="scene_patio" class="vignettes" onclick="loadpano('hdp/patio/tour.xml'); resethotel(); nomdelavue = 'scene_patio'; hidelightbox();">
+
+			<img src="hdp/patio/panos/patio.tiles/thumb.jpg" />
+
+			<p class="legende">Patio</p>
+
+		</div>
+
+
+
+
+
+		<!-- restaurants et bars -->
+
+		<h1 class="separation">Restaurants &amp; Bars</h1>
+
+		<hr>
+
+		<div id="scene_ducasse" class="vignettes" onclick="loadpano('hdp/ducasse/tour.xml'); resethotel(); nomdelavue = 'ducasse'; hidelightbox();">
+
+			<img src="hdp/ducasse/panos/ducasse.tiles/thumb.jpg" />
+
+			<p class="legende">Le Louis XV – Alain Ducasse</p>
+
+		</div>
+
+
+
+		<div id="scene_grill_roof" class="vignettes" onclick="loadpano('hdp/grill/tour.xml'); resethotel(); nomdelavue = 'scene_grill_roof'; hidelightbox();">
+
+			<img src="hdp/grill/panos/grill_roof.tiles/thumb.jpg" />
+
+			<p class="legende">Le Grill</p>
+
+		</div>
+
+
+
+		<div id="scene_omer" class="vignettes" onclick="loadpano('hdp/omer/tour.xml'); resethotel(); nomdelavue = 'scene_omer'; hidelightbox();">
+
+			<img src="hdp/omer/panos/omer.tiles/thumb.jpg" />
+
+			<p class="legende">Em Sherif</p>
+
+		</div>
+
+
+
+		<div id="scene_baramericain" class="vignettes" onclick="loadpano('hdp/baramericain/tour.xml'); resethotel(); nomdelavue = 'scene_baramericain'; hidelightbox();">
+
+			<img src="hdp/baramericain/panos/baramericain.tiles/thumb.jpg" />
+
+			<p class="legende">Le Bar Américain</p>
+
+		</div>
+
+
+
+
+
+		<div id="scene_cavecouloir" class="vignettes" onclick="loadpano('hdp/cavecouloir/tour.xml'); resethotel(); nomdelavue = 'cavecouloir'; hidelightbox();">
+
+			<img src="hdp/cavecouloir/panos/cavecouloir.tiles/thumb.jpg" />
+
+			<p class="legende">Wine Cellars</p>
+
+		</div>
+
+
+
+		 <!-- Meeting & Banqueting -->
+
+		<h1 class="separation">Meeting &amp; Banqueting</h1>
+
+		<hr>
+
+		<div id="scene_empire" class="vignettes" onclick="loadpano('hdp/empire/tour.xml'); resethotel(); nomdelavue = 'empire'; hidelightbox();">
+
+			<img src="hdp/empire/panos/empire.tiles/thumb.jpg" />
+
+			<p class="legende">Salle Empire</p>
+
+		</div>
+
+
+
+		<div id="scene_churchill" class="vignettes" onclick="loadpano('hdp/grill/tour2.xml'); resethotel(); nomdelavue = 'scene_churchill'; hidelightbox();">
+
+			<img src="hdp/grill/panos/churchill.tiles/thumb.jpg" />
+
+			<p class="legende">Salon Churchill</p>
+
+		</div>
+
+
+
+
+
+
+
+		<div id="scene_salon_charles3" class="vignettes" onclick="loadpano('hdp/salon_charles3/tour.xml'); resethotel(); nomdelavue = 'scene_salon_charles3'; hidelightbox();">
+
+			<img src="hdp/salon_charles3/thumb.jpg" />
+
+			<p class="legende">Salon Charles III</p>
+
+		</div>
+
+
+
+		<div id="scene_salon_hippolyte" class="vignettes" onclick="loadpano('hdp/salon_hippolyte/tour.xml'); resethotel(); nomdelavue = 'scene_salon_hippolyte'; hidelightbox();">
+
+			<img src="hdp/salon_hippolyte/thumb.jpg" />
+
+			<p class="legende">Salon Louise Hippolyte</p>
+
+		</div>
+
+
+
+
+
+			<div id="scene_salon_jacques1" class="vignettes" onclick="loadpano('hdp/salon_jacques1/tour.xml'); resethotel(); nomdelavue = 'scene_salon_jacques1'; hidelightbox();">
+
+			<img src="hdp/salon_jacques1/thumb.jpg" />
+
+			<p class="legende">Salon Jacques 1er</p>
+
+		</div>
+
+
+
+
+
+		<div id="scene_caveroom" class="vignettes" onclick="loadpano('hdp/cavecouloir/tour2.xml'); resethotel(); nomdelavue = 'scene_caveroom'; hidelightbox();">
+
+			<img src="hdp/cavecouloir/panos/caveroom.tiles/thumb.jpg" />
+
+			<p class="legende">Wine Cellars - Private Banqueting Room</p>
+
+		</div>
+
+
+
+
+
+		<!-- Leisure -->
+
+		<h1 class="separation">Leisure</h1>
+
+		<hr>
+
+
+
+		 <div id="scene_spa_accueil" class="vignettes" onclick="loadpano('hdp/wellness_sky_club/tour.xml'); resethotel(); nomdelavue = 'scene_spa_accueil'; hidelightbox();">
+
+			<img src="hdp/wellness_sky_club/panos/spa_accueil.tiles/thumb.jpg" />
+
+			<p class="legende">Wellness Sky Club</p>
+
+		</div>
+
+		<div id="scene_17piscinejour" class="vignettes" onclick="loadpano('thermes/17poolHBleue/tour.xml'); resethotel(); nomdelavue = '17piscinejour'; hidelightbox();">
+
+			<img src="thermes/17poolHBleue/panos/17pool.tiles/thumb.jpg" />
+
+			<p class="legende">Thermes Marins Monte-Carlo</p>
+
+		</div>
+
+
+		<div id="scene_olympic_pool" class="vignettes" onclick="loadpano('beach/olympic_pool/tour.xml'); resethotel(); nomdelavue = 'scene_olympic_pool'; hidelightbox();">
+
+			<img src="beach/olympic_pool/panos/olympic_pool.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo Beach Club</p>
+
+		</div>
+
+
+
+		<div id="scene_country" class="vignettes" onclick="loadpano('aeriennes/country/tour.xml'); resethotel(); nomdelavue = 'scene_country'; hidelightbox();">
+
+			<img src="aeriennes/country/panos/country.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo
+
+				<br>Country Club</p>
+
+		</div>
+
+
+
+
+
+		<div id="scene_golfmc_sphere" class="vignettes" onclick="loadpano('aeriennes/golf/tour.xml'); resethotel(); nomdelavue = 'scene_golfmc_sphere'; hidelightbox();">
+
+			<img src="aeriennes/golf/panos/golfmc_sphere.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo
+
+				<br>Golf Club</p>
+
+		</div>
+
+
+
+		<div id="atrium" class="vignettes" onclick="loadpano('casinos/atrium/tour.xml'); resethotel(); nomdelavue = 'atrium'; hidelightbox();">
+
+			<img src="casinos/atrium/panos/atrium.tiles/thumb.jpg" />
+
+			<p class="legende">Casino de Monte-Carlo</p>
+
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	<div id="hoteldeparissuites" class="cadre-vignettes">
+
+		<!-- Suites -->
+
+		<h1 class="separation">Rooms &amp; Suites</h1>
+
+		<hr>
+
+		
+
+		<div id="scene_hp669" class="vignettes" onclick="loadpano('hdp/hp669.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_hp669'; hidelightbox();">
+
+			<img src="hdp/hp669.tiles/thumb.jpg" />
+
+			<p class="legende">Superior Room - Patio View</p>
+
+		</div>
+		
+	
+
+
+
+		<div id="scene_hp563bed" class="vignettes" onclick="loadpano('hdp/hp563bed.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_hp563bed'; hidelightbox();">
+
+			<img src="hdp/hp563bed.tiles/thumb.jpg" />
+
+			<p class="legende">Deluxe Room – Ctity or Patio View</p>
+
+		</div>
+
+
+
+		<div id="scene_HP_560" class="vignettes" onclick="loadpano('hdp/HP_560.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_HP_560'; hidelightbox();">
+
+			<img src="hdp/HP_560.tiles/thumb.jpg" />
+
+			<p class="legende">Deluxe Room – Harbour View</p>
+
+		</div>
+
+
+
+		<div id="scene_hp291" class="vignettes" onclick="loadpano('hdp/hp291/tour.xml'); resethotel(); nomdelavue = 'scene_hp291'; hidelightbox();">
+
+			<img src="hdp/hp291/thumb.jpg" />
+
+			<p class="legende">Exclusive Room – Sea View</p>
+
+		</div>
+
+
+
+		<!--<div id="scene_HP_568" class="vignettes" onclick="loadpano('hdp/HP_568/tour.xml'); resethotel(); nomdelavue = 'scene_HP_568'; hidelightbox();">
+
+			<img src="hdp/HP_568/thumb.jpg" />
+
+			<p class="legende">Exclusive Room – Sea View – 568</p>
+
+		</div>-->
+
+
+
+		<div id="scene_194" class="vignettes" onclick="loadpano('hdp/194/tour.xml'); resethotel(); nomdelavue = 'scene_194'; hidelightbox();">
+
+			<img src="hdp/194/panos/194.tiles/thumb.jpg" />
+
+			<p class="legende">Exclusive Room  -  Sea View with Terrace - 194</p>
+
+		</div>
+		
+		
+		
+
+
+		<div id="scene_hp411" class="vignettes" onclick="loadpano('hdp/hp411/tour.xml'); resethotel(); nomdelavue = 'scene_hp411'; hidelightbox();">
+
+			<img src="hdp/hp411/thumb.jpg" />
+
+			<p class="legende">Exclusive Room – Casino View</p>
+
+		</div>
+
+
+
+		<div id="scene_422" class="vignettes" onclick="loadpano('hdp/hp422.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_422'; hidelightbox();">
+
+			<img src="hdp/hp422.tiles/thumb.jpg" />
+
+			<p class="legende">Junior Suite – City or Patio View</p>
+
+		</div>
+
+
+
+
+
+
+		<div id="scene_hp_315_living" class="vignettes" onclick="loadpano('hdp/hp315/tour.xml'); resethotel(); nomdelavue = 'scene_hp_315_living'; hidelightbox();">
+
+			<img src="hdp/hp315/hp_315_bed.tiles/thumb.jpg" />
+
+			<p class="legende">Junior Suite – Casino View</p>
+
+		</div>
+
+
+
+		<div id="scene_hp490" class="vignettes" onclick="loadpano('hdp/hp490/tour.xml'); resethotel(); nomdelavue = 'scene_hp490'; hidelightbox();">
+
+			<img src="hdp/hp490/thumb.jpg" />
+
+			<p class="legende">Junior Suite – Sea View</p>
+
+		</div>
+
+
+
+		<div id="scene_suite550_living" class="vignettes" onclick="loadpano('hdp/550/tour.xml'); resethotel(); nomdelavue = 'scene_suite550_living'; hidelightbox();">
+
+			<img src="hdp/550/panos/suite550_living.tiles/thumb.jpg" />
+
+			<p class="legende">Suite - City View</p>
+
+		</div>
+
+
+
+		<div id="scene_hp416living" class="vignettes" onclick="loadpano('hdp/416/tour.xml'); resethotel(); nomdelavue = 'scene_hp416living'; hidelightbox();">
+
+			<img src="hdp/416/hp416living.tiles/thumb.jpg" />
+
+			<p class="legende">Suite - Casino View</p>
+
+		</div>
+
+
+
+		<!--<div id="scene_Suite_197_98_seaside_view_living" class="vignettes" onclick="loadpano('hdp/197/tour.xml'); resethotel(); nomdelavue = 'scene_Suite_197_98_seaside_view_living'; hidelightbox();">
+
+			<img src="hdp/197/panos/Suite_197_98_seaside_view_living.tiles/thumb.jpg" />
+
+			<p class="legende">Suite - Sea View - 197-198</p>
+
+		</div>-->
+
+
+
+		<div id="scene_HP_492" class="vignettes" onclick="loadpano('hdp/HP_492.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_HP_492'; hidelightbox();">
+
+			<img src="hdp/HP_492.tiles/thumb.jpg" />
+
+			<p class="legende">Suite – Sea View</p>
+
+		</div>
+
+
+
+		<!--<div id="scene_hp497living" class="vignettes" onclick="loadpano('hdp/hp497/tour.xml'); resethotel(); nomdelavue = 'scene_hp497living'; hidelightbox();">
+
+			<img src="hdp/hp497/hp497living.tiles/thumb.jpg" />
+
+			<p class="legende">Suite – Sea View – 497</p>
+
+		</div>-->
+
+
+
+		<div id="scene_HP_570_572_1" class="vignettes" onclick="loadpano('hdp/HP_570_572/tour.xml'); resethotel(); nomdelavue = 'scene_HP_570_572_1'; hidelightbox();">
+
+			<img src="hdp/HP_570_572/HP_570_572_1/thumb.jpg" />
+
+			<p class="legende">Suite – Sea View with Terrace</p>
+
+		</div>
+		
+		
+		
+
+
+
+
+
+		<!--<div id="scene_HP_796_2" class="vignettes" onclick="loadpano('hdp/HP_796/tour.xml'); resethotel(); nomdelavue = 'scene_HP_796_2'; hidelightbox();">
+
+			<img src="hdp/HP_796/HP_796_2.tiles/thumb.jpg" />
+
+			<p class="legende">Suite – Sea View with Terrace – 796-797</p>
+
+		</div>-->
+
+
+
+		<!--<div id="scene_hp798_living" class="vignettes" onclick="loadpano('hdp/hp798/tour.xml'); resethotel(); nomdelavue = 'scene_hp798_living'; hidelightbox();">
+
+			<img src="hdp/hp798/hp798_living.tiles/thumb.jpg" />
+
+			<p class="legende">Suite 798</p>
+
+		</div>-->
+
+
+		
+
+
+		<!-- Princesse Grace -->
+
+		<h1 class="separation">Diamond Suites</h1>
+
+		<hr>
+		
+		<div id="scene_hp102" class="vignettes" onclick="loadpano('hdp/hp_102.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_hp102'; hidelightbox();">
+
+			<img src="hdp/hp_102.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite – Sea View with Terrace</p>
+
+		</div>
+
+
+
+		<div id="scene_Diamond_suite_sea_view593-94-95_salon" class="vignettes" onclick="loadpano('hdp/593/tour.xml'); resethotel(); nomdelavue = 'scene_Diamond_suite_sea_view593-94-95_salon'; hidelightbox();">
+
+			<img src="hdp/593/panos/Diamond_suite_sea_view593-94-95_salon.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite - Sea View</p>
+
+		</div>
+
+
+
+		<div id="scene_hp_suite_garnier_living" class="vignettes" onclick="loadpano('hdp/garnier/tour.xml'); resethotel(); nomdelavue = 'scene_hp_suite_garnier_living'; hidelightbox();">
+
+			<img src="hdp/garnier/panos/hp_suite_garnier_living.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite - Garnier</p>
+
+		</div>
+
+
+
+		<div id="scene_HP_suite_princesse_grace_salon_7" class="vignettes" onclick="loadpano('hdp/suite_princesse_grace/HP_suite_princesse_grace_salon_7.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_HP_suite_princesse_grace_salon_7'; hidelightbox();">
+
+			<img src="hdp/suite_princesse_grace/HP_suite_princesse_grace_salon_7.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite - Princess Grace – 7th Floor</p>
+
+		</div>
+
+
+
+	
+
+
+
+		<div id="scene_rainier3living" class="vignettes" onclick="loadpano('hdp/rainier3/rainier3living.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_rainier3living'; hidelightbox();">
+
+			<img src="hdp/rainier3/rainier3living.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite - Prince Rainier III</p>
+
+		</div>
+
+
+
+	
+	</div>
+
+
+	<!-------------------------------------- HOTEL HERMITAGE  ------------------------------------------------>
+
+
+
+
+
+	<!--<img id="hotelhermitagelogo" class="logohotel" src="img/logo_HH.jpg" />-->
+
+	<h1 id="hotelhermitagelogo" class="logohotel">Hôtel Hermitage Monte-Carlo</h1>
+
+
+
+
+
+
+
+	<div id="hotelhermitage" class="cadre-vignettes">
+
+		<!-- Lobby -->
+
+		<h1 class="separation">Lobby</h1>
+
+		<hr>
+
+
+
+		<div id="scene_lobby_hermitage" class="vignettes" onclick="loadpano('hh/lobby_hermitage/tour.xml'); resethotel(); nomdelavue = 'lobby_hermitage'; hidelightbox();">
+
+			<img src="hh/lobby_hermitage/thumb.jpg" />
+
+			<p class="legende">Beaumarchais Lobby</p>
+
+		</div>
+
+
+
+		<div id="scene_lobby_hiver_hermitage" class="vignettes" onclick="loadpano('hh/lobby_hiver_hermitage/tour.xml'); resethotel(); nomdelavue = 'lobby_hiver_hermitage'; hidelightbox();">
+
+			<img src="hh/lobby_hiver_hermitage/thumb.jpg" />
+
+			<p class="legende">Jardin d'Hiver Lobby</p>
+
+		</div>
+
+
+
+
+
+
+
+		<!-- Bars et Restaurants -->
+
+		<h1 class="separation">Restaurants &amp; Bars</h1>
+
+		<hr>
+
+
+
+		<div id="scene_hh_pavyllon_terrace" class="vignettes" onclick="loadpano('hh/hh_pavyllon_terrace.tiles/tour.xml'); resethotel(); nomdelavue = 'hh_pavyllon_terrace'; hidelightbox();">
+
+			<img src="hh/hh_pavyllon_terrace.tiles/thumb.jpg" />
+
+			<p class="legende">Pavyllon Monte-Carlo</p>
+
+		</div>
+
+
+
+		<div id="scene_crystalbar" class="vignettes" onclick="loadpano('hh/crystalbar/tour.xml'); resethotel(); nomdelavue = 'crystalbar'; hidelightbox();">
+
+			<img src="hh/crystalbar/thumb.jpg" />
+
+			<p class="legende">Crystal Bar</p>
+
+		</div>
+
+
+
+
+
+		
+
+
+
+		  <div id="scene_hermitage_limun_bar" class="vignettes" onclick="loadpano('hh/limun/tour.xml'); resethotel(); nomdelavue = 'scene_hermitage_limun_bar'; hidelightbox();">
+
+			<img src="hh/limun/panos/hermitage_limun_bar.tiles/thumb.jpg" />
+
+			<p class="legende">Le Limùn</p>
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- Salles et Salons -->
+
+		<h1 class="separation">Meeting &amp; Banqueting</h1>
+
+		<hr>
+
+
+
+		<div id="scene_groupcheck" class="vignettes" onclick="loadpano('hh/group_check_in/tour.xml'); resethotel(); nomdelavue = 'scene_groupcheck'; hidelightbox();">
+
+			<img src="hh/group_check_in/panos/group_check_in.tiles/thumb.jpg" />
+
+			<p class="legende">Group Check-in</p>
+
+		</div>
+
+
+
+		<div id="scene_belleepoq" class="vignettes" onclick="loadpano('hh/belleepoq/tour.xml'); resethotel(); nomdelavue = 'hermitage_belleepoq'; hidelightbox();">
+
+			<img src="hh/belleepoq/thumb.jpg" />
+
+			<p class="legende">Salle Belle Epoque</p>
+
+		</div>
+
+
+
+		<div id="scene_eiffel_2017" class="vignettes" onclick="loadpano('hh/eiffel/tour.xml'); resethotel(); nomdelavue = 'scene_eiffel_2017'; hidelightbox();">
+
+			<img src="hh/eiffel/panos/eiffel_conference1.tiles/thumb.jpg" />
+
+			<p class="legende">Salle Eiffel</p>
+
+		</div>
+
+
+
+		<div id="scene_salon_jardin_hiver" class="vignettes" onclick="loadpano('hh/salonhiver/tour.xml'); resethotel(); nomdelavue = 'scene_salon_jardin_hiver'; hidelightbox();">
+
+			<img src="hh/salonhiver/panos/salon_jardin_hiver.tiles/thumb.jpg" />
+
+			<p class="legende">Salon Jardin d'Hiver</p>
+
+		</div>
+
+
+
+		<div id="scene_cours" class="vignettes" onclick="loadpano('hh/cours/tour.xml'); resethotel(); nomdelavue = 'cours'; hidelightbox();">
+
+			<img src="hh/cours/panos/cours.tiles/thumb.jpg" />
+
+			<p class="legende">Gustave Courtyard</p>
+
+		</div>
+
+
+
+		<div id="scene_mezzanine_eiffel" class="vignettes" onclick="loadpano('hh/mezzanine_eiffel/tour.xml'); resethotel(); nomdelavue = 'mezzanine_eiffel'; hidelightbox();">
+
+			<img src="hh/mezzanine_eiffel/panos/mezzanine_eiffel.tiles/thumb.jpg" />
+
+			<p class="legende">Eiffel Mezzanine</p>
+
+		</div>
+
+
+
+		<div id="scene_mezzanine_terrasse" class="vignettes" onclick="loadpano('hh/mezzanine_terrasse/tour.xml'); resethotel(); nomdelavue = 'mezzanine_terrasse'; hidelightbox();">
+
+			<img src="hh/mezzanine_terrasse/panos/mezzanine_terrasse.tiles/thumb.jpg" />
+
+			<p class="legende">Eiffel Mezzanine - Terrace</p>
+
+		</div>
+
+
+
+		<div id="scene_excelsior" class="vignettes" onclick="loadpano('hh/excelsior/tour.xml'); resethotel(); nomdelavue = 'scene_excelsior'; hidelightbox();">
+
+			<img src="hh/excelsior/panos/excelsior.tiles/thumb.jpg" />
+
+			<p class="legende">Salon Excelsior</p>
+
+		</div>
+
+
+
+		<div id="scene_hermitage_terrasse_midi" class="vignettes" onclick="loadpano('hh/midi/tour.xml'); resethotel(); nomdelavue = 'scene_hermitage_terrasse_midi'; hidelightbox();">
+
+			<img src="hh/midi/panos/hermitage_terrasse_midi.tiles/thumb.jpg" />
+
+			<p class="legende">Midi Terrace</p>
+
+		</div>
+
+
+
+
+
+
+
+
+
+		<!-- Leisure -->
+
+		<h1 class="separation">Leisure</h1>
+
+		<hr>
+
+		<div id="scene_17piscinejour" class="vignettes" onclick="loadpano('thermes/17poolHBleue/tour.xml'); resethotel(); nomdelavue = '17piscinejour'; hidelightbox();">
+
+			<img src="thermes/17poolHBleue/panos/17pool.tiles/thumb.jpg" />
+
+			<p class="legende">Thermes Marins Monte-Carlo</p>
+
+		</div>
+
+
+		<div id="scene_olympic_pool" class="vignettes" onclick="loadpano('beach/olympic_pool/tour.xml'); resethotel(); nomdelavue = 'scene_olympic_pool'; hidelightbox();">
+
+			<img src="beach/olympic_pool/panos/olympic_pool.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo Beach Club</p>
+
+		</div>
+
+
+
+		<div id="scene_country" class="vignettes" onclick="loadpano('aeriennes/country/tour.xml'); resethotel(); nomdelavue = 'scene_country'; hidelightbox();">
+
+			<img src="aeriennes/country/panos/country.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo
+
+				<br>Country Club</p>
+
+		</div>
+
+
+
+
+
+		<div id="scene_golfmc_sphere" class="vignettes" onclick="loadpano('aeriennes/golf/tour.xml'); resethotel(); nomdelavue = 'scene_golfmc_sphere'; hidelightbox();">
+
+			<img src="aeriennes/golf/panos/golfmc_sphere.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo
+
+				<br>Golf Club</p>
+
+		</div>
+
+
+
+		<div id="atrium" class="vignettes" onclick="loadpano('casinos/atrium/tour.xml'); resethotel(); nomdelavue = 'atrium'; hidelightbox();">
+
+			<img src="casinos/atrium/panos/atrium.tiles/thumb.jpg" />
+
+			<p class="legende">Casino de Monte-Carlo</p>
+
+		</div>
+
+
+
+
+
+	</div>
+
+
+	<div id="hotelhermitagesuites" class="cadre-vignettes">
+
+		<!-- Suites -->
+
+		<h1 class="separation">Rooms &amp; Suites</h1>
+
+		<hr>
+
+		
+		
+		<div id="scene_hh_superior_queen_room" class="vignettes" onclick="loadpano('hh/hh_superior_queen_room.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_hh_superior_queen_room'; hidelightbox();">
+
+			<img src="hh/hh_superior_queen_room.tiles/thumb.jpg" />
+
+			<p class="legende">Superior Queen Room - City or Courtyard View</p>
+
+		</div>
+		
+		
+		
+		<div id="scene_hh734" class="vignettes" onclick="loadpano('hh/hh734.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_hh734'; hidelightbox();">
+
+			<img src="hh/hh734.tiles/thumb.jpg" />
+
+			<p class="legende">Superior King Room - City or Courtyard View</p>
+
+		</div>
+
+
+		<div id="scene_hh284" class="vignettes" onclick="loadpano('hh/hh284/tour.xml'); resethotel(); nomdelavue = 'hh284'; hidelightbox();">
+
+			<img src="hh/hh284/panos/hh284.tiles/thumb.jpg" />
+
+			<p class="legende">Deluxe Room – City or courtyard view</p>
+
+		</div>
+
+
+
+		<!--<div id="scene_hh289" class="vignettes" onclick="loadpano('hh/hh289/tour.xml'); resethotel(); nomdelavue = 'hh289'; hidelightbox();">
+
+			<img src="hh/hh289/panos/hh289.tiles/thumb.jpg" />
+
+			<p class="legende">Deluxe Room - Garden View With Terrace - 289</p>
+
+		</div>-->
+		
+		<!--<div id="scene_hh516" class="vignettes" onclick="loadpano('hh/hh516.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_hh516'; hidelightbox();">
+
+			<img src="hh/hh516.tiles/thumb.jpg" />
+
+			<p class="legende">Deluxe Room - City or Courtyard View - 516</p>
+
+		</div>-->
+
+
+
+		<div id="scene_hh306" class="vignettes" onclick="loadpano('hh/hh306/tour.xml'); resethotel(); nomdelavue = 'scene_hh306'; hidelightbox();">
+
+			<img src="hh/hh306/thumb.jpg" />
+
+			<p class="legende">Exclusive Room – Sea View</p>
+
+		</div>
+		
+		<!--<div id="scene_hh621" class="vignettes" onclick="loadpano('hh/hh621.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_hh621'; hidelightbox();">
+
+			<img src="hh/hh621.tiles/thumb.jpg" />
+
+			<p class="legende">Exclusive Room - Sea View - 621</p>
+
+		</div>-->
+
+
+
+		<div id="scene_Junior_suite_377" class="vignettes" onclick="loadpano('hh/Junior_suite_377/tour.xml'); resethotel(); nomdelavue = 'scene_Junior_suite_377'; hidelightbox();">
+
+			<img src="hh/Junior_suite_377/panos/Junior_suite_377.tiles/thumb.jpg" />
+
+			<p class="legende">Junior Suite - City or Courtyard View</p>
+
+		</div>
+
+
+
+
+
+		<div id="scene_hh530" class="vignettes" onclick="loadpano('hh/hh530/tour.xml'); resethotel(); nomdelavue = 'hh530'; hidelightbox();">
+
+			<img src="hh/hh530/panos/hh530.tiles/thumb.jpg" />
+
+			<p class="legende">Junior Suite Family - City View</p>
+
+		</div>
+
+
+		
+		<div id="scene_Junior_suite_411" class="vignettes" onclick="loadpano('hh/Junior_suite_411/tour.xml'); resethotel(); nomdelavue = 'scene_Junior_suite_411'; hidelightbox();">
+
+			<img src="hh/Junior_suite_411/panos/Junior_suite_411.tiles/thumb.jpg" />
+
+			<p class="legende">Junior Suite - Sea View</p>
+
+		</div>
+
+		
+
+
+		
+
+
+
+
+
+
+
+
+
+		<!--<div id="scene_hh68" class="vignettes" onclick="loadpano('hh/hh68/tour.xml'); resethotel(); nomdelavue = 'hh68'; hidelightbox();">
+
+			<img src="hh/hh68/panos/hh68.tiles/thumb.jpg" />
+
+			<p class="legende">Junior Suite - Sea View With Terrace - 68</p>
+
+		</div>-->
+
+
+
+		<div id="scene_hh211" class="vignettes" onclick="loadpano('hh/hh211/tour.xml'); resethotel(); nomdelavue = 'hh211'; hidelightbox();">
+
+			<img src="hh/hh211/panos/hh211.tiles/thumb.jpg" />
+
+			<p class="legende">Junior Suite - Sea View With Terrace</p>
+
+		</div>
+
+
+
+		<!--<div id="scene_Junior_suite_67" class="vignettes" onclick="loadpano('hh/Junior_suite_67/tour.xml'); resethotel(); nomdelavue = 'scene_Junior_suite_67'; hidelightbox();">
+
+			<img src="hh/Junior_suite_67/panos/Junior_suite_67.tiles/thumb.jpg" />
+
+			<p class="legende">Junior Suite - Sea View With Jacuzzi- 67</p>
+
+		</div>-->
+
+
+
+		<div id="scene_hermitage71" class="vignettes" onclick="loadpano('hh/hh71/tour.xml'); resethotel(); nomdelavue = 'scene_hermitage71'; hidelightbox();">
+
+			<img src="hh/hh71/panos/hermitage71.tiles/thumb.jpg" />
+
+			<p class="legende">Junior Suite - Sea View with Jacuzzi</p>
+
+		</div>
+
+
+
+		
+		<div id="scene_hh414" class="vignettes" onclick="loadpano('hh/hh414.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_hh414'; hidelightbox();">
+
+			<img src="hh/hh414.tiles/thumb.jpg" />
+
+			<p class="legende">Suite - Courtyard or City View</p>
+
+		</div>
+
+
+		<!--<div id="scene_Junior_suite_214" class="vignettes" onclick="loadpano('hh/Junior_suite_214/tour.xml'); resethotel(); nomdelavue = 'scene_Junior_suite_214'; hidelightbox();">
+
+			<img src="hh/Junior_suite_214/panos/Junior_suite_214.tiles/thumb.jpg" />
+
+			<p class="legende">Suite - City or Courtyard View - 214</p>
+
+		</div>-->
+
+
+
+		
+
+
+
+		
+
+
+
+		<!--<div id="scene_Simple_suite_exclusive_301" class="vignettes" onclick="loadpano('hh/Simple_suite_exclusive_301/tour.xml'); resethotel(); nomdelavue = 'scene_Simple_suite_exclusive_301'; hidelightbox();">
+
+			<img src="hh/Simple_suite_exclusive_301/panos/Simple_suite_exclusive_301.tiles/thumb.jpg" />
+
+			<p class="legende">Suite - Sea View - 301</p>
+
+		</div>-->
+
+
+
+		<!--<div id="scene_Simple_suite_492" class="vignettes" onclick="loadpano('hh/Simple_suite_492/tour.xml'); resethotel(); nomdelavue = 'scene_Simple_suite_492'; hidelightbox();">
+
+			<img src="hh/Simple_suite_492/panos/Simple_suite_492.tiles/thumb.jpg" />
+
+			<p class="legende">Suite - Sea View - 492</p>
+
+		</div>-->
+
+
+
+
+
+
+
+		<div id="scene_hh544living" class="vignettes" onclick="loadpano('hh/544/tour.xml'); resethotel(); nomdelavue = 'scene_hh544living'; hidelightbox();">
+
+			<img src="hh/544/hh544living.tiles/thumb.jpg" />
+
+			<p class="legende">Suite - Sea View</p>
+
+		</div>
+
+
+
+		<!--<div id="scene_Simple_suite_548_49_50" class="vignettes" onclick="loadpano('hh/Simple_suite_548_49_50/tour.xml'); resethotel(); nomdelavue = 'scene_Simple_suite_548_49_50'; hidelightbox();">
+
+			<img src="hh/Simple_suite_548_49_50/panos/Simple_suite_548_49_50.tiles/thumb.jpg" />
+
+			<p class="legende">Suite - Sea View - 548</p>
+
+		</div>-->
+
+
+
+		<div id="scene_hh202" class="vignettes" onclick="loadpano('hh/hh202_203/tour.xml'); resethotel(); nomdelavue = 'hh202_203'; hidelightbox();">
+
+			<img src="hh/hh202_203/panos/hh202.tiles/thumb.jpg" />
+
+			<p class="legende">Suite - Sea View With Terrace</p>
+
+		</div>
+
+
+
+		<h1 class="separation">Diamond Suites</h1>
+
+		<hr>
+
+
+
+		<div id="scene_suite_pagnol" class="vignettes" onclick="loadpano('hh/suite_pagnol/tour.xml'); resethotel(); nomdelavue = 'scene_suite_pagnol'; hidelightbox();">
+
+			<img src="hh/suite_pagnol/panos/suite_pagnol.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite - Pagnol</p>
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div id="scene_Simple_suite_740" class="vignettes" onclick="loadpano('hh/Simple_suite_740/tour.xml'); resethotel(); nomdelavue = 'scene_Simple_suite_740'; hidelightbox();">
+
+			<img src="hh/Simple_suite_740/panos/Simple_suite_740.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite - 740</p>
+
+		</div>
+
+
+
+		<div id="scene_Simple_suite_exclusive_62_63" class="vignettes" onclick="loadpano('hh/Simple_suite_exclusive_62_63/tour.xml'); resethotel(); nomdelavue = 'scene_Simple_suite_exclusive_62_63'; hidelightbox();">
+
+			<img src="hh/Simple_suite_exclusive_62_63/panos/Simple_suite_exclusive_62_63.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite With Jacuzzi</p>
+
+		</div>
+
+
+
+		
+
+
+
+		<div id="Diamond_suite_637" class="vignettes" onclick="loadpano('hh/Diamond_suite_637/tour.xml'); resethotel(); nomdelavue = 'scene_Diamond_suite_637'; hidelightbox();">
+
+			<img src="hh/Diamond_suite_637/panos/Diamond_suite_637.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite</p>
+
+		</div>
+
+
+
+		<div id="Diamond_suite_640" class="vignettes" onclick="loadpano('hh/Diamond_suite_640/tour.xml'); resethotel(); nomdelavue = 'scene_Diamond_suite_640'; hidelightbox();">
+
+			<img src="hh/Diamond_suite_640/panos/Diamond_suite_640.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite</p>
+
+		</div>
+
+
+
+		<div id="Diamond_suite_643" class="vignettes" onclick="loadpano('hh/Diamond_suite_643/tour.xml'); resethotel(); nomdelavue = 'scene_Diamond_suite_643'; hidelightbox();">
+
+			<img src="hh/Diamond_suite_643/panos/Diamond_suite_643.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite</p>
+
+		</div>
+
+
+
+
+
+		<div id="scene_Penthouse_588" class="vignettes" onclick="loadpano('hh/Penthouse_588/tour.xml'); resethotel(); nomdelavue = 'scene_Penthouse_588'; hidelightbox();">
+
+			<img src="hh/Penthouse_588/panos/588salon.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite - Penthouse</p>
+
+		</div>
+
+
+
+		<div id="scene_hh748" class="vignettes" onclick="loadpano('hh/hh748/tour.xml'); resethotel(); nomdelavue = 'hh748'; hidelightbox();">
+
+			<img src="hh/hh748/panos/hh748.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite - Presidential</p>
+
+		</div>
+
+
+
+		<div id="scene_Diamond_suite_761" class="vignettes" onclick="loadpano('hh/Diamond_suite_761/tour.xml'); resethotel(); nomdelavue = 'scene_Diamond_suite_761_jacuzzi'; hidelightbox();">
+
+			<img src="hh/Diamond_suite_761/panos/Diamond_suite_761.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite - Duplex</p>
+
+		</div>
+
+
+
+		<div id="scene_diamond_suite_748" class="vignettes" onclick="loadpano('hh/diamond_suite_748/tour.xml'); resethotel(); nomdelavue = 'scene_diamond_suite_748'; hidelightbox();">
+
+			<img src="hh/diamond_suite_748/panos/diamond_suite_748.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite - Princely</p>
+
+		</div>
+
+	</div>
+
+	<!-------------------------------------- HOTEL MCB  ------------------------------------------------>
+
+	<!--<img id="hotelmcbaylogo" class="logohotel" src="img/logo-Monte-CarloBay.jpg" />-->
+
+	<h1 id="hotelmcbaylogo" class="logohotel">Monte Carlo Bay Hotel &amp; Resort</h1>
+
+
+
+	<div id="hotelmcbay" class="cadre-vignettes">
+
+		<!-- Lobby -->
+
+		<h1 class="separation">Lobby</h1>
+
+		<hr>
+
+
+
+		<div id="scene_mcbay_lobby" class="vignettes" onclick="loadpano('mcbay/mcbay_lobby/tour.xml'); resethotel(); nomdelavue = 'mcbay_lobby'; hidelightbox();">
+
+			<img src="mcbay/mcbay_lobby/thumb.jpg" />
+
+			<p class="legende">Lobby</p>
+
+		</div>
+
+
+
+
+
+
+
+
+
+		 <!-- Bars et Restaurants -->
+
+		<h1 class="separation">Restaurants &amp; Bars</h1>
+
+		<hr>
+
+
+		<div id="scene_orange_verte" class="vignettes" onclick="loadpano('mcbay/orange_verte/tour.xml'); resethotel(); nomdelavue = 'scene_orange_verte'; hidelightbox();">
+
+			<img src="mcbay/orange_verte/mcbay_orange_verte_in.tiles/thumb.jpg" />
+
+			<p class="legende">L'Orange Verte</p>
+
+		</div>
+
+
+		<div id="scene_bluebay" class="vignettes" onclick="loadpano('mcbay/bluebay/tour.xml'); resethotel(); nomdelavue = 'scene_bluebay'; hidelightbox();">
+
+			<img src="mcbay/bluebay/panos/bluebay.tiles/thumb.jpg" />
+
+			<p class="legende">Blue Bay</p>
+
+		</div>
+
+
+
+		<div id="scene_bluebay_terrasse" class="vignettes" onclick="loadpano('mcbay/bluebay/tour2.xml'); resethotel(); nomdelavue = 'scene_bluebay_terrasse'; hidelightbox();">
+
+			<img src="mcbay/bluebay/panos/bluebay_terrasse.tiles/thumb.jpg" />
+
+			<p class="legende">Blue Bay - Terrace</p>
+
+		</div>
+
+
+
+		<div id="scene_bluegin" class="vignettes" onclick="loadpano('mcbay/bluegin/tour.xml'); resethotel(); nomdelavue = 'scene_bluegin'; hidelightbox();">
+
+			<img src="mcbay/bluegin/panos/bluegin.tiles/thumb.jpg" />
+
+			<p class="legende">Blue Gin</p>
+
+		</div>
+
+
+
+
+
+
+
+		<!-- Salles et Salons -->
+
+		<h1 class="separation">Meeting &amp; Banqueting</h1>
+
+		<hr>
+
+		<div id="salle_sincerity" class="vignettes" onclick="loadpano('mcbay/sincerity/tour.xml'); resethotel(); nomdelavue = 'salle_sincerity'; hidelightbox();">
+
+			<img src="mcbay/sincerity/panos/sincerity.tiles/thumb.jpg" />
+
+			<p class="legende">Salon Sincerity - Group Check-in</p>
+
+		</div>
+
+
+
+		<div id="scene_baycolombia" class="vignettes" onclick="loadpano('mcbay/baycolombia/tour.xml'); resethotel(); nomdelavue = 'baycolombia'; hidelightbox();">
+
+			<img src="mcbay/baycolombia/panos/baycolombia.tiles/thumb.jpg" />
+
+			<p class="legende">Salle Columbia</p>
+
+		</div>
+
+
+
+		<div id="scene_mcbayconference" class="vignettes" onclick="loadpano('mcbay/salle_america/tour.xml'); resethotel(); nomdelavue = 'scene_mcbayconference'; hidelightbox();">
+
+			<img src="mcbay/salle_america/panos/mcbayconference.tiles/thumb.jpg" />
+
+			<p class="legende">Salle America - Meeting - Plenary Room</p>
+
+		</div>
+		
+		
+		<div id="scene_bay_salon_tuiga" class="vignettes" onclick="loadpano('mcbay/salle_tuiga/tour.xml'); resethotel(); nomdelavue = 'scene_bay_salon_tuiga'; hidelightbox();">
+
+			<img src="mcbay/salle_tuiga/panos/bay_salon_tuiga.tiles/thumb.jpg" />
+
+			<p class="legende">Salle Tuiga - Meeting</p>
+
+		</div>
+		
+		
+		<div id="scene_salle_nirvana" class="vignettes" onclick="loadpano('mcbay/salle_nirvana/tour.xml'); resethotel(); nomdelavue = 'scene_salle_nirvana'; hidelightbox();">
+
+			<img src="mcbay/salle_nirvana/thumb.jpg" />
+
+			<p class="legende">Salle Nirvana</p>
+
+		</div>
+		
+		
+		<div id="scene_salle_nyala" class="vignettes" onclick="loadpano('mcbay/salle_nyala/tour.xml'); resethotel(); nomdelavue = 'scene_salle_nyala'; hidelightbox();">
+
+			<img src="mcbay/salle_nyala/thumb.jpg" />
+
+			<p class="legende">Salle Nyala</p>
+
+		</div>
+		
+		
+		<div id="scene_salle_trivia" class="vignettes" onclick="loadpano('mcbay/salle_trivia/tour.xml'); resethotel(); nomdelavue = 'scene_salle_trivia'; hidelightbox();">
+
+			<img src="mcbay/salle_trivia/thumb.jpg" />
+
+			<p class="legende">Salle Trivia</p>
+
+		</div>
+		
+		
+		<div id="scene_salle_viola" class="vignettes" onclick="loadpano('mcbay/salle_viola/tour.xml'); resethotel(); nomdelavue = 'scene_salle_viola'; hidelightbox();">
+
+			<img src="mcbay/salle_viola/panos/viola/thumb.jpg" />
+
+			<p class="legende">Salle Viola</p>
+
+		</div>
+
+
+
+		<div id="scene_jardins_mediterraneens" class="vignettes" onclick="loadpano('mcbay/lagon_inside/tour3.xml'); resethotel(); nomdelavue = 'scene_jardins_mediterraneens'; hidelightbox();">
+
+			<img src="mcbay/lagon_inside/panos/jardins_mediterraneens.tiles/thumb.jpg" />
+
+			<p class="legende">Jardin Méditerranéen</p>
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		 <!-- Leisure -->
+
+		<h1 class="separation">Leisure</h1>
+
+		<hr>
+
+
+		
+		<div id="scene_mcbay_fitness" class="vignettes" onclick="loadpano('mcbay/mcbay_fitness.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_mcbay_fitness'; hidelightbox();">
+
+			<img src="mcbay/mcbay_fitness.tiles/thumb.jpg" />
+
+			<p class="legende">Fitness</p>
+
+		</div>
+		
+		
+		<div id="scene_spa5mondes" class="vignettes" onclick="loadpano('mcbay/spa5mondes/tour.xml'); resethotel(); nomdelavue = 'scene_spa5mondes'; hidelightbox();">
+
+			<img src="mcbay/spa5mondes/mcbay_spa5mondes_entree.tiles/thumb.jpg" />
+
+			<p class="legende">Spa Cinq Mondes</p>
+
+		</div>
+		
+
+		 <div id="scene_lagon_jour_haut" class="vignettes" onclick="loadpano('mcbay/lagon_inside/tour.xml'); resethotel(); nomdelavue = 'scene_lagon_jour_haut'; hidelightbox();">
+
+			<img src="mcbay/lagon_inside/panos/lagon_jour_haut.tiles/thumb.jpg" />
+
+			<p class="legende">Sandy-Bottomed Lagoon</p>
+
+		</div>
+
+
+
+
+
+
+
+		<div id="scene_poolaccueil" class="vignettes" onclick="loadpano('mcbay/baypoolin/tour.xml'); resethotel(); nomdelavue = 'scene_poolaccueil'; hidelightbox();">
+
+			<img src="mcbay/baypoolin/panos/baypoolin.tiles/thumb.jpg" />
+
+			<p class="legende">Indoor Swimming Pool</p>
+
+		</div>
+
+
+
+		<div id="scene_poolout" class="vignettes" onclick="loadpano('mcbay/baypoolout/tour.xml'); resethotel(); nomdelavue = 'scene_poolout'; hidelightbox();">
+
+			<img src="mcbay/baypoolout/panos/baypoolout.tiles/thumb.jpg" />
+
+			<p class="legende">Outdoor Swimming Pool</p>
+
+		</div>
+
+
+
+
+
+
+
+		<div id="scene_country" class="vignettes" onclick="loadpano('aeriennes/country/tour.xml'); resethotel(); nomdelavue = 'scene_country'; hidelightbox();">
+
+			<img src="aeriennes/country/panos/country.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo
+
+				<br>Country Club</p>
+
+		</div>
+
+
+
+
+
+		<div id="scene_golfmc_sphere" class="vignettes" onclick="loadpano('aeriennes/golf/tour.xml'); resethotel(); nomdelavue = 'scene_golfmc_sphere'; hidelightbox();">
+
+			<img src="aeriennes/golf/panos/golfmc_sphere.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo
+
+				<br>Golf Club</p>
+
+		</div>
+
+
+
+		<div id="atrium" class="vignettes" onclick="loadpano('casinos/atrium/tour.xml'); resethotel(); nomdelavue = 'atrium'; hidelightbox();">
+
+			<img src="casinos/atrium/panos/atrium.tiles/thumb.jpg" />
+
+			<p class="legende">Casino de Monte-Carlo</p>
+
+		</div>
+
+	</div>
+
+	<div id="hotelmcbaysuites" class="cadre-vignettes">
+
+
+
+		<!-- Suites -->
+
+		<h1 class="separation">Rooms &amp; Suites</h1>
+
+		<hr>
+		
+		<div id="scene_suite433" class="vignettes" onclick="loadpano('mcbay/suite433/tour.xml'); resethotel(); nomdelavue = 'scene_suite433'; hidelightbox();">
+
+			<img src="mcbay/suite433/thumb.jpg" />
+
+			<p class="legende">Deluxe Room – Seaside</p>
+
+		</div>
+		
+		
+		
+		<div id="scene_suite218" class="vignettes" onclick="loadpano('mcbay/suite218/tour.xml'); resethotel(); nomdelavue = 'scene_suite218'; hidelightbox();">
+
+			<img src="mcbay/suite218/panos/suite218.tiles/thumb.jpg" />
+
+			<p class="legende">Exclusive Room - Sea View</p>
+
+		</div>
+		
+		
+		<div id="scene_suite601" class="vignettes" onclick="loadpano('mcbay/suite601/tour.xml'); resethotel(); nomdelavue = 'scene_suite601'; hidelightbox();">
+
+			<img src="mcbay/suite601/thumb.jpg" />
+
+			<p class="legende">Prestige Room – Sea View</p>
+
+		</div>
+
+
+		<div id="scene_suite238" class="vignettes" onclick="loadpano('mcbay/suite238/tour.xml'); resethotel(); nomdelavue = 'scene_suite238'; hidelightbox();">
+
+			<img src="mcbay/suite238/panos/suite2.tiles/thumb.jpg" />
+
+			<p class="legende">Prestige Superior Room - Sea View</p>
+
+		</div>
+		
+		
+		
+		<div id="scene_suite1008" class="vignettes" onclick="loadpano('mcbay/suite1008/tour.xml'); resethotel(); nomdelavue = 'scene_suite1008'; hidelightbox();">
+
+			<img src="mcbay/suite1008/suite1008.tiles/thumb.jpg" />
+
+			<p class="legende">Duplex Suite – Sea View</p>
+
+		</div>
+
+
+<div id="scene_nadal" class="vignettes" onclick="loadpano('mcbay/nadal/tour.xml'); resethotel(); nomdelavue = 'scene_nadal'; hidelightbox();">
+
+			<img src="mcbay/nadal/nadal_living/thumb.jpg" />
+
+			<p class="legende">Nadal Suite - Sea View</p>
+
+		</div>
+		
+		
+		<div id="scene_suite1002" class="vignettes" onclick="loadpano('mcbay/suite1002/tour.xml'); resethotel(); nomdelavue = 'scene_suite1002'; hidelightbox();">
+
+			<img src="mcbay/suite1002/panos/suite1002.tiles/thumb.jpg" />
+
+			<p class="legende">Prestige Duplex Suite - Sea View</p>
+
+		</div>
+		
+		
+		<div id="scene_suite701" class="vignettes" onclick="loadpano('mcbay/suite701/tour.xml'); resethotel(); nomdelavue = 'scene_suite701'; hidelightbox();">
+
+			<img src="mcbay/suite701/panos/suite701.tiles/thumb.jpg" />
+
+			<p class="legende">Prestige Suite - Sea View</p>
+
+		</div>
+
+
+
+		
+
+
+
+		 
+
+
+
+		<!--<div id="scene_suite1004" class="vignettes" onclick="loadpano('mcbay/suite1004/tour.xml'); resethotel(); nomdelavue = 'scene_suite1004'; hidelightbox();">
+
+			<img src="mcbay/suite1004/panos/suite1004.tiles/thumb.jpg" />
+
+			<p class="legende">Duplex Suite - Sea View - 1004</p>
+
+		</div>-->
+
+
+
+		<!--<div id="scene_suite1005" class="vignettes" onclick="loadpano('mcbay/suite1005/tour.xml'); resethotel(); nomdelavue = 'scene_suite1005'; hidelightbox();">
+
+			<img src="mcbay/suite1005/panos/suite1005.tiles/thumb.jpg" />
+
+			<p class="legende">Duplex Suite - Sea View - 1005</p>
+
+		</div>-->
+
+
+
+		<!--<div id="scene_suite1001" class="vignettes" onclick="loadpano('mcbay/suite1001/tour.xml'); resethotel(); nomdelavue = 'scene_suite1001'; hidelightbox();">
+
+			<img src="mcbay/suite1001/panos/suite1001.tiles/thumb.jpg" />
+
+			<p class="legende">Prestige  Suite – sea view - 1001</p>
+
+		</div>-->
+
+
+
+		
+		
+		
+
+
+
+		
+
+
+
+
+
+		
+		
+		<h1 class="separation">Diamond Suites</h1>
+
+		<hr>
+		
+		<div id="scene_eleven_entree" class="vignettes" onclick="loadpano('mcbay/eleven/tour.xml'); resethotel(); nomdelavue = 'scene_eleven'; hidelightbox();">
+
+			<img src="mcbay/eleven/panos/entree.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite Eleven</p>
+
+		</div>
+
+
+
+
+
+
+	</div>
+
+	<!-------------------------------------- HOTEL BEACH  ------------------------------------------------>
+
+	<!--<img id="hotelbeachlogo" class="logohotel" src="img/logo_MCBeach.jpg" />-->
+
+	<h1 id="hotelbeachlogo" class="logohotel">Monte Carlo Beach</h1>
+
+
+
+	<div id="hotelbeach" class="cadre-vignettes">
+
+		<!-- Lobby -->
+
+		<h1 class="separation">Lobby &amp; Facade</h1>
+
+		<hr>
+
+
+
+		<div id="scene_beach150m" class="vignettes" onclick="loadpano('aeriennes/beach150m/tour.xml'); resethotel(); nomdelavue = 'scene_beach150m'; hidelightbox();">
+
+			<img src="aeriennes/beach150m/panos/beach150m.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo Beach
+
+				<br>Seaside View</p>
+
+		</div>
+
+
+
+		<div id="scene_lobby" class="vignettes" onclick="loadpano('beach/lobby/tour.xml'); resethotel(); nomdelavue = 'lobby'; hidelightbox();">
+
+			<img src="beach/lobby/panos/lobby.tiles/thumb.jpg" />
+
+			<p class="legende">Lobby</p>
+
+		</div>
+
+
+
+
+
+		<!-- Bars et Restaurants -->
+
+		<h1 class="separation">Restaurants &amp; Bars</h1>
+
+		<hr>
+
+		<!--<div id="scene_elsa_terrace" class="vignettes" onclick="loadpano('beach/elsa_terrace/tour.xml'); resethotel(); nomdelavue = 'scene_elsa_terrace'; hidelightbox();">
+
+			<img src="beach/elsa_terrace/panos/elsa_terrace.tiles/thumb.jpg" />
+
+			<p class="legende">Elsa - Terrace</p>
+
+		</div>-->
+
+
+
+		<div id="scene_elsa" class="vignettes" onclick="loadpano('beach/elsa/tour.xml'); resethotel(); nomdelavue = 'scene_elsa'; hidelightbox();">
+
+			<img src="beach/elsa/panos/elsa.tiles/thumb.jpg" />
+
+			<p class="legende">Elsa</p>
+
+		</div>
+
+
+
+		<div id="scene_vigie_bar_nuit" class="vignettes" onclick="loadpano('beach/vigie_restaurant/tour.xml'); resethotel(); nomdelavue = 'scene_vigie_jour'; hidelightbox();">
+
+			<img src="beach/vigie_restaurant/panos/vigie_centre_day.tiles/thumb.jpg" />
+
+			<p class="legende">La Vigie Lounge &amp; Restaurant</p>
+
+		</div>
+
+
+
+		<div id="scene_deck" class="vignettes" onclick="loadpano('beach/deck/tour.xml'); resethotel(); nomdelavue = 'scene_deck'; hidelightbox();">
+
+			<img src="beach/deck/thumb.jpg" />
+
+			<p class="legende">Le Deck</p>
+
+		</div>
+
+
+
+
+
+		
+
+	 <!-- Meeting and Banqueting -->
+
+		<h1 class="separation">Meeting &amp; Banqueting</h1>
+
+		<hr>
+
+
+
+		<div id="scene_deck" class="vignettes" onclick="loadpano('beach/deck/tour.xml'); resethotel(); nomdelavue = 'scene_deck'; hidelightbox();">
+
+			<img src="beach/deck/thumb.jpg" />
+
+			<p class="legende">Le Deck</p>
+
+		</div>
+
+
+
+
+
+		<!-- Leisure -->
+
+		<h1 class="separation">Leisure</h1>
+
+		<hr>
+
+
+		<div id="scene_beach_spa" class="vignettes" onclick="loadpano('beach/beach_spa.tiles/tour.xml'); resethotel(); nomdelavue = 'scene_beach_spa'; hidelightbox();">
+
+			<img src="beach/beach_spa.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo Beach Spa</p>
+
+		</div>
+
+
+		<div id="scene_olympic_pool" class="vignettes" onclick="loadpano('beach/olympic_pool/tour.xml'); resethotel(); nomdelavue = 'scene_olympic_pool'; hidelightbox();">
+
+			<img src="beach/olympic_pool/panos/olympic_pool.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo Beach Club</p>
+
+		</div>
+
+
+
+		<!--<div id="scene_water" class="vignettes" onclick="loadpano('aeriennes/water/tour.xml'); resethotel(); nomdelavue = 'scene_water'; hidelightbox(); ">
+
+			<img src="aeriennes/water/panos/water.tiles/thumb.jpg" />
+
+			<p class="legende">Water Sport Activities</p>
+
+		</div>-->
+
+
+
+		<div id="scene_17piscinejour" class="vignettes" onclick="loadpano('thermes/17poolHBleue/tour.xml'); resethotel(); nomdelavue = '17piscinejour'; hidelightbox();">
+
+			<img src="thermes/17poolHBleue/panos/17pool.tiles/thumb.jpg" />
+
+			<p class="legende">Thermes Marins Monte-Carlo</p>
+
+		</div>
+
+
+
+
+
+		<div id="scene_country" class="vignettes" onclick="loadpano('aeriennes/country/tour.xml'); resethotel(); nomdelavue = 'scene_country'; hidelightbox();">
+
+			<img src="aeriennes/country/panos/country.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo
+
+				<br>Country Club</p>
+
+		</div>
+
+
+
+
+
+		<div id="scene_golfmc_sphere" class="vignettes" onclick="loadpano('aeriennes/golf/tour.xml'); resethotel(); nomdelavue = 'scene_golfmc_sphere'; hidelightbox();">
+
+			<img src="aeriennes/golf/panos/golfmc_sphere.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo
+
+				<br>Golf Club</p>
+
+		</div>
+
+
+
+		<div id="atrium" class="vignettes" onclick="loadpano('casinos/atrium/tour.xml'); resethotel(); nomdelavue = 'atrium'; hidelightbox();">
+
+			<img src="casinos/atrium/panos/atrium.tiles/thumb.jpg" />
+
+			<p class="legende">Casino de Monte-Carlo</p>
+
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div id="hotelbeachsuites" class="cadre-vignettes">
+
+		<!-- Suites -->
+
+		<h1 class="separation">Rooms &amp; Suites</h1>
+
+		<hr>
+
+
+
+
+		<div id="scene_beach_47" class="vignettes" onclick="loadpano('beach/beach_47/tour.xml'); resethotel(); nomdelavue = 'scene_beach_47'; hidelightbox();">
+
+			<img src="beach/beach_47/thumb.jpg" />
+
+			<p class="legende">Exclusive Room - Sea View</p>
+
+		</div>
+
+
+		<div id="scene_beach_27" class="vignettes" onclick="loadpano('beach/beach_27/tour.xml'); resethotel(); nomdelavue = 'scene_beach_27'; hidelightbox();">
+
+			<img src="beach/beach_27/thumb.jpg" />
+
+			<p class="legende">Exclusive Superior Room – Sea View</p>
+
+		</div>
+
+
+
+
+
+		<div id="scene_Beach-Junior-suite-40-SJM-vue-mer" class="vignettes" onclick="loadpano('beach/Beach-Junior-suite-40-SJM-vue-mer/tour.xml'); resethotel(); nomdelavue = 'Beach-Junior-suite-40-SJM-vue-mer'; hidelightbox();">
+
+			<img src="beach/Beach-Junior-suite-40-SJM-vue-mer/panos/Beach-Junior-suite-40-SJM-vue-mer.tiles/thumb.jpg" />
+
+			<p class="legende">Junior Suite - Sea View</p>
+
+		</div>
+
+
+
+
+
+
+
+		<div id="scene_Beach-Junior-suite-exclusive-74-SJE-vue-mer" class="vignettes" onclick="loadpano('beach/Beach-Junior-suite-exclusive-74-SJE-vue-mer/tour.xml'); resethotel(); nomdelavue = 'Beach-Junior-suite-exclusive-74-SJE-vue-mer'; hidelightbox();">
+
+			<img src="beach/Beach-Junior-suite-exclusive-74-SJE-vue-mer/panos/Beach-Junior-suite-exclusive-74-SJE-vue-mer.tiles/thumb.jpg" />
+
+			<p class="legende">Exclusive Junior Suite - Sea View</p>
+
+		</div>
+
+
+
+		<div id="scene_one_bedroom_suite_and_loft" class="vignettes" onclick="loadpano('beach/one_bedroom_suite_and_loft/tour.xml'); resethotel(); nomdelavue = 'one_bedroom_suite_and_loft'; hidelightbox();">
+
+			<img src="beach/one_bedroom_suite_and_loft/panos/one_bedroom_suite_and_loft.tiles/thumb.jpg" />
+
+			<p class="legende">Loft Suite - Sea View</p>
+
+		</div>
+
+
+
+		<div id="scene_Beach-Suite-duplex-59-SSE-vue-mer" class="vignettes" onclick="loadpano('beach/Beach-Suite-duplex-59-SSE-vue-mer/tour.xml'); resethotel(); nomdelavue = 'Beach-Suite-duplex-59-SSE-vue-mer'; hidelightbox();">
+
+			<img src="beach/Beach-Suite-duplex-59-SSE-vue-mer/panos/Beach-Suite-duplex-59-SSE-vue-mer.tiles/thumb.jpg" />
+
+			<p class="legende">Duplex Suite - Sea View</p>
+
+		</div>
+
+
+
+		<div id="scene_Beach-Double-suite-55-SD" class="vignettes" onclick="loadpano('beach/Beach-Double-suite-55-SD/tour.xml'); resethotel(); nomdelavue = 'Beach-Double-suite-55-SD'; hidelightbox();">
+
+			<img src="beach/Beach-Double-suite-55-SD/panos/Beach-Double-suite-55-SD.tiles/thumb.jpg" />
+
+			<p class="legende">Two Bedroom Suite - Pool View</p>
+
+		</div>
+
+<h1 class="separation">Diamond Suite</h1>
+
+		<hr>
+
+		<div id="scene_06sunshine_salon" class="vignettes" onclick="loadpano('beach/sunshine/tour.xml'); resethotel(); nomdelavue = 'sunshine'; hidelightbox();">
+
+			<img src="beach/sunshine/panos/06sunshine_salon.tiles/thumb.jpg" />
+
+			<p class="legende">Diamond Suite - Sunshine</p>
+
+		</div>
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	<!-------------------------------------- SPORTING  ------------------------------------------------>
+
+
+
+
+
+	<!--<img id="hotelsportinglogo" class="logohotel" src="img/visu_sporting.jpg" />-->
+
+	<h1 id="hotelsportinglogo" class="logohotel">Sporting Monte-Carlo</h1>
+
+
+
+	<div id="hotelsporting" class="cadre-vignettes-center">
+
+		<!-- Lobby -->
+
+		<h1 class="separation">Lobby &amp; Facade</h1>
+
+		<hr>
+
+
+
+		<div id="scene_sporting_air" class="vignettes" onclick="loadpano('aeriennes/sporting_air/tour.xml'); resethotel(); nomdelavue = 'sporting_air'; hidelightbox();">
+
+			<img src="aeriennes/sporting_air/panos/sporting_air.tiles/thumb.jpg" />
+
+			<p class="legende">Aerial View - Sporting Monte-Carlo </p>
+
+		</div>
+
+
+
+		<div id="scene_sporting_out" class="vignettes" onclick="loadpano('sporting/sporting_out/tour.xml'); resethotel(); nomdelavue = 'sporting_out'; hidelightbox();">
+
+			<img src="sporting/sporting_out/panos/sporting_out.tiles/thumb.jpg" />
+
+			<p class="legende">Entrance</p>
+
+		</div>
+
+
+
+		<div id="scene_hall_sporting" class="vignettes" onclick="loadpano('sporting/hall_sporting/tour.xml'); resethotel(); nomdelavue = 'hall_sporting'; hidelightbox();">
+
+			<img src="sporting/hall_sporting/panos/hall_sporting.tiles/thumb.jpg" />
+
+			<p class="legende">Lobby</p>
+
+		</div>
+
+
+
+
+
+		 <!-- restaurant -->
+
+		<h1 class="separation">Restaurants &amp; Bars</h1>
+
+		<hr>
+
+
+
+		<div id="scene_coya_out" class="vignettes" onclick="loadpano('sporting/coya/tour.xml'); resethotel(); nomdelavue = 'scene_coya_out'; hidelightbox();">
+
+			<img src="sporting/coya/panos/coya_out.tiles/thumb.jpg" />
+
+			<p class="legende">COYA Monte-Carlo</p>
+
+		</div>
+
+
+
+
+
+		<!-- Suites -->
+
+		<h1 class="separation">Meeting &amp; Banqueting</h1>
+
+		<hr>
+
+
+
+		<div id="scene_show_sphere" class="vignettes" onclick="loadpano('sporting/etoiles/tour.xml'); resethotel(); nomdelavue = 'scene_show_sphere'; hidelightbox();">
+
+			<img src="sporting/etoiles/panos/show_sphere.tiles/thumb.jpg" />
+
+			<p class="legende">Salle des Étoiles</p>
+
+		</div>
+
+
+
+		<div id="scene_palmier1" class="vignettes" onclick="loadpano('sporting/palmiers/tour.xml'); resethotel(); nomdelavue = 'palmiers'; hidelightbox();">
+
+			<img src="sporting/palmiers/panos/palmier1.tiles/thumb.jpg" />
+
+			<p class="legende">Salle des Palmiers</p>
+
+		</div>
+
+
+
+
+
+		<h1 class="separation">Leisure</h1>
+
+		<hr>
+
+
+
+		<div id="scene_01jimmyz_out1" class="vignettes" onclick="loadpano('sporting/jimmyz/tour.xml'); resethotel(); nomdelavue = 'jimmyz'; hidelightbox();">
+
+			<img src="sporting/jimmyz/panos/01jimmyz_out1.tiles/thumb.jpg" />
+
+			<p class="legende">Jimmy'z Monte-Carlo</p>
+
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	<!-------------------------------------- THERMES MARINS  ------------------------------------------------>
+
+
+
+
+
+	<!--<img id="hotelthermeslogo" class="logohotel" src="img/logo_Thermes_Marins.jpg" />-->
+
+	<h1 id="hotelthermeslogo" class="logohotel">Thermes Marins Monte-Carlo</h1>
+
+
+
+	<div id="hotelthermes" class="cadre-vignettes-center">
+
+
+
+		<h1 class="separation">Lobby &amp; Facade</h1>
+
+		<hr>
+
+
+
+		 <div id="scene_accueil" class="vignettes" onclick="loadpano('thermes/01accueil/tour.xml'); resethotel(); nomdelavue = 'accueil'; hidelightbox();">
+
+			<img src="thermes/01accueil/panos/accueil.tiles/thumb.jpg" />
+
+			<p class="legende">Reception</p>
+
+		</div>
+
+
+
+				<div id="scene_15shoping" class="vignettes" onclick="loadpano('thermes/15shoping/tour.xml'); resethotel(); nomdelavue = '15shoping'; hidelightbox();">
+
+			<img src="thermes/15shoping/panos/15shoping.tiles/thumb.jpg" />
+
+			<p class="legende">Boutique</p>
+
+		</div>
+
+
+
+
+
+		<h1 class="separation">Restaurants &amp; Bars</h1>
+
+		<hr>
+
+
+
+		<div id="scene_14resto" class="vignettes" onclick="loadpano('thermes/14resto/tour.xml'); resethotel(); nomdelavue = '14resto'; hidelightbox();">
+
+			<img src="thermes/14resto/panos/14resto.tiles/thumb.jpg" />
+
+			<p class="legende">L'Hirondelle</p>
+
+		</div>
+
+
+
+
+
+		<h1 class="separation">Leisure</h1>
+
+		<hr>
+
+
+
+		<div id="scene_17poolHBleue" class="vignettes" onclick="loadpano('thermes/17poolHBleue/tour.xml'); resethotel(); nomdelavue = '17poolHBleue'; hidelightbox();">
+
+			<img src="thermes/17poolHBleue/panos/17poolHBleue.tiles/thumb.jpg" />
+
+			<p class="legende">Swimming Pool</p>
+
+		</div>
+
+
+
+		 <div id="scene_19poolterrasse" class="vignettes" onclick="loadpano('thermes/19poolterrasse/tour.xml'); resethotel(); nomdelavue = '19poolterrasse'; hidelightbox();">
+
+			<img src="thermes/19poolterrasse/panos/19poolterrasse.tiles/thumb.jpg" />
+
+			<p class="legende">Solarium</p>
+
+		</div>
+
+
+
+		<div id="scene_18jacuzzi" class="vignettes" onclick="loadpano('thermes/18jacuzzi/tour.xml'); resethotel(); nomdelavue = '18jacuzzi'; hidelightbox();">
+
+			<img src="thermes/18jacuzzi/panos/18jacuzzi.tiles/thumb.jpg" />
+
+			<p class="legende">Solarium - Jacuzzi</p>
+
+		</div>
+
+
+
+		  <div id="scene_06fitness" class="vignettes" onclick="loadpano('thermes/06fitness/tour.xml'); resethotel(); nomdelavue = '06fitness'; hidelightbox();">
+
+			<img src="thermes/06fitness/panos/06fitness.tiles/thumb.jpg" />
+
+			<p class="legende">Fitness Center</p>
+
+		</div>
+
+
+
+
+
+		<div id="scene_02baldaquin" class="vignettes" onclick="loadpano('thermes/02baldaquin/tour.xml'); resethotel(); nomdelavue = '02baldaquin'; hidelightbox();">
+
+			<img src="thermes/02baldaquin/panos/02baldaquin.tiles/thumb.jpg" />
+
+			<p class="legende">Resting Room</p>
+
+		</div>
+
+
+
+		<div id="scene_04massage1" class="vignettes" onclick="loadpano('thermes/04massage1/tour.xml'); resethotel(); nomdelavue = '04massage1'; hidelightbox();">
+
+			<img src="thermes/04massage1/panos/04massage1.tiles/thumb.jpg" />
+
+			<p class="legende">Coffee Break</p>
+
+		</div>
+
+
+
+
+
+
+
+		<div id="scene_07couloir" class="vignettes" onclick="loadpano('thermes/07couloir/tour.xml'); resethotel(); nomdelavue = '07couloir'; hidelightbox();">
+
+			<img src="thermes/07couloir/panos/07couloir.tiles/thumb.jpg" />
+
+			<p class="legende">Corridors</p>
+
+		</div>
+
+
+
+			   <div id="scene_08accueilvestiaires" class="vignettes" onclick="loadpano('thermes/08accueilvestiaires/tour.xml'); resethotel(); nomdelavue = '08accueilvestiaires'; hidelightbox();">
+
+			<img src="thermes/08accueilvestiaires/panos/08accueilvestiaires.tiles/thumb.jpg" />
+
+			<p class="legende">Changing Room - Front Desk</p>
+
+		</div>
+
+
+
+	<div id="scene_09vestiaires" class="vignettes" onclick="loadpano('thermes/09vestiaires/tour.xml'); resethotel(); nomdelavue = '09vestiaires'; hidelightbox();">
+
+			<img src="thermes/09vestiaires/panos/09vestiaires.tiles/thumb.jpg" />
+
+			<p class="legende">Changing Room</p>
+
+		</div>
+
+
+
+
+
+
+
+		<div id="scene_03soins1" class="vignettes" onclick="loadpano('thermes/03soins1/tour.xml'); resethotel(); nomdelavue = '03soins1'; hidelightbox();">
+
+			<img src="thermes/03soins1/panos/03soins1.tiles/thumb.jpg" />
+
+			<p class="legende">Treatment Room - 1</p>
+
+		</div>
+
+
+
+
+
+		<div id="scene_05soins2" class="vignettes" onclick="loadpano('thermes/05soins2/tour.xml'); resethotel(); nomdelavue = '05soins2'; hidelightbox();">
+
+			<img src="thermes/05soins2/panos/05soins2.tiles/thumb.jpg" />
+
+			<p class="legende">Treatment Room - 2</p>
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div id="scene_10soins3" class="vignettes" onclick="loadpano('thermes/10soins3/tour.xml'); resethotel(); nomdelavue = '10soins3'; hidelightbox();">
+
+			<img src="thermes/10soins3/panos/10soins3.tiles/thumb.jpg" />
+
+			<p class="legende">Treatment Room - 3</p>
+
+		</div>
+
+
+
+		<div id="scene_11cabinehf1" class="vignettes" onclick="loadpano('thermes/11cabinehf1/tour.xml'); resethotel(); nomdelavue = '11cabinehf1'; hidelightbox();">
+
+			<img src="thermes/11cabinehf1/panos/11cabinehf1.tiles/thumb.jpg" />
+
+			<p class="legende">Women/Men Cabin - 1</p>
+
+		</div>
+
+
+
+		<div id="scene_12cabinehf2" class="vignettes" onclick="loadpano('thermes/12cabinehf2/tour.xml'); resethotel(); nomdelavue = '12cabinehf2'; hidelightbox();">
+
+			<img src="thermes/12cabinehf2/panos/12cabinehf2.tiles/thumb.jpg" />
+
+			<p class="legende">Women/Men Cabin - 2</p>
+
+		</div>
+
+
+
+		<div id="scene_16cabines" class="vignettes" onclick="loadpano('thermes/16cabines/tour.xml'); resethotel(); nomdelavue = '16cabines'; hidelightbox();">
+
+			<img src="thermes/16cabines/panos/16cabines.tiles/thumb.jpg" />
+
+			<p class="legende">Private Cabins</p>
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	<!-------------------------------------- Café de Paris------------------------------------------------>
+
+
+
+
+
+
+
+	<!--<img id="hotelcdplogo" class="logohotel" src="img/visu_cdp.jpg" />-->
+
+	<h1 id="hotelcdplogo" class="logohotel">Café de Paris Monte-Carlo</h1>
+
+
+
+
+
+
+
+	<div id="hotelcdp" class="cadre-vignettes-center">
+
+
+
+
+
+	<h1 class="separation">Lobby &amp; Facade</h1>
+
+		<hr>
+
+
+
+		<div id="scene_hallCdP" class="vignettes" onclick="loadpano('cdp/cdphall/tour.xml'); resethotel(); nomdelavue = 'scene_hallCdP'; hidelightbox();">
+
+			<img src="cdp/cdphall/panos/hallCdP.tiles/thumb.jpg" />
+
+			<p class="legende">Hall</p>
+
+		</div>
+
+
+
+		<h1 class="separation">Restaurants &amp; Bars</h1>
+
+		<hr>
+
+
+
+		<div id="scene_CdPterrasse" class="vignettes" onclick="loadpano('cdp/cdpterrasse/tour.xml'); resethotel(); nomdelavue = 'scene_CdPterrasse'; hidelightbox();">
+
+			<img src="cdp/cdpterrasse/panos/CdPterrasse.tiles/thumb.jpg" />
+
+			<p class="legende">Terrace</p>
+
+		</div>
+
+
+
+		<div id="scene_CdPbrasserie" class="vignettes" onclick="loadpano('cdp/cdpbrasserie/tour.xml'); resethotel(); nomdelavue = 'scene_CdPbrasserie'; hidelightbox();">
+
+			<img src="cdp/cdpbrasserie/panos/CdPbrasserie.tiles/thumb.jpg" />
+
+			<p class="legende">Brasserie</p>
+
+		</div>
+
+
+
+		
+
+		<h1 class="separation">Leisure</h1>
+
+		<hr>
+
+
+
+		<div id="scene_casinoCdP1" class="vignettes" onclick="loadpano('cdp/casinocdp1/tour.xml'); resethotel(); nomdelavue = 'scene_casinoCdP1'; hidelightbox();">
+
+			<img src="cdp/casinocdp1/panos/casinoCdP1.tiles/thumb.jpg" />
+
+			<p class="legende">Casino Café de Paris - Slot Machines area 1</p>
+
+		</div>
+
+
+
+		<div id="scene_casinoCdPin1" class="vignettes" onclick="loadpano('cdp/casinocdp2/tour.xml'); resethotel(); nomdelavue = 'scene_casinoCdPin1'; hidelightbox();">
+
+			<img src="cdp/casinocdp2/panos/casinoCdPin1.tiles/thumb.jpg" />
+
+			<p class="legende">Casino Café de Paris - Slot Machines area 2</p>
+
+		</div>
+
+
+
+		<div id="scene_casinoCdPterrasse1" class="vignettes" onclick="loadpano('cdp/casinoterrace1/tour.xml'); resethotel(); nomdelavue = 'scene_casinoCdPterrasse1'; hidelightbox();">
+
+			<img src="cdp/casinoterrace1/panos/casinoCdPterrasse1.tiles/thumb.jpg" />
+
+			<p class="legende">Casino Café de Paris - Terrace</p>
+
+		</div>
+
+
+
+		<div id="scene_casinoCdPterrasse2" class="vignettes" onclick="loadpano('cdp/casinoterrace2/tour.xml'); resethotel(); nomdelavue = 'scene_casinoCdPterrasse2'; hidelightbox();">
+
+			<img src="cdp/casinoterrace2/panos/casinoCdPterrasse2.tiles/thumb.jpg" />
+
+			<p class="legende">Casino Café de Paris - Terrace</p>
+
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+
+
+	<!-------------------------------------- AERIENNES------------------------------------------------>
+
+
+
+
+
+
+
+	
+
+	<h1 id="hotelaerienneslogo" class="logohotel">Aerial Views</h1>
+
+
+
+	<div id="hotelaeriennes" class="cadre-vignettes-center">
+
+
+
+		<hr>
+
+
+
+		<div id="scene_casino100m" class="vignettes" onclick="loadpano('aeriennes/casino100m/tour.xml'); resethotel(); nomdelavue = 'scene_casino100m'; hidelightbox();">
+
+			<img src="aeriennes/casino100m/thumb.jpg" />
+
+			<p class="legende">Casino Square</p>
+
+		</div>
+
+
+
+		 <div id="hercule" class="vignettes" onclick="loadpano('aeriennes/hercule/tour.xml'); resethotel(); nomdelavue = 'hercule'; hidelightbox();">
+
+			<img src="aeriennes/hercule/panos/hercule.tiles/thumb.jpg" />
+
+			<p class="legende">Monaco Harbor</p>
+
+		</div>
+
+
+
+		<div id="scene_beach150m" class="vignettes" onclick="loadpano('aeriennes/beach150m/tour.xml'); resethotel(); nomdelavue = 'scene_beach150m'; hidelightbox();">
+
+			<img src="aeriennes/beach150m/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo Beach
+
+				<br>Seaside View</p>
+
+		</div>
+
+
+
+		
+
+
+
+
+
+		 <div id="scene_sporting_air" class="vignettes" onclick="loadpano('aeriennes/sporting_air/tour.xml'); resethotel(); nomdelavue = 'sporting_air'; hidelightbox();">
+
+			<img src="aeriennes/sporting_air/panos/sporting_air.tiles/thumb.jpg" />
+
+			<p class="legende">Sporting Monte-Carlo</p>
+
+		</div>
+
+
+
+	   <div id="scene_country" class="vignettes" onclick="loadpano('aeriennes/country/tour.xml'); resethotel(); nomdelavue = 'scene_country'; hidelightbox();">
+
+			<img src="aeriennes/country/panos/country.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo
+
+				<br>Country Club</p>
+
+		</div>
+
+
+
+		<div id="scene_golfmc_sphere" class="vignettes" onclick="loadpano('aeriennes/golf/tour.xml'); resethotel(); nomdelavue = 'scene_golfmc_sphere'; hidelightbox();">
+
+			<img src="aeriennes/golf/panos/golfmc_sphere.tiles/thumb.jpg" />
+
+			<p class="legende">Monte-Carlo
+
+				<br>Golf Club</p>
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-------------------------------------- CASINOS------------------------------------------------>
+
+
+
+
+
+
+
+	<!--<img id="hotelcasinoslogo" class="logohotel" src="img/visu_casinos.jpg" />-->
+
+	<h1 id="hotelcasinoslogo" class="logohotel">Casino de Monte-Carlo</h1>
+
+
+
+	<div id="hotelcasinos" class="cadre-vignettes-center">
+
+		<h1 class="separation">Lobby &amp; Facade</h1>
+
+		<hr>
+
+
+
+		<div id="atrium" class="vignettes" onclick="loadpano('casinos/atrium/tour.xml'); resethotel(); nomdelavue = 'atrium'; hidelightbox();">
+
+			<img src="casinos/atrium/panos/atrium.tiles/thumb.jpg" />
+
+			<p class="legende">Atrium</p>
+
+		</div>
+
+
+
+		<div id="opera" class="vignettes" onclick="loadpano('casinos/opera/tour.xml'); resethotel(); nomdelavue = 'opera'; hidelightbox();">
+
+			<img src="casinos/opera/panos/opera-maire_sphere.tiles/thumb.jpg" />
+
+			<p class="legende">Opéra Monte-Carlo</p>
+
+		</div>
+
+		<!-- Leisure -->
+
+		<h1 class="separation">Leisure</h1>
+
+		<hr>
+
+
+
+		<div id="renaissance" class="vignettes" onclick="loadpano('casinos/renaissance/tour.xml'); resethotel(); nomdelavue = 'renaissance'; hidelightbox();">
+
+			<img src="casinos/renaissance/panos/renaissance.tiles/thumb.jpg" />
+
+			<p class="legende">Salle Renaissance</p>
+
+		</div>
+
+
+
+		<div id="europe" class="vignettes" onclick="loadpano('casinos/europe/tour.xml'); resethotel(); nomdelavue = 'europe'; hidelightbox();">
+
+			<img src="casinos/europe/panos/europe.tiles/thumb.jpg" />
+
+			<p class="legende">Salle Europe</p>
+
+		</div>
+
+
+
+		<div id="blanche" class="vignettes" onclick="loadpano('casinos/blanche/tour.xml'); resethotel(); nomdelavue = 'blanche'; hidelightbox();">
+
+			<img src="casinos/blanche/panos/blanche.tiles/thumb.jpg" />
+
+			<p class="legende">Salle Blanche</p>
+
+		</div>
+
+
+
+		<div id="ameriques" class="vignettes" onclick="loadpano('casinos/ameriques/tour.xml'); resethotel(); nomdelavue = 'ameriques'; hidelightbox();">
+
+			<img src="casinos/ameriques/panos/ameriques.tiles/thumb.jpg" />
+
+			<p class="legende">Salle des Amériques</p>
+
+		</div>
+
+
+
+		<div id="touzet_nord" class="vignettes" onclick="loadpano('casinos/touzet_nord/tour.xml'); resethotel(); nomdelavue = 'touzet_nord'; hidelightbox();">
+
+			<img src="casinos/touzet_nord/panos/touzet_nord.tiles/thumb.jpg" />
+
+			<p class="legende">Salle Touzet Nord</p>
+
+		</div>
+
+
+
+		<div id="touzet_sud" class="vignettes" onclick="loadpano('casinos/touzet_sud/tour.xml'); resethotel(); nomdelavue = 'touzet_sud'; hidelightbox();">
+
+			<img src="casinos/touzet_sud/panos/touzet_sud.tiles/thumb.jpg" />
+
+			<p class="legende">Salle Touzet Sud</p>
+
+		</div>
+
+
+
+		<div id="medecin" class="vignettes" onclick="loadpano('casinos/medecin/tour.xml'); resethotel(); nomdelavue = 'medecin'; hidelightbox();">
+
+			<img src="casinos/medecin/panos/medecin.tiles/thumb.jpg" />
+
+			<p class="legende">Salle Médecin</p>
+
+		</div>
+
+
+
+		<div id="salon_anglais" class="vignettes" onclick="loadpano('casinos/salon_anglais/tour.xml'); resethotel(); nomdelavue = 'salon_anglais'; hidelightbox();">
+
+			<img src="casinos/salon_anglais/panos/salon_anglais.tiles/thumb.jpg" />
+
+			<p class="legende">Salon Anglais</p>
+
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<!-------------------------------------- BUDDHA BAR------------------------------------------------>
+
+
+
+
+
+
+
+
+
+	<h1 id="hotelbuddhabarlogo" class="logohotel">Buddha Bar Monte-Carlo</h1>
+
+
+
+	<div id="hotelbuddhabar" class="cadre-vignettes-center">
+
+		<h1 class="separation">Leisure</h1>
+
+		<hr>
+
+
+
+		<div id="scene_buddhabas" class="vignettes" onclick="loadpano('buddhabar/buddhabas/tour.xml'); resethotel(); nomdelavue = 'buddhabas'; hidelightbox();">
+
+			<img src="buddhabar/buddhabas/panos/buddhabas.tiles/thumb.jpg" />
+
+			<p class="legende">Lounge Bar</p>
+
+		</div>
+
+
+
+		<div id="scene_buddhahaut" class="vignettes" onclick="loadpano('buddhabar/buddhahaut/tour.xml'); resethotel(); nomdelavue = 'scene_buddhahaut'; hidelightbox();">
+
+			<img src="buddhabar/buddhahaut/panos/buddhahaut.tiles/thumb.jpg" />
+
+			<p class="legende">Restaurant</p>
+
+		</div>
+
+
+
+		<div id="scene_privetable" class="vignettes" onclick="loadpano('buddhabar/private/tour.xml'); resethotel(); nomdelavue = 'scene_privetable'; hidelightbox();">
+
+			<img src="buddhabar/private/panos/privetable.tiles/thumb.jpg" />
+
+			<p class="legende">Private Room</p>
+
+		</div>
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+	<!-------------------------------------- Rascasse ------------------------------------------------>
+
+
+
+
+
+
+
+
+	<h1 id="hotelrascasselogo" class="logohotel">La Rascasse</h1>
+
+
+
+	<div id="hotelrascasse" class="cadre-vignettes-center">
+
+		<h1 class="separation">Leisure</h1>
+
+		<hr>
+
+
+
+		<div id="scene_rascasseext" class="vignettes" onclick="loadpano('rascasse/rascasseext/tour.xml'); resethotel(); nomdelavue = 'rascasseext'; hidelightbox();">
+
+			<img src="rascasse/rascasseext/panos/rascasseext.tiles/thumb.jpg" />
+
+			<p class="legende">Terrace</p>
+
+		</div>
+
+
+
+		<div id="scene_rascasse1" class="vignettes" onclick="loadpano('rascasse/rascasse1/tour.xml'); resethotel(); nomdelavue = 'rascasse1'; hidelightbox();">
+
+			<img src="rascasse/rascasse1/panos/rascasse1.tiles/thumb.jpg" />
+
+			<p class="legende">Ground Floor</p>
+
+		</div>
+
+
+
+	   <div id="scene_rascasseetage" class="vignettes" onclick="loadpano('rascasse/rascasseetage/tour.xml'); resethotel(); nomdelavue = 'rascasseetage'; hidelightbox();">
+
+			<img src="rascasse/rascasseetage/panos/rascasseetage.tiles/thumb.jpg" />
+
+			<p class="legende">First Floor</p>
+
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<!-------------------------------------- La VIGIE ------------------------------------------------>
+
+
+
+
+
+
+
+	<!--<img id="hotelvigielogo" class="logohotel" src="img/visu_vigie.jpg" />-->
+
+	<h1 id="hotelvigielogo" class="logohotel">Villa La Vigie</h1>
+
+
+
+	<div id="hotelvigie" class="cadre-vignettes-center">
+
+
+
+		<hr>
+
+
+
+		<div id="scene_salon" class="vignettes" onclick="loadpano('vigie/salon/tour.xml'); resethotel(); nomdelavue = 'salon'; hidelightbox();">
+
+			<img src="vigie/salon/panos/salon.tiles/thumb.jpg" />
+
+			<p class="legende">Living Room</p>
+
+		</div>
+
+
+
+		<div id="scene_sam" class="vignettes" onclick="loadpano('vigie/sam/tour.xml'); resethotel(); nomdelavue = 'sam'; hidelightbox();">
+
+			<img src="vigie/sam/panos/sam.tiles/thumb.jpg" />
+
+			<p class="legende">Dining Room</p>
+
+		</div>
+
+
+
+		<div id="scene_billard" class="vignettes" onclick="loadpano('vigie/billard/tour.xml'); resethotel(); nomdelavue = 'billard'; hidelightbox();">
+
+			<img src="vigie/billard/panos/billard.tiles/thumb.jpg" />
+
+			<p class="legende">Billard Room</p>
+
+		</div>
+
+
+
+		<div id="scene_bed1" class="vignettes" onclick="loadpano('vigie/bed1/tour.xml'); resethotel(); nomdelavue = 'bed1'; hidelightbox();">
+
+			<img src="vigie/bed1/panos/bed1.tiles/thumb.jpg" />
+
+			<p class="legende">Bedroom - 1</p>
+
+		</div>
+
+
+
+		<div id="scene_bed2" class="vignettes" onclick="loadpano('vigie/bed2/tour.xml'); resethotel(); nomdelavue = 'bed2'; hidelightbox();">
+
+			<img src="vigie/bed2/panos/bed2.tiles/thumb.jpg" />
+
+			<p class="legende">Bedroom - 2</p>
+
+		</div>
+
+
+
+		<div id="scene_bed3" class="vignettes" onclick="loadpano('vigie/bed3/tour.xml'); resethotel(); nomdelavue = 'bed3'; hidelightbox();">
+
+			<img src="vigie/bed3/panos/bed3.tiles/thumb.jpg" />
+
+			<p class="legende">Bedroom - 3</p>
+
+		</div>
+
+
+
+		<div id="scene_bed4" class="vignettes" onclick="loadpano('vigie/bed4/tour.xml'); resethotel(); nomdelavue = 'bed4'; hidelightbox();">
+
+			<img src="vigie/bed4/panos/bed4.tiles/thumb.jpg" />
+
+			<p class="legende">Bedroom - 4</p>
+
+		</div>
+
+
+
+		<div id="scene_bed5" class="vignettes" onclick="loadpano('vigie/bed5/tour.xml'); resethotel(); nomdelavue = 'bed5'; hidelightbox();">
+
+			<img src="vigie/bed5/panos/bed5.tiles/thumb.jpg" />
+
+			<p class="legende">Bedroom - 5</p>
+
+		</div>
+
+
+
+		<div id="scene_bed6" class="vignettes" onclick="loadpano('vigie/bed6/tour.xml'); resethotel(); nomdelavue = 'bed6'; hidelightbox();">
+
+			<img src="vigie/bed6/panos/bed6.tiles/thumb.jpg" />
+
+			<p class="legende">Bedroom - 6</p>
+
+		</div>
+
+
+
+		<div id="scene_sdb1" class="vignettes" onclick="loadpano('vigie/sdb1/tour.xml'); resethotel(); nomdelavue = 'sdb1'; hidelightbox();">
+
+			<img src="vigie/sdb1/panos/sdb1.tiles/thumb.jpg" />
+
+			<p class="legende">Bathroom - 1</p>
+
+		</div>
+
+
+
+		<div id="scene_sdb2" class="vignettes" onclick="loadpano('vigie/sdb2/tour.xml'); resethotel(); nomdelavue = 'sdb2'; hidelightbox();">
+
+			<img src="vigie/sdb2/panos/sdb2.tiles/thumb.jpg" />
+
+			<p class="legende">Bathroom - 2</p>
+
+		</div>
+
+
+
+		<div id="scene_sdb3" class="vignettes" onclick="loadpano('vigie/sdb3/tour.xml'); resethotel(); nomdelavue = 'sdb3'; hidelightbox();">
+
+			<img src="vigie/sdb3/panos/sdb3.tiles/thumb.jpg" />
+
+			<p class="legende">Bathroom - 3</p>
+
+		</div>
+
+
+
+		<div id="scene_sdb4" class="vignettes" onclick="loadpano('vigie/sdb4/tour.xml'); resethotel(); nomdelavue = 'sdb4'; hidelightbox();">
+
+			<img src="vigie/sdb4/panos/sdb4.tiles/thumb.jpg" />
+
+			<p class="legende">Bathroom - 4</p>
+
+		</div>
+
+
+
+		<div id="scene_bureau" class="vignettes" onclick="loadpano('vigie/bureau/tour.xml'); resethotel(); nomdelavue = 'bureau'; hidelightbox();">
+
+			<img src="vigie/bureau/panos/bureau.tiles/thumb.jpg" />
+
+			<p class="legende">Office</p>
+
+		</div>
+
+
+
+		<div id="scene_balcon" class="vignettes" onclick="loadpano('vigie/balcon/tour.xml'); resethotel(); nomdelavue = 'balcon'; hidelightbox();">
+
+			<img src="vigie/balcon/panos/balcon.tiles/thumb.jpg" />
+
+			<p class="legende">Bedroom Balcony</p>
+
+		</div>
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+	  <!-------------------------------------- One Monte-Carlo ------------------------------------------------>
+
+
+
+
+
+
+
+
+
+
+
+	<h1 id="hotelonelogo" class="logohotel">One Monte-Carlo</h1>
+
+	<div id="hotelone" class="cadre-vignettes-center">
+
+
+
+		<h1 class="separation">District</h1>
+
+		<hr>
+
+
+
+		<div id="scene_OneMat" class="vignettes" onclick="loadpano('one/one_mat/tour.xml'); resethotel(); nomdelavue = 'scene_OneMat'; hidelightbox();">
+
+			<img src="one/one_mat/thumb.jpg" />
+
+			<p class="legende">Shopping area</p>
+
+		</div>
+
+
+
+		<h1 class="separation">Restaurant</h1>
+
+		<hr>
+
+
+
+		<div id="scene_madaone" class="vignettes" onclick="loadpano('one/madaone/tour.xml'); resethotel(); nomdelavue = 'scene_madaone'; hidelightbox();">
+
+			<img src="one/madaone/panos/madaone_out.tiles/thumb.jpg" />
+
+			<p class="legende">Mada One</p>
+
+		</div>
+
+
+
+		<h1 class="separation">Conference Center</h1>
+
+		<hr>
+
+
+
+		<div id="scene_foyer" class="vignettes" onclick="loadpano('one/foyer/tour.xml'); resethotel(); nomdelavue = 'scene_foyer'; hidelightbox();">
+
+			<img src="one/foyer/thumb.jpg" />
+
+			<p class="legende">Foyer</p>
+
+		</div>
+
+
+
+		<div id="scene_one_cocteau_banquet" class="vignettes" onclick="loadpano('one/cocteau/tour.xml'); resethotel(); nomdelavue = 'scene_one_cocteau_banquet'; hidelightbox();">
+
+			<img src="one/cocteau/panos/one_cocteau_banquet.tiles/thumb.jpg" />
+
+			<p class="legende">Salle Jean Cocteau</p>
+
+		</div>
+
+
+
+		<div id="scene_arman" class="vignettes" onclick="loadpano('one/arman/tour.xml'); resethotel(); nomdelavue = 'scene_arman'; hidelightbox();">
+
+			<img src="one/arman/thumb.jpg" />
+
+			<p class="legende">Salon Arman</p>
+
+		</div>
+
+
+
+		<div id="scene_one_salle_des_arts_theatre" class="vignettes" onclick="loadpano('one/arts/tour.xml'); resethotel(); nomdelavue = 'scene_one_salle_des_arts_theatre'; hidelightbox();">
+
+			<img src="one/arts/panos/one_salle_des_arts_banquet.tiles/thumb.jpg" />
+
+			<p class="legende">Salle des Arts</p>
+
+		</div>
+
+
+
+
+
+
+
+		<div id="scene_auditorium" class="vignettes" onclick="loadpano('one/auditorium/tour.xml'); resethotel(); nomdelavue = 'scene_auditorium'; hidelightbox();">
+
+			<img src="one/auditorium/thumb.jpg" />
+
+			<p class="legende">Amphithéâtre</p>
+
+		</div>
+
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+	<!-------------------------------------- EXCEPTIONAL VENUES------------------------------------------------>
+
+
+
+
+
+
+
+	
+
+	<h1 id="hotelvenueslogo" class="logohotel">Exceptional venues</h1>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+	<!--------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+	<!---------------------------------------------------------- GALERIES PHOTOS  ----------------------------------------------------->
+
+
+
+	<!--------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+	<!------------------------------------------ MENU GALERIES PHOTOS --------------------------->
+
+
+
+	<img src="img/close-but.png" id="fermerphoto" />
+
+	<div class="menu_general_galeries_photos">
+
+		<img src="img/close-but.png" id="fermer-menu-photo" />
+
+		<div id="galeries_photos-container">
+
+			<ul id="galerie-menu-hotel">
+
+				<li class="logohotel-menu"><img id="hdplogo"  src="img/logo_HDP.jpg"/></li>
+
+				<li class="logohotel-menu"><img id="hhlogo"  src="img/logo_HH.jpg"/></li>
+
+				<li class="logohotel-menu"><img id="mcbaylogo"  src="img/logo-Monte-CarloBay.jpg"/></li>
+
+				<li class="logohotel-menu"><img id="beachlogo"  src="img/logo_MCBeach.jpg"/></li>
+
+			</ul>
+
+			<ul id="galerie-menu-etablissements">
+                
+                <li class="logohotel-menu-bas"><img id="extralogo" src="img/onemontecarlo.jpg"/></li>
+                
+                <li class="logohotel-menu-bas"><img id="sportinglogo" src="img/visu_sporting.jpg"/></li>
+
+				<li class="logohotel-menu-bas"><img id="thermeslogo" src="img/logo_Thermes_Marins.jpg"/></li>
+
+				<li class="logohotel-menu-bas"><img id="cdplogo" src="img/visu_cdp1.jpg"/></li>
+
+				<li class="logohotel-menu-bas"><img id="casinoslogo" src="img/visu_casinos.jpg"/></li>
+
+				<li class="logohotel-menu-bas"><img id="buddhabarlogo" src="img/visu_buddhabar.jpg"/></li>
+
+				<li class="logohotel-menu-bas"><img id="rascasselogo" src="img/visu_rascasse.jpg"/></li>
+
+				<li class="logohotel-menu-bas"><img id="vigielogo" src="img/visu_vigie.jpg"/></li>
+
+
+
+			</ul>
+
+		</div>
+
+	</div>
+
+	<script>
+
+		document.getElementById("hhlogo").addEventListener("click", function () {
+
+			galerie_hotel_HH();
+
+			hh_galerie_photos();
+
+		});
+
+
+
+		document.getElementById("hdplogo").addEventListener("click", function () {
+
+			galerie_hotel_HDP();
+
+		});
+
+
+
+		document.getElementById("mcbaylogo").addEventListener("click", function () {
+
+			galerie_hotel_mcb();
+
+		});
+
+
+
+		document.getElementById("beachlogo").addEventListener("click", function () {
+
+			galerie_hotel_beach();
+
+		});
+
+
+
+
+
+		document.getElementById("extralogo").addEventListener("click", function () {
+
+			galerie_one();
+
+		});
+
+
+
+		document.getElementById("thermeslogo").addEventListener("click", function () {
+
+			$('#thermes-galerie').show();
+
+			$('#fermer-menu-photo-thermes').show();
+
+			$('#retour-menu-photo-thermes').show();
+
+			thermes_galerie_chargement();
+
+		});
+
+
+
+		document.getElementById("sportinglogo").addEventListener("click", function () {
+
+			$('#sporting-galerie').show();
+
+			$('#fermer-menu-photo-sporting').show();
+
+			$('#retour-menu-photo-sporting').show();
+
+			sporting_galerie_chargement();
+
+		});
+
+
+
+		document.getElementById("cdplogo").addEventListener("click", function () {
+
+			$('#cdp-galerie').show();
+
+			$('#fermer-menu-photo-cdp').show();
+
+			$('#retour-menu-photo-cdp').show();
+
+			cdp_galerie_chargement();
+
+		});
+
+
+
+		document.getElementById("casinoslogo").addEventListener("click", function () {
+
+			$('#casinos-galerie').show();
+
+			$('#fermer-menu-photo-casinos').show();
+
+			$('#retour-menu-photo-casinos').show();
+
+			casinos_galerie_chargement();
+
+		});
+
+
+
+		document.getElementById("buddhabarlogo").addEventListener("click", function () {
+
+			$('#buddhabar-galerie').show();
+
+			$('#fermer-menu-photo-buddhabar').show();
+
+			$('#retour-menu-photo-buddhabar').show();
+
+			buddhabar_galerie_chargement();
+
+		});
+
+
+
+		document.getElementById("rascasselogo").addEventListener("click", function () {
+
+			$('#rascasse-galerie').show();
+
+			$('#fermer-menu-photo-rascasse').show();
+
+			$('#retour-menu-photo-rascasse').show();
+
+			rascasse_galerie_chargement();
+
+		});
+
+
+
+		document.getElementById("vigielogo").addEventListener("click", function () {
+
+			$('#vigie-galerie').show();
+
+			$('#fermer-menu-photo-vigie').show();
+
+			$('#retour-menu-photo-vigie').show();
+
+			vigie_galerie_chargement();
+
+		});
+
+
+
+		document.getElementById("extralogo").addEventListener("click", function () {
+
+			$('#extra-galerie').show();
+
+			$('#fermer-menu-photo-extra').show();
+
+			$('#retour-menu-photo-extra').show();
+
+			extra_galerie_chargement();
+
+		});
+
+	</script>
+
+<!-------------------------------------- GALERIES ------------------------------------------------>
+
+
+	<!-------------------------------------- GALERIE HH  ------------------------------------------------>
+
+
+
+	<div id="menu-galerie-hh" class="menu-galerie-photo">
+
+		<img src="img/close-but.png" id="fermer-menu-photo-hh" class="fermer-menu-photo" />
+
+		<img src="img/return-but.png" id="retour-menu-photo-hh" class="retour-menu-photo" />
+
+		<div id="galerie-menu-hh" class="galerie-hotel-ok">
+
+			<img id="hhmenu" class="logohotelgalerie" src="img/logo_HH.jpg" />
+
+			<div id="hh-facade" class="thematique-hotel">Lobby - Facade</div><div class="plans-hide"></div>
+
+			<div id="hh-room" class="thematique-hotel">Rooms - Suites</div><div class="plans-hide"></div>
+
+			<div id="hh-resto" class="thematique-hotel">Restaurants - Bars</div><div class="plans-hide"></div>
+
+			<div id="hh-meeting" class="thematique-hotel">Meeting - Banqueting</div><div id="hh-meeting-plan" class="plans">+</div>
+
+			<div id="hh-leisure" class="thematique-hotel">Leisure</div><div class="plans-hide"></div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+	<iframe id="hh-facade-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="hh-room-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="hh-resto-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="hh-meeting-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="hh-leisure-galerie" class="galeries" src=""></iframe>
+
+
+
+
+
+	<script>
+
+		document.getElementById("hh-facade").addEventListener("click", function () {
+
+			$('#hh-facade-galerie').show();
+
+			$('#fermerphoto').show();
+
+			hh_facade_galerie_chargement();
+
+		});
+
+		document.getElementById("hh-room").addEventListener("click", function () {
+
+			$('#hh-room-galerie').show();
+
+			$('#fermerphoto').show();
+
+			hh_room_galerie_chargement();
+
+		});
+
+		document.getElementById("hh-resto").addEventListener("click", function () {
+
+			$('#hh-resto-galerie').show();
+
+			$('#fermerphoto').show();
+
+			hh_resto_galerie_chargement();
+
+		});
+
+		document.getElementById("hh-meeting").addEventListener("click", function () {
+
+			$('#hh-meeting-galerie').show();
+
+			$('#fermerphoto').show();
+
+			hh_meeting_galerie_chargement();
+
+		});
+
+		document.getElementById("hh-meeting-plan").addEventListener("click", function () {
+
+			hhpplan();
+
+		});
+
+		document.getElementById("hh-leisure").addEventListener("click", function () {
+
+			$('#hh-leisure-galerie').show();
+
+			$('#fermerphoto').show();
+
+			hh_leisure_galerie_chargement();
+
+		});
+
+		document.getElementById("retour-menu-photo-hh").addEventListener("click", function () {
+
+			$('.menu-galerie-photo').hide();
+
+			$('.menu_general_galeries_photos').show();
+
+			hh_facade_galerie_dechargement();
+
+			hh_room_galerie_dechargement();
+
+			hh_resto_galerie_dechargement();
+
+			hh_meeting_galerie_dechargement();
+
+			hh_leisure_galerie_dechargement();
+
+		});
+
+		document.getElementById("fermer-menu-photo-hh").addEventListener("click", function () {
+
+			$('.menu-galerie-photo').hide();
+
+			$('.menu_general_galeries_photos').hide();
+
+			hh_facade_galerie_dechargement();
+
+			hh_room_galerie_dechargement();
+
+			hh_resto_galerie_dechargement();
+
+			hh_meeting_galerie_dechargement();
+
+			hh_leisure_galerie_dechargement();
+
+			$('.logotitre').show();
+
+		});
+
+	</script>
+
+
+
+
+
+	<!-------------------------------------- GALERIE HDP  ------------------------------------------------>
+
+
+
+	<div id="menu-galerie-hdp" class="menu-galerie-photo">
+
+		<img src="img/close-but.png" id="fermer-menu-photo-hdp" class="fermer-menu-photo" />
+
+		<img src="img/return-but.png" id="retour-menu-photo-hdp" class="retour-menu-photo" />
+
+		<div id="galerie-menu-hdp" class="galerie-hotel-ok">
+
+			<img id="hdpmenu" class="logohotelgalerie" src="img/logo_HDP.jpg" />
+
+			<div id="hdp-facade" class="thematique-hotel">Lobby - Facade</div><div class="plans-hide"></div>
+
+			<div id="hdp-room" class="thematique-hotel">Rooms - Suites</div><div class="plans-hide"></div>
+
+			<div id="hdp-resto" class="thematique-hotel">Restaurants - Bars</div><div class="plans-hide"></div>
+
+			<div id="hdp-meeting" class="thematique-hotel">Meeting - Banqueting</div><div id="hdp-meeting-plan" class="plans">+</div>
+
+			<div id="hdp-leisure" class="thematique-hotel">Leisure</div><div class="plans-hide"></div>
+
+		</div>
+
+	</div>
+
+
+
+	<iframe id="hdp-facade-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="hdp-room-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="hdp-resto-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="hdp-meeting-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="hdp-leisure-galerie" class="galeries" src=""></iframe>
+
+
+
+	<script>
+
+		document.getElementById("hdp-facade").addEventListener("click", function () {
+
+			$('#hdp-facade-galerie').show();
+
+			$('#fermerphoto').show();
+
+			hdp_facade_galerie_chargement();
+
+		});
+
+		document.getElementById("hdp-room").addEventListener("click", function () {
+
+			$('#hdp-room-galerie').show();
+
+			$('#fermerphoto').show();
+
+			hdp_room_galerie_chargement();
+
+		});
+
+		document.getElementById("hdp-resto").addEventListener("click", function () {
+
+			$('#hdp-resto-galerie').show();
+
+			$('#fermerphoto').show();
+
+			hdp_resto_galerie_chargement();
+
+		});
+
+		document.getElementById("hdp-meeting").addEventListener("click", function () {
+
+			$('#hdp-meeting-galerie').show();
+
+			$('#fermerphoto').show();
+
+			hdp_meeting_galerie_chargement();
+
+		});
+
+		document.getElementById("hdp-meeting-plan").addEventListener("click", function () {
+
+			hdpplan();
+
+		});
+        
+        
+
+		document.getElementById("hdp-leisure").addEventListener("click", function () {
+
+			$('#hdp-leisure-galerie').show();
+
+			$('#fermerphoto').show();
+
+			hdp_leisure_galerie_chargement();
+
+		});
+
+		document.getElementById("retour-menu-photo-hdp").addEventListener("click", function () {
+
+			$('.menu-galerie-photo').hide();
+
+			$('.menu_general_galeries_photos').show();
+
+			hdp_facade_galerie_dechargement();
+
+			hdp_room_galerie_dechargement();
+
+			hdp_resto_galerie_dechargement();
+
+			hdp_meeting_galerie_dechargement();
+
+			hdp_leisure_galerie_dechargement();
+
+		});
+
+		document.getElementById("fermer-menu-photo-hdp").addEventListener("click", function () {
+
+			$('.menu-galerie-photo').hide();
+
+			$('.menu_general_galeries_photos').hide();
+
+			hdp_facade_galerie_dechargement();
+
+			hdp_room_galerie_dechargement();
+
+			hdp_resto_galerie_dechargement();
+
+			hdp_meeting_galerie_dechargement();
+
+			hdp_leisure_galerie_dechargement();
+
+		});
+
+	</script>
+
+
+
+
+
+
+
+	<!-------------------------------------- GALERIE MCB  ------------------------------------------------>
+
+
+
+	<div id="menu-galerie-mcb" class="menu-galerie-photo">
+
+		<img src="img/close-but.png" id="fermer-menu-photo-mcb" class="fermer-menu-photo" />
+
+		<img src="img/return-but.png" id="retour-menu-photo-mcb" class="retour-menu-photo" />
+
+		<div id="galerie-menu-mcb" class="galerie-hotel-ok">
+
+			<img id="mcbmenu" class="logohotelgalerie" src="img/logo_MCB.jpg" />
+
+			<div id="mcb-facade" class="thematique-hotel">Lobby - Facade</div><div class="plans-hide"></div>
+
+			<div id="mcb-room" class="thematique-hotel">Rooms - Suites</div><div class="plans-hide"></div>
+
+			<div id="mcb-resto" class="thematique-hotel">Restaurants - Bars</div><div class="plans-hide"></div>
+
+			<div id="mcb-meeting" class="thematique-hotel">Meeting - Banqueting</div><div id="mcb-meeting-plan" class="plans">+</div>
+
+			<div id="mcb-leisure" class="thematique-hotel">Leisure</div><div class="plans-hide"></div>
+
+		</div>
+
+	</div>
+
+
+
+	<iframe id="mcb-facade-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="mcb-room-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="mcb-resto-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="mcb-meeting-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="mcb-leisure-galerie" class="galeries" src=""></iframe>
+
+
+
+
+
+	<script>
+
+		document.getElementById("mcb-facade").addEventListener("click", function () {
+
+			$('#mcb-facade-galerie').show();
+
+			$('#fermerphoto').show();
+
+			mcb_facade_galerie_chargement();
+
+		});
+
+		document.getElementById("mcb-room").addEventListener("click", function () {
+
+			$('#mcb-room-galerie').show();
+
+			$('#fermerphoto').show();
+
+			mcb_room_galerie_chargement();
+
+		});
+
+		document.getElementById("mcb-resto").addEventListener("click", function () {
+
+			$('#mcb-resto-galerie').show();
+
+			$('#fermerphoto').show();
+
+			mcb_resto_galerie_chargement();
+
+		});
+
+		document.getElementById("mcb-meeting").addEventListener("click", function () {
+
+			$('#mcb-meeting-galerie').show();
+
+			$('#fermerphoto').show();
+
+			mcb_meeting_galerie_chargement();
+
+		});
+
+		document.getElementById("mcb-meeting-plan").addEventListener("click", function () {
+
+			mcbpplan();
+
+		});
+
+		document.getElementById("mcb-leisure").addEventListener("click", function () {
+
+			$('#mcb-leisure-galerie').show();
+
+			$('#fermerphoto').show();
+
+			mcb_leisure_galerie_chargement();
+
+		});
+
+		document.getElementById("retour-menu-photo-mcb").addEventListener("click", function () {
+
+			$('.menu-galerie-photo').hide();
+
+			$('.menu_general_galeries_photos').show();
+
+			mcb_facade_galerie_dechargement();
+
+			mcb_room_galerie_dechargement();
+
+			mcb_resto_galerie_dechargement();
+
+			mcb_meeting_galerie_dechargement();
+
+			mcb_leisure_galerie_dechargement();
+
+		});
+
+		document.getElementById("fermer-menu-photo-mcb").addEventListener("click", function () {
+
+			$('.menu-galerie-photo').hide();
+
+			$('.menu_general_galeries_photos').hide();
+
+			mcb_facade_galerie_dechargement();
+
+			mcb_room_galerie_dechargement();
+
+			mcb_resto_galerie_dechargement();
+
+			mcb_meeting_galerie_dechargement();
+
+			mcb_leisure_galerie_dechargement();
+
+		});
+
+	</script>
+
+
+
+
+
+	<!-------------------------------------- GALERIE BEACH  ------------------------------------------------>
+
+
+
+	<div id="menu-galerie-beach" class="menu-galerie-photo">
+
+		<img src="img/close-but.png" id="fermer-menu-photo-beach" class="fermer-menu-photo" />
+
+		<img src="img/return-but.png" id="retour-menu-photo-beach" class="retour-menu-photo" />
+
+		<div id="galerie-menu-beach" class="galerie-hotel-ok">
+
+			<img id="beachmenu" class="logohotelgalerie" src="img/logo_MCBeach.jpg" />
+
+			<div id="beach-facade" class="thematique-hotel">Lobby - Facade</div><div class="plans-hide"></div>
+
+			<div id="beach-room" class="thematique-hotel">Rooms - Suites</div><div class="plans-hide"></div>
+
+			<div id="beach-resto" class="thematique-hotel">Restaurants - Bars</div><div class="plans-hide"></div>
+
+			<div id="beach-meeting" class="thematique-hotel">Meeting - Banqueting</div><div id="beach-meeting-plan" class="plans">+</div>
+
+			<div id="beach-leisure" class="thematique-hotel">Leisure</div><div class="plans-hide"></div>
+
+		</div>
+
+	</div>
+
+
+
+	<iframe id="beach-facade-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="beach-room-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="beach-resto-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="beach-meeting-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="beach-leisure-galerie" class="galeries" src=""></iframe>
+
+
+
+
+
+	<script>
+
+		document.getElementById("beach-facade").addEventListener("click", function () {
+
+			$('#beach-facade-galerie').show();
+
+			$('#fermerphoto').show();
+
+			beach_facade_galerie_chargement();
+
+		});
+
+		document.getElementById("beach-room").addEventListener("click", function () {
+
+			$('#beach-room-galerie').show();
+
+			$('#fermerphoto').show();
+
+			beach_room_galerie_chargement();
+
+		});
+
+		document.getElementById("beach-resto").addEventListener("click", function () {
+
+			$('#beach-resto-galerie').show();
+
+			$('#fermerphoto').show();
+
+			beach_resto_galerie_chargement();
+
+		});
+
+		document.getElementById("beach-meeting").addEventListener("click", function () {
+
+			$('#beach-meeting-galerie').show();
+
+			$('#fermerphoto').show();
+
+			beach_meeting_galerie_chargement();
+
+		});
+
+		document.getElementById("beach-meeting-plan").addEventListener("click", function () {
+
+			beachplan();
+
+		});
+
+		document.getElementById("beach-leisure").addEventListener("click", function () {
+
+			$('#beach-leisure-galerie').show();
+
+			$('#fermerphoto').show();
+
+			beach_leisure_galerie_chargement();
+
+		});
+
+		document.getElementById("retour-menu-photo-beach").addEventListener("click", function () {
+
+			$('.menu-galerie-photo').hide();
+
+			$('.menu_general_galeries_photos').show();
+
+			beach_facade_galerie_dechargement();
+
+			beach_room_galerie_dechargement();
+
+			beach_resto_galerie_dechargement();
+
+			beach_meeting_galerie_dechargement();
+
+			beach_leisure_galerie_dechargement();
+
+		});
+
+		document.getElementById("fermer-menu-photo-beach").addEventListener("click", function () {
+
+			$('.menu-galerie-photo').hide();
+
+			$('.menu_general_galeries_photos').hide();
+
+			beach_facade_galerie_dechargement();
+
+			beach_room_galerie_dechargement();
+
+			beach_resto_galerie_dechargement();
+
+			beach_meeting_galerie_dechargement();
+
+			beach_leisure_galerie_dechargement();
+
+		});
+
+	</script>
+
+
+
+
+
+
+
+	<!-------------------------------------- GALERIE THERMES  ------------------------------------------------>
+
+
+
+	<img src="img/return-but.png" id="retour-menu-photo-thermes" class="retour-menu-photo" />
+
+	<img src="img/close-but.png" id="fermer-menu-photo-thermes" class="fermer-menu-photo" />
+
+	<iframe id="thermes-galerie" class="galeries" src=""></iframe>
+
+
+
+	<script>
+
+		document.getElementById("fermer-menu-photo-thermes").addEventListener("click", function () {
+
+			$('#thermes-galerie').hide();
+
+			$('.menu_general_galeries_photos').hide();
+
+			$('#fermer-menu-photo-thermes').hide();
+
+			$('#retour-menu-photo-thermes').hide();
+
+			thermes_galerie_dechargement();
+
+
+
+		});
+
+		document.getElementById("retour-menu-photo-thermes").addEventListener("click", function () {
+
+			$('#retour-menu-photo-thermes').hide();
+
+			$('#thermes-galerie').hide();
+
+			$('.menu_general_galeries_photos').show();
+
+			$('#fermer-menu-photo-thermes').hide();
+
+			thermes_galerie_dechargement();
+
+		});
+
+	</script>
+
+
+
+
+
+
+
+	<!-------------------------------------- GALERIE SPORTING  ------------------------------------------------>
+
+
+
+	<img src="img/return-but.png" id="retour-menu-photo-sporting" class="retour-menu-photo" />
+
+	<img src="img/close-but.png" id="fermer-menu-photo-sporting" class="fermer-menu-photo" />
+
+	<iframe id="sporting-galerie" class="galeries" src=""></iframe>
+
+
+
+	<script>
+
+		document.getElementById("fermer-menu-photo-sporting").addEventListener("click", function () {
+
+			$('#sporting-galerie').hide();
+
+			$('.menu_general_galeries_photos').hide();
+
+			$('#fermer-menu-photo-sporting').hide();
+
+			$('#retour-menu-photo-sporting').hide();
+
+			sporting_galerie_dechargement();
+
+
+
+		});
+
+		document.getElementById("retour-menu-photo-sporting").addEventListener("click", function () {
+
+			$('#retour-menu-photo-sporting').hide();
+
+			$('#sporting-galerie').hide();
+
+			$('.menu_general_galeries_photos').show();
+
+			$('#fermer-menu-photo-sporting').hide();
+
+			sporting_galerie_dechargement();
+
+
+
+		});
+
+	</script>
+
+
+
+
+
+
+
+	<!-------------------------------------- GALERIE CAFE DE PARIS  ------------------------------------------------>
+
+
+
+	<img src="img/return-but.png" id="retour-menu-photo-cdp" class="retour-menu-photo" />
+
+	<img src="img/close-but.png" id="fermer-menu-photo-cdp" class="fermer-menu-photo" />
+
+	<iframe id="cdp-galerie" class="galeries" src=""></iframe>
+
+
+
+	<script>
+
+		document.getElementById("fermer-menu-photo-cdp").addEventListener("click", function () {
+
+			$('#cdp-galerie').hide();
+
+			$('.menu_general_galeries_photos').hide();
+
+			$('#fermer-menu-photo-cdp').hide();
+
+			$('#retour-menu-photo-cdp').hide();
+
+			cdp_galerie_dechargement();
+
+		});
+
+		document.getElementById("retour-menu-photo-cdp").addEventListener("click", function () {
+
+			$('#retour-menu-photo-cdp').hide();
+
+			$('#cdp-galerie').hide();
+
+			$('.menu_general_galeries_photos').show();
+
+			$('#fermer-menu-photo-cdp').hide();
+
+			cdp_galerie_dechargement();
+
+		});
+
+	</script>
+
+
+
+
+
+
+
+	<!-------------------------------------- GALERIE CASINOS  ------------------------------------------------>
+
+
+
+	<img src="img/return-but.png" id="retour-menu-photo-casinos" alt="Menu general photos" class="retour-menu-photo" />
+
+	<img src="img/close-but.png" id="fermer-menu-photo-casinos" class="fermer-menu-photo" />
+
+	<iframe id="casinos-galerie" class="galeries" src=""></iframe>
+
+
+
+	<script>
+
+		document.getElementById("fermer-menu-photo-casinos").addEventListener("click", function () {
+
+			$('#casinos-galerie').hide();
+
+			$('.menu_general_galeries_photos').hide();
+
+			$('#fermer-menu-photo-casinos').hide();
+
+			$('#retour-menu-photo-casinos').hide();
+
+			casinos_galerie_dechargement();
+
+		});
+
+		document.getElementById("retour-menu-photo-casinos").addEventListener("click", function () {
+
+			$('#retour-menu-photo-casinos').hide();
+
+			$('#casinos-galerie').hide();
+
+			$('.menu_general_galeries_photos').show();
+
+			$('#fermer-menu-photo-casinos').hide();
+
+			casinos_galerie_dechargement();
+
+		});
+
+	</script>
+
+
+
+
+
+
+
+	<!-------------------------------------- GALERIE BUDDHABAR  ------------------------------------------------>
+
+
+
+	<img src="img/return-but.png" id="retour-menu-photo-buddhabar" class="retour-menu-photo" />
+
+	<img src="img/close-but.png" id="fermer-menu-photo-buddhabar" class="fermer-menu-photo" />
+
+	<iframe id="buddhabar-galerie" class="galeries" src=""></iframe>
+
+
+
+	<script>
+
+		document.getElementById("fermer-menu-photo-buddhabar").addEventListener("click", function () {
+
+			$('#buddhabar-galerie').hide();
+
+			$('.menu_general_galeries_photos').hide();
+
+			$('#fermer-menu-photo-buddhabar').hide();
+
+			$('#retour-menu-photo-buddhabar').hide();
+
+			buddhabar_galerie_dechargement();
+
+		});
+
+		document.getElementById("retour-menu-photo-buddhabar").addEventListener("click", function () {
+
+			$('#retour-menu-photo-buddhabar').hide();
+
+			$('#buddhabar-galerie').hide();
+
+			$('.menu_general_galeries_photos').show();
+
+			$('#fermer-menu-photo-buddhabar').hide();
+
+			buddhabar_galerie_dechargement();
+
+		});
+
+	</script>
+
+
+
+
+
+
+
+	<!-------------------------------------- GALERIE RASCASSE  ------------------------------------------------>
+
+
+
+	<img src="img/return-but.png" id="retour-menu-photo-rascasse" class="retour-menu-photo" />
+
+	<img src="img/close-but.png" id="fermer-menu-photo-rascasse" class="fermer-menu-photo" />
+
+	<iframe id="rascasse-galerie" class="galeries" src=""></iframe>
+
+
+
+	<script>
+
+		document.getElementById("fermer-menu-photo-rascasse").addEventListener("click", function () {
+
+			$('#rascasse-galerie').hide();
+
+			$('.menu_general_galeries_photos').hide();
+
+			$('#fermer-menu-photo-rascasse').hide();
+
+			$('#retour-menu-photo-rascasse').hide();
+
+			rascasse_galerie_dechargement();
+
+		});
+
+		document.getElementById("retour-menu-photo-rascasse").addEventListener("click", function () {
+
+			$('#retour-menu-photo-rascasse').hide();
+
+			$('#rascasse-galerie').hide();
+
+			$('.menu_general_galeries_photos').show();
+
+			$('#fermer-menu-photo-rascasse').hide();
+
+			rascasse_galerie_dechargement();
+
+		});
+
+	</script>
+
+
+
+
+
+
+
+
+
+	<!-------------------------------------- GALERIE VIGIE  ------------------------------------------------>
+
+
+
+	<img src="img/return-but.png" id="retour-menu-photo-vigie" class="retour-menu-photo" />
+
+	<img src="img/close-but.png" id="fermer-menu-photo-vigie" class="fermer-menu-photo" />
+
+	<iframe id="vigie-galerie" class="galeries" src=""></iframe>
+
+
+
+	<script>
+
+		document.getElementById("fermer-menu-photo-vigie").addEventListener("click", function () {
+
+			$('#vigie-galerie').hide();
+
+			$('.menu_general_galeries_photos').hide();
+
+			$('#fermer-menu-photo-vigie').hide();
+
+			$('#retour-menu-photo-vigie').hide();
+
+			vigie_galerie_dechargement();
+
+		});
+
+		document.getElementById("retour-menu-photo-vigie").addEventListener("click", function () {
+
+			$('#retour-menu-photo-vigie').hide();
+
+			$('#vigie-galerie').hide();
+
+			$('.menu_general_galeries_photos').show();
+
+			$('#fermer-menu-photo-vigie').hide();
+
+			vigie_galerie_dechargement();
+
+		});
+
+	</script>
+
+
+
+
+
+
+
+	<!-------------------------------------- GALERIE EXTRA  ---------------------------------------------
+
+
+
+	<img src="img/return-but.png" id="retour-menu-photo-extra" class="retour-menu-photo" />
+
+	<img src="img/close-but.png" id="fermer-menu-photo-extra" class="fermer-menu-photo" />
+
+	<iframe id="extra-galerie" class="galeries" src=""></iframe>
+
+
+
+	<script>
+
+		document.getElementById("fermer-menu-photo-extra").addEventListener("click", function () {
+
+			$('#extra-galerie').hide();
+
+			$('.menu_general_galeries_photos').hide();
+
+			$('#fermer-menu-photo-extra').hide();
+
+			$('#retour-menu-photo-extra').hide();
+
+			extra_galerie_dechargement();
+
+		});
+
+		document.getElementById("retour-menu-photo-extra").addEventListener("click", function () {
+
+			$('#retour-menu-photo-extra').hide();
+
+			$('#extra-galerie').hide();
+
+			$('.menu_general_galeries_photos').show();
+
+			$('#fermer-menu-photo-extra').hide();
+
+			extra_galerie_dechargement();
+
+		});
+
+	</script>
+
+	-->
+
+
+
+
+
+	<!--GALERIE PHOTOS-->
+
+	<div class="swiper-container">
+
+		<img src="img/close-but.png" id="fermerphoto" />
+
+		<div id="galerie" class="swiper-wrapper"> </div>
+
+
+
+		<div class="swiper-pagination"></div>
+
+	</div>
+
+
+
+	<!-- PLAYER VIDEO -->
+
+	<div id="containervideo">
+
+		<img src="img/close-but.png" id="fermervideo" />
+
+		<video id="videoplayer" class="videoplayer" controls> </video>
+
+	</div>
+
+
+
+	<div id="infos"> <img src="img/close-but.png" id="fermerinfo" /> </div>
+
+
+
+
+
+
+
+	<!-------------------------------------- GALERIE ONE  -------------------------------------------->
+
+
+
+	<div id="menu-galerie-one" class="menu-galerie-photo">
+
+		<img src="img/close-but.png" id="fermer-menu-photo-extra" class="fermer-menu-photo" />
+
+		<img src="img/return-but.png" id="retour-menu-photo-extra" class="retour-menu-photo" />
+
+		<div id="galerie-menu-one" class="galerie-hotel-ok">
+
+			<img id="onemenu" class="logohotelgalerie" src="img/onemontecarlo.jpg" />
+
+			<div id="one-conference" class="thematique-hotel">Conference Center</div><div id="one-meeting-plan" class="plans">+</div>
+
+			<div id="one-district" class="thematique-hotel">District</div><div class="plans-hide"></div>
+
+			<div id="one-leisure" class="thematique-hotel">Leisure</div><div class="plans-hide"></div>
+
+			<div id="one-restaurant" class="thematique-hotel">Restaurant</div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+	<iframe id="one-conference-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="one-district-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="one-leisure-galerie" class="galeries" src=""></iframe>
+
+	<iframe id="one-restaurant-galerie" class="galeries" src=""></iframe>
+
+
+
+
+
+	<script>
+
+		document.getElementById("one-conference").addEventListener("click", function () {
+
+			$('#one-conference-galerie').show();
+
+			$('#fermerphoto').show();
+
+			one_confernce_galerie_chargement();
+
+		});
+
+		document.getElementById("one-district").addEventListener("click", function () {
+
+			$('#one-district-galerie').show();
+
+			$('#fermerphoto').show();
+
+			one_district_galerie_chargement();
+
+		});
+
+		document.getElementById("one-leisure").addEventListener("click", function () {
+
+			$('#one-leisure-galerie').show();
+
+			$('#fermerphoto').show();
+
+			one_leisure_galerie_chargement();
+
+		});
+
+		document.getElementById("one-restaurant").addEventListener("click", function () {
+
+			$('#one-restaurant-galerie').show();
+
+			$('#fermerphoto').show();
+
+		   one_restaurant_galerie_chargement();
+
+		});
+
+
+
+		document.getElementById("retour-menu-photo-extra").addEventListener("click", function () {
+
+			$('.menu-galerie-photo').hide();
+
+			$('.menu_general_galeries_photos').show();
+
+			one_confernce_galerie_dechargement();
+
+			one_district_galerie_dechargement();
+
+			one_leisure_galerie_dechargementchargement();
+
+			one_restaurant_galerie_chargement();
+
+		});
+
+		document.getElementById("fermer-menu-photo-extra").addEventListener("click", function () {
+
+			$('.menu-galerie-photo').hide();
+
+			$('.menu_general_galeries_photos').hide();
+
+			one_confernce_galerie_dechargement();
+
+			one_district_galerie_dechargement();
+
+			one_leisure_galerie_dechargementchargement();
+
+			one_restaurant_galerie_chargement();
+
+			$('.logotitre').show();
+
+		});
+
+	</script>
+
+
+	<script>
+
+	/*----------------------------- ECOUTEUR D'EVENEMENT AU CLIC SUR BOUTON -----------------------------------------------------*/
+
+        document.getElementById("one-meeting-plan").addEventListener("click", function () {
+
+			oneplan();
+
+		});
+
+		document.getElementById("top").addEventListener("click", function () {
+
+			haut()
+
+		});
+
+		document.getElementById("bottom").addEventListener("click", function () {
+
+			ligtbox()
+
+		});
+
+		document.getElementById("logotitre").addEventListener("click", function () {
+
+			ligtbox()
+
+		});
+
+		document.getElementById("close-bottom").addEventListener("click", function () {
+
+			hidelightbox()
+
+		});
+
+		//document.getElementById("left").addEventListener("click", function () {
+
+		//gauche()
+
+		//});
+
+		document.getElementById("right").addEventListener("click", function () {
+
+			droite()
+
+		});
+
+		document.getElementById("krpanoDIV").addEventListener("click", function () {
+
+			retour()
+
+		});
+
+		document.getElementById("krpanoDIV").addEventListener("touchstart", function () {
+
+			retour()
+
+		});
+
+		document.getElementById("lightbox").addEventListener("click", function () {
+
+			hidelightbox()
+
+		});
+
+		document.getElementById("lightbox").addEventListener("touchstart", function () {
+
+			hidelightbox()
+
+		});
+
+		document.getElementById("arrow-right").addEventListener("click", function () {
+
+			sliderighth()
+
+			$('#arrow-right').hide();
+
+			$('#arrow-right2').show();
+
+			$('#arrow-left').hide();
+
+			$('#arrow-left2').show();
+
+		});
+
+
+
+		document.getElementById("arrow-right2").addEventListener("click", function () {
+
+			sliderighth2();
+
+
+
+			$('#arrow-left3').show();
+
+			$('#arrow-left2').hide();
+
+
+
+		});
+
+		document.getElementById("arrow-left2").addEventListener("click", function () {
+
+			sliderleft();
+
+			$('#arrow-left').show();
+
+			$('#arrow-left2').hide();
+
+			$('#arrow-right').show();
+
+			$('#arrow-right2').hide();
+
+		});
+
+		document.getElementById("arrow-left3").addEventListener("click", function () {
+
+			sliderleft2();
+
+			$('#arrow-left2').show();
+
+			$('#arrow-left3').hide();
+
+			$('#arrow-right2').show();
+
+			$('#arrow-right3').hide();
+
+		});
+
+
+
+
+
+		document.getElementById("video").addEventListener("click", function () {
+
+			timer9();
+
+			$('#containervideo').show();
+
+		});
+
+		document.getElementById("info").addEventListener("click", function () {
+
+			plans();
+
+			$('.logotitre').hide();
+
+		});
+
+		document.getElementById("fermer-plans").addEventListener("click", function () {
+
+			$('#plans').hide();
+
+			$('#fermer-plans').hide();
+
+			document.getElementById('plans').src = "";
+
+		});
+
+
+
+		document.getElementById("fermerphoto").addEventListener("click", function () {
+
+			$('.galeries').hide();
+
+			$('#fermerphoto').hide();
+
+		});
+
+		document.getElementById("fermervideo").addEventListener("click", function () {
+
+			$('#containervideo').hide();
+
+		});
+
+		document.getElementById("fermerinfo").addEventListener("click", function () {
+
+			$('#infos').hide();
+
+		});
+
+		document.getElementById("fermer-menu-photo").addEventListener("click", function () {
+
+			$('.menu_general_galeries_photos').hide();
+
+			$('.bottom').show();
+
+		});
+
+		document.getElementById("galerie-but").addEventListener("click", function () {
+
+			$('.menu_general_galeries_photos').show();
+
+			$('.bottom').hide();
+
+		});
+
+		document.getElementById("photo").addEventListener("click", function () {
+
+			accesgalerie();
+
+		});
+
+	</script>
+
+
+
+
+
+	<script>
+
+		document.getElementById("carte-cerlce").addEventListener("click", function () {
+
+			droite();
+
+			$('#carte-cercle-generique').show();
+
+			$('#fermer-carte-cercle').show();
+
+			carte_cercle();
+
+		});
+
+
+
+		document.getElementById("fermer-carte-cercle").addEventListener("click", function () {
+
+			carte_cercle_retour();
+
+		});
+        
+        
+
+	</script>
+
+
+
+
+
+
+
+
+
+	<!-- Initialize Swiper -->
+
+	<script>
+
+		var swiper = new Swiper('.swiper-container', {
+
+			pagination: '.swiper-pagination',
+
+			paginationClickable: true,
+
+			nextButton: '.swiper-button-next',
+
+			prevButton: '.swiper-button-prev',
+
+		});
+
+	</script>
+
+
+<!-- Google Analytics -->
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-90750874-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+<!-- Fonctions -->
+
+	<script type="text/javascript" src="function2.js"></script>
+
+<!-- // ! \\ Bug AT Internet -->
+
+	<!--
+	<script type="text/javascript" src="https://montecarlovirtualtour.com/js/smarttag.js"></script>
+
+	<script>
+
+	var ATTag = new ATInternet.Tracker.Tag({
+
+				   log: "logc279",
+
+				   logSSL: "logs1279",
+
+				   secure: false,
+
+				   site: 546163,
+
+				   domain: "xiti.com"
+
+	});
+
+	ATTag.page.send({
+
+				   name: "virtualtour"
+
+	});
+
+	</script>
+	-->
 
 </body>
+
 </html>

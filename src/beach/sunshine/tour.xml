@@ -1,0 +1,58 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_06sunshine_salon, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <events onloadcomplete="action(loader); js(hotelbeach());  js(setprogress());"/>
+
+
+	
+	<scene name="scene_06sunshine_salon" nameid="scene_06sunshine_salon" etablissement="Monte-Carlo Beach" dossier="beach" galeriephoto="oui" galerievideo="non" info="non" title="Diamond Suite - Sunshine" onstart="" thumburl="panos/06sunshine_salon.tiles/thumb.jpg" lat="" lng="" heading="" resa="oui" resaurl="http://www.monte-carlo-beach.com/luxury-rooms-suites/suites-2/two-bedroom-suite-sunshine-with-jacuzzi/">
+
+		<view hlookat="26.346" vlookat="3.903" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/06sunshine_salon.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/06sunshine_salon.tiles/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="72.279" atv="2.231" linkedscene="scene_07sunshine_bed1" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Bedroom" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="159.633" atv="-3.059" linkedscene="scene_08sunshine_terrace" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Terrace" />
+
+	</scene>
+
+	<scene name="scene_07sunshine_bed1" nameid="scene_06sunshine_salon" etablissement="Monte-Carlo Beach" dossier="beach" galeriephoto="oui" galerievideo="non" info="non" title="Diamond Suite - Sunshine - Bedroom" onstart="" thumburl="panos/07sunshine_bed1.tiles/thumb.jpg" lat="" lng="" heading="" resa="oui" resaurl="http://www.monte-carlo-beach.com/luxury-rooms-suites/suites-2/two-bedroom-suite-sunshine-with-jacuzzi/">
+
+		<view hlookat="247.110" vlookat="4.447" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+			<preview url="panos/07sunshine_bed1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/07sunshine_bed1.tiles/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-100.870" atv="1.522" linkedscene="scene_06sunshine_salon"  onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Living Room"/>
+
+	</scene>
+	
+	
+		<scene name="scene_08sunshine_terrace" nameid="scene_06sunshine_salon" etablissement="Monte-Carlo Beach" dossier="beach" galeriephoto="oui" galerievideo="non" info="non" title="Diamond Suite - Sunshine - Terrace" onstart="" thumburl="panos/08sunshine_terrace.tiles/thumb.jpg" lat="" lng="" heading="" resa="oui" resaurl="http://www.monte-carlo-beach.com/luxury-rooms-suites/suites-2/two-bedroom-suite-sunshine-with-jacuzzi/">
+
+		<view hlookat="-50.146" vlookat="14.488" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+			<preview url="panos/08sunshine_terrace.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/08sunshine_terrace.tiles/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-110.746" atv="2.078" linkedscene="scene_06sunshine_salon"  onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Living Room"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="69.969" atv="10.771" linkedscene="scene_06sunshine_salon" onclick="action(olympic)" tooltip="Olympic-Size Pool"/>
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="42.605" atv="-37.460" onclick="action(beach150m)" tooltip="Monte-Carlo Beach Seaside view"/>
+
+	</scene>
+
+
+</krpano>

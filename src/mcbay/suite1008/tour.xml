@@ -1,0 +1,115 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+
+ <action name="startup">
+
+
+
+        loadscene(scene_suite1008, null, MERGE, BLEND(1));
+
+
+
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+  	<scene name="scene_suite1008" nameid="scene_suite1008" title="Duplex Suite - sea view - 1008" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="https://www.montecarlosbm.com/en/hotel-monaco/monte-carlo-bay-hotel-resort/accomodation/duplex-suite">
+
+
+
+		<view hlookat="-32.090" vlookat="15.065" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+
+
+		<preview url="suite1008.tiles/preview.jpg" />
+
+
+
+		<image>
+
+			<cube url="suite1008.tiles/pano_%s.jpg" />
+
+			<mobile>
+
+				<cube url="suite1008.tiles/mobile_%s.jpg" />
+
+			</mobile>
+
+		</image>
+
+
+
+		<!-- place your scene hotspots here -->
+
+		
+
+
+
+
+
+<hotspot name="spot1" style="skin_hotspotstyle" ath="27.624" atv="-18.187" linkedscene="scene_suite1008bed" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Duplex Suite - sea view - 1008 - Bedroom"/> 
+
+
+
+
+
+	</scene>
+
+
+
+	<scene name="scene_suite1008bed" nameid="scene_suite1008" title="Duplex Suite - sea view - 1008 - Bedroom" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="https://www.montecarlosbm.com/en/hotel-monaco/monte-carlo-bay-hotel-resort/accomodation/duplex-suite">
+
+
+
+		<view hlookat="18.547" vlookat="19.252" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+
+
+		<preview url="suite1008bed.tiles/preview.jpg" />
+
+
+
+		<image>
+
+			<cube url="suite1008bed.tiles/pano_%s.jpg" />
+
+			<mobile>
+
+				<cube url="suite1008bed.tiles/mobile_%s.jpg" />
+
+			</mobile>
+
+		</image>
+
+
+
+		<!-- place your scene hotspots here -->
+
+		
+
+<hotspot name="spot1" style="skin_hotspotstyle" ath="156.237" atv="21.425" linkedscene="scene_suite1008" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Duplex Suite - sea view - 1008 - Living Room"/>
+
+
+
+	</scene>
+
+	
+
+
+
+
+
+</krpano>

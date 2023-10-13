@@ -1,0 +1,121 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+    <include url="../../skin.xml" />
+
+
+    <action name="startup">
+        loadscene(scene_01jimmyz_out1, null, MERGE, BLEND(1));
+    </action>
+
+    <events onloadcomplete="action(loader); js(hotelsporting()); js(setprogress());" />
+
+    <scene name="scene_01jimmyz_out1" nameid="scene_01jimmyz_out1" etablissement="Sporting Monte-Carlo" dossier="jimmyz" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-Jimmyz.pdf" title="Jimmy'z Monte-Carlo - Terrace" onstart="" thumburl="panos/01jimmyz_out1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="-80.042" vlookat="3.466" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+
+        <preview url="panos/01jimmyz_out1.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/01jimmyz_out1.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="panos/01jimmyz_out1.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+
+        <!-- place your scene hotspots here -->
+        <hotspot name="spot1" style="skin_hotspotstyle" ath="-75.838" atv="2.719" linkedscene="scene_02jimmyz_out_2" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Terrace" />
+        <hotspot name="spot2" style="skin_hotspotstyle" ath="6.493" atv="6.132" linkedscene="scene_03piste" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Dancefloor" />
+
+    </scene>
+
+    <scene name="scene_02jimmyz_out_2" nameid="scene_01jimmyz_out1" etablissement="Sporting Monte-Carlo" dossier="jimmyz" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-Jimmyz.pdf" title="Jimmy'z Monte-Carlo - Terrace" onstart="" thumburl="panos/02jimmyz_out_2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="31.620" vlookat="-0.126" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+
+
+        <image>
+            <cube url="panos/02jimmyz_out_2.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="panos/02jimmyz_out_2.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+
+        <!-- place your scene hotspots here -->
+        <hotspot name="spot1" style="skin_hotspotstyle" ath="-30.558" atv="1.848" linkedscene="scene_05dompe" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="VIP room" />
+        <hotspot name="spot2" style="skin_hotspotstyle" ath="-5.576" atv="1.230" linkedscene="scene_04vip" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Private Space designed by Philipp Plein" />
+        <hotspot name="spot3" style="skin_hotspotstyle" ath="30.381" atv="2.013" linkedscene="scene_03piste" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Dancefloor" />
+        <hotspot name="spot4" style="skin_hotspotstyle" ath="81.957" atv="-0.063" linkedscene="scene_01jimmyz_out1" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Terrace" />
+
+    </scene>
+
+    <scene name="scene_03piste" nameid="scene_01jimmyz_out1" etablissement="Sporting Monte-Carlo" dossier="jimmyz" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-Jimmyz.pdf" title="Jimmy'z Monte-Carlo - Dancefloor" onstart="" thumburl="panos/03piste.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="404.829" vlookat="-0.682" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/03piste.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/03piste.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="panos/03piste.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+
+        <!-- place your scene hotspots here -->
+
+        <hotspot name="spot1" style="skin_hotspotstyle" ath="4.803" atv="-4.335" linkedscene="scene_01jimmyz_out1" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Terrace" />
+        <hotspot name="spot2" style="skin_hotspotstyle" ath="56.914" atv="-3.050" linkedscene="scene_02jimmyz_out_2" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Terrace" />
+        <hotspot name="spot3" style="skin_hotspotstyle" ath="137.088" atv="-5.694" linkedscene="scene_04vip" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Private Space designed by Philipp Plein" />
+    </scene>
+
+
+    <scene name="scene_04vip" nameid="scene_01jimmyz_out1" etablissement="Sporting Monte-Carlo" dossier="jimmyz" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-Jimmyz.pdf" title="Jimmyz Monte-Carlo – Private Space designed by Philipp Plein" onstart="" thumburl="panos/04VIP.tiles/thumb.jpg" lat="" lng="" heading="">
+        
+
+        <view hlookat="2.539" vlookat="2.082" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/03piste.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/04VIP.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="panos/04VIP.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+
+        <!-- place your scene hotspots here -->
+
+        <hotspot name="spot1" style="skin_hotspotstyle" ath="3.907" atv="3.966" linkedscene="scene_03piste" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Dancefloor" />
+        <hotspot name="spot2" style="skin_hotspotstyle" ath="86.114" atv="7.545" linkedscene="scene_05dompe" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="VIP room" />
+    </scene>
+    
+    
+    <scene name="scene_05dompe" nameid="scene_01jimmyz_out1" etablissement="Sporting Monte-Carlo" dossier="jimmyz" galeriephoto="oui" galerievideo="non" info="oui" infourl= "SPORTING-Jimmyz.pdf" title="Jimmy'z Monte-Carlo - VIP room" onstart="" thumburl="panos/05dompe.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="-430.866" vlookat="1.205" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+        <preview url="panos/03piste.tiles/preview.jpg" />
+
+        <image>
+            <cube url="panos/05dompe.tiles/pano_%s.jpg" />
+            <mobile>
+                <cube url="panos/05dompe.tiles/mobile_%s.jpg" />
+            </mobile>
+        </image>
+
+        <!-- place your scene hotspots here -->
+
+   <hotspot name="spot1" style="skin_hotspotstyle" ath="-117.480" atv="0.113" linkedscene="scene_04vip" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Private Space designed by Philipp Plein" />
+        <hotspot name="spot2" style="skin_hotspotstyle" ath="-8.551" atv="0.489" linkedscene="scene_02jimmyz_out_2" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Terrace" />
+        <hotspot name="spot3" style="skin_hotspotstyle" ath="-58.758" atv="0.645" linkedscene="scene_03piste" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Dancefloor" />
+    </scene>
+
+
+
+
+
+
+</krpano>

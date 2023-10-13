@@ -1,0 +1,41 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" />
+    
+
+    <action name="startup">
+        loadscene(scene_verriere_sphere, null, MERGE, BLEND(1));
+    </action>
+	
+	
+	<events onloadcomplete="action(loader); js(hotelcdp());"/>
+	
+	<scene name="scene_verriere_sphere" nameid="scene_verriere_sphere" etablissement="Café de Paris Monte-Carlo" dossier="cdp" galeriephoto="oui" galerievideo="non" info="non" title="Salon Bellevue - Terrace" onstart="" thumburl="panos/verriere_sphere.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/verriere_sphere.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/verriere_sphere.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/verriere_sphere.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<hotspot name="atrium" style="skin_hotspotstyle" ath="-50.899" atv="4.123" onclick="action(atrium)" tooltip="Casino Atrium" />
+		<hotspot name="casino100m" style="skin_hotspotstyle" ath="46.950" atv="-31.104" onclick="action(casino100m)" tooltip="Casino Square" />
+		<hotspot name="cdphall" style="skin_hotspotstyle" ath="177.093" atv="51.129" onclick="action(cdphall)" tooltip="Lobby"/>
+		<hotspot name="bellevue" style="skin_hotspotstyle" ath="169.911" atv="4.309" onclick="action(bellevue)" tooltip="Salon Bellevue"/>
+		<hotspot name="buddhabar" style="skin_hotspotstyle" ath="-142.856" atv="2.694" onclick="action(buddhabas)" tooltip="Buddha Bar"/>
+		<hotspot name="golf" style="skin_hotspotstyle" ath="129.440" atv="-21.644" onclick="action(golf)" tooltip="Monte-Carlo Golf Club"/>
+
+
+	</scene>
+	
+	
+
+</krpano>

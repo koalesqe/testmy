@@ -1,0 +1,99 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_eleven_entree, null, MERGE, BLEND(1));
+
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+
+
+    
+
+
+
+
+  	<scene name="scene_eleven_entree" nameid="scene_eleven_entree" title="Diamond Suite Eleven - Sea View" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="https://cutt.ly/1fWVenP">
+
+		<view hlookat="50.223" vlookat="0.152" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/entree.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/entree.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/entree.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+
+
+<hotspot name="spot1" style="skin_hotspotstyle" ath="116" atv="0" linkedscene="scene_eleven_bed" tooltip="Bedroom" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" /> 
+<hotspot name="spo21" style="skin_hotspotstyle" ath="12" atv="0" linkedscene="scene_eleven_living" tooltip="Livingroom" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+<hotspot name="spo22" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_mcbay_eleven_terrace" tooltip="Terrace" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+	</scene>
+
+	<scene name="scene_eleven_bed" nameid="scene_eleven_entree" title="Diamond Suite Eleven - Sea View" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non" onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="https://cutt.ly/1fWVenP">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/bed.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/bed.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/bed.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+<hotspot name="spot1" style="skin_hotspotstyle" ath="66.5" atv="0" linkedscene="scene_eleven_entree" tooltip="Entrance" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+
+	</scene>
+	
+	
+	<scene name="scene_eleven_living" nameid="scene_eleven_entree" title="Diamond Suite Eleven - Sea View" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non" onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="https://cutt.ly/1fWVenP">
+
+		<view hlookat="-209.319" vlookat="10.964" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/living.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/living.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/living.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+<hotspot name="spot1" style="skin_hotspotstyle" ath="-27" atv="0" linkedscene="scene_eleven_entree" tooltip="Entrance" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+		<hotspot name="spo22" style="skin_hotspotstyle" ath="-135" atv="0" linkedscene="scene_mcbay_eleven_terrace" tooltip="Terrace" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+
+	</scene>
+	
+	<scene name="scene_mcbay_eleven_terrace" nameid="scene_eleven_entree" title="Diamond Suite Eleven - Sea View" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non" onstart="" thumburl="" lat="" lng="" heading="" resa="oui" resaurl="https://cutt.ly/1fWVenP">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/terrace.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/terrace.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/terrace.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-45.588" atv="0.156" distorted="false" zoom="false" linkedscene="scene_eleven_entree" tooltip="Entrance" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="68.043" atv="3.012" distorted="false" zoom="false" linkedscene="scene_eleven_living" tooltip="Livingroom" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+
+	</scene>
+
+
+
+</krpano>

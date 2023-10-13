@@ -1,0 +1,102 @@
+<krpano  title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+
+
+
+<include url="../../skin.xml" />
+
+    
+
+
+
+    <action name="startup">
+
+        loadscene(scene_opera-maire_sphere, null, MERGE, BLEND(1));
+
+    </action>
+
+	
+
+	<events onloadcomplete="action(loader); js(hotelcasinos());"/>
+
+	<scene name="scene_opera-maire_sphere" nameid="opera" etablissement="Casino de Monte-Carlo"  dossier="casinos" galeriephoto="oui" galerievideo="non" info="non" title="Opéra Monte-Carlo - Salle Garnier" onstart="" thumburl="panos/opera-maire_sphere.tiles/thumb.jpg" lat="" lng="" heading="">
+
+
+
+		<view hlookat="14.996" vlookat="12.310" fovtype="MFOV" fov="122.654" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+
+
+		<preview url="panos/opera-maire_sphere.tiles/preview.jpg" />
+
+
+
+		<image>
+
+			<cube url="panos/opera-maire_sphere.tiles/pano_%s.jpg" />
+
+			<mobile>
+
+				<cube url="panos/opera-maire_sphere.tiles/mobile_%s.jpg" />
+
+			</mobile>
+
+		</image>
+
+
+
+		<!-- place your scene hotspots here -->
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="21.212" atv="11.589" linkedscene="scene_opera-scene_sphere" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Opéra de Monte-Carlo - Stage"/>
+
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-20.511" atv="12.426" onclick="action(atrium)" tooltip="Atrium" />
+
+
+
+	</scene>
+
+
+
+	<scene name="scene_opera-scene_sphere" nameid="opera" etablissement="Casino de Monte-Carlo"  dossier="casinos" galeriephoto="oui" galerievideo="non" info="non" title="Opéra Monte-Carlo - Salle Garnier" onstart="" thumburl="panos/opera-scene_sphere.tiles/thumb.jpg" lat="" lng="" heading="">
+
+
+
+		<view hlookat="0.000" vlookat="-16.086" fovtype="MFOV" fov="122.654" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+
+
+		<preview url="panos/opera-scene_sphere.tiles/preview.jpg" />
+
+
+
+		<image>
+
+			<cube url="panos/opera-scene_sphere.tiles/pano_%s.jpg" />
+
+			<mobile>
+
+				<cube url="panos/opera-scene_sphere.tiles/mobile_%s.jpg" />
+
+			</mobile>
+
+		</image>
+
+
+
+		<!-- place your scene hotspots here -->
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-27.267" atv="-18.530" linkedscene="scene_opera-maire_sphere" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" tooltip="Balcony"/>
+
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="46.989" atv="-2.761" onclick="action(atrium)" tooltip="Atrium" />
+
+
+
+	</scene>
+
+
+
+
+
+</krpano>
+

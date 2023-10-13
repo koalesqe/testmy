@@ -1,0 +1,46 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+<include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_lobby, null, MERGE, BLEND(1));
+
+    </action>
+
+
+<action name="lobby">
+  js(loadpano('beach/lobby/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());
+    </action>
+ 
+
+    
+
+    <events onloadcomplete="action(loader); js(hotelbeach());"/>
+
+	
+	<scene name="scene_lobby" nameid="scene_lobby" etablissement="Monte-Carlo Beach" dossier="beach" galeriephoto="oui" galerievideo="non" info="non"  title="Lobby" onstart="" thumburl="panos/lobby.tiles/thumb.jpg" lat="" lng="" heading="" resa="oui" resaurl="https://www.montecarlosbm.com/fr/hotel-monaco/monte-carlo-beach">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/lobby.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/lobby.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/lobby.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<hotspot name="elsa" style="skin_hotspotstyle" ath="-108.412" atv="-5.096" onclick="action(elsa)" tooltip="Elsa" />
+		<hotspot name="vigie" style="skin_hotspotstyle" ath="-53" atv="-5.096" onclick="action(vigie_resto)" tooltip="La Vigie Lounge &amp; Restaurant " />
+		<hotspot name="elsa terrace" style="skin_hotspotstyle" ath="0.946" atv="2.203" onclick="action(elsa_terrace)" tooltip="Elsa - Terrace" />
+		<hotspot name="beach150m" style="skin_hotspotstyle" ath="10.183" atv="-14.006" onclick="action(beach150m)" tooltip="Monte-Carlo Beach Seaside View" />
+		<hotspot name="pool" style="skin_hotspotstyle" ath="55.158" atv="-3.698" onclick="action(olympic)" tooltip="Olympic-Size Pool" />
+
+		<hotspot name="deck" style="skin_hotspotstyle3" ath="60" atv="-1" onclick="action(deck)" tooltip="Le Deck" />
+
+	</scene>
+
+
+</krpano>

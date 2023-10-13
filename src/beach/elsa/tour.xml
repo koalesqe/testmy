@@ -1,0 +1,35 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_elsa, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <events onloadcomplete="action(loader); js(hotelbeach());"/>
+
+
+	
+	<scene name="scene_elsa" nameid="scene_elsa" etablissement="Monte-Carlo Beach" dossier="beach" galeriephoto="oui" galerievideo="non" info="oui" infourl= "MCBeach-ElsaTerrace.pdf" title="Elsa" onstart="" thumburl="panos/elsa.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-0.241" vlookat="10.840" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/elsa.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/elsa.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/elsa.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="19.829" atv="1.437" onclick="action(elsa_terrace);" tooltip="Elsa - Terrace"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="47.484" atv="0.843" onclick="action(beach_lobby);" tooltip="Lobby" />
+
+	</scene>
+
+
+</krpano>

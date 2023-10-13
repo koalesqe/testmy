@@ -1,0 +1,81 @@
+<krpano title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" />
+    
+
+    <action name="startup">
+        loadscene(scene_hall_sporting, null, MERGE, BLEND(1));
+		
+    </action>
+	
+	
+	<events onloadcomplete="action(loader); js(hotelsporting());"/>
+	
+	<scene name="scene_hall_sporting" nameid="scene_hall_sporting" etablissement="Sporting Monte-Carlo" dossier="sporting" galeriephoto="oui" galerievideo="non" info="non" title="Lobby" onstart="" thumburl="panos/hall_sporting.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="123.476" vlookat="0.198" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/hall_sporting.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/hall_sporting.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/hall_sporting.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<!-- <layer name="journuit" keep="false" zorder="15"  selectable="false"
+	       url="switch.png"	              
+	        align="centertop"      
+		    edge="centertop"
+		    y="15"
+		    x="0"  
+		   onclick="loadscene(scene_salle_etoiles_pianiste, null, KEEPVIEW , SLIDEBLEND(1.0, 0.0, 0.2, linear));"
+	       
+	       />-->
+		
+		
+		<hotspot name="etoiles" style="skin_hotspotstyle" ath="127.283" atv="2.155" onclick="etoiles()" tooltip="Salle des Etoiles" />
+		<hotspot name="out" style="skin_hotspotstyle" ath="-81.539" atv="-2.395" onclick="sporting_out()" tooltip="Entrance By Night" />
+		<hotspot name="palmiers" style="skin_hotspotstyle" ath="11.129" atv="-1.567"  onclick="palmiers()" tooltip="Salle des Palmiers" />
+		<hotspot name="jimmyz" style="skin_hotspotstyle2" ath="53.630" atv="4" onclick="jimmyz()" tooltip="Jimmy'z Monte-Carlo" />
+		<hotspot name="coya" style="skin_hotspotstyle" ath="53.630" atv="0"  onclick="action(coya)" tooltip="COYA Monte-Carlo" />
+	</scene>
+	
+	
+<!--	<scene name="scene_salle_etoiles_pianiste" nameid="scene_salle_etoiles_pianiste" etablissement="Sporting Monte-Carlo" dossier="sporting" galeriephoto="oui" galerievideo="non" info="non" title="Lobby" onstart="" thumburl="panos/salle_etoiles_pianiste.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/salle_etoiles_pianiste.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/salle_etoiles_pianiste.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/salle_etoiles_pianiste.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		
+		<layer name="journuit" keep="false" zorder="15"  selectable="false"
+	       url="switch.png"	              
+	        align="centertop"      
+		    edge="centertop"
+		    y="15"
+		    x="0"  
+		   onclick="loadscene(scene_hall_sporting, null, KEEPVIEW , SLIDEBLEND(1.0, 0.0, 0.2, linear));"/>
+		
+		
+		<hotspot name="etoiles" style="skin_hotspotstyle" ath="175" atv="-2" onclick="etoiles()" tooltip="Salle des Etoiles" />
+		<hotspot name="out" style="skin_hotspotstyle" ath="-80.539" atv="-2.395" onclick="sporting_out()" tooltip="Entrance By Night" />
+		<hotspot name="palmiers" style="skin_hotspotstyle" ath="8" atv="-1.567"  onclick="palmiers()" tooltip="Salle des Palmiers" />
+		<hotspot name="jimmyz" style="skin_hotspotstyle" ath="46" atv="4" onclick="jimmyz()" tooltip="Jimmy'z Monte-Carlo" />
+		<hotspot name="coya" style="skin_hotspotstyle" ath="46" atv="0"  onclick="action(coya)" tooltip="COYA Monte-Carlo" />
+
+	</scene>
+-->
+
+</krpano>

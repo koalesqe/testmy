@@ -1,0 +1,76 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_hh_pavyllon_terrace, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <events onloadcomplete="action(loader); js(hotelhermitage());"/>
+
+	
+	<scene name="scene_hh_pavyllon_terrace" nameid="scene_hh_pavyllon_terrace" title="Pavyllon Monte-Carlo, a restaurant by Yannick Alléno" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="oui" infourl= "HH-Pavyllon-Monte-Carlo.htm" onstart="" thumburl="thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-8.823" vlookat="0.285" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="preview.jpg" />
+
+		<image>
+			<cube url="pano_%s.jpg" />
+			<mobile>
+				<cube url="mobile_%s.jpg" />
+			</mobile>
+		</image>
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="78" atv="-1.972" onclick="action(lobby);" tooltip="Beaumarchais Lobby"/>
+		<hotspot name="spotlimun" style="skin_hotspotstyle" ath="75" atv="-1.972" onclick="action(limun);" tooltip="Le Limùn"/>
+		<hotspot name="spothiver" style="skin_hotspotstyle" ath="45" atv="-2" onclick="action(hermitage);" tooltip="Jardin d'Hiver Lobby"/>
+		<hotspot name="crystal" style="skin_hotspotstyle2" ath="52" atv="-2" onclick="action(Crystal)" tooltip="Crystal Bar" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-54.272" atv="-1.688" distorted="false" zoom="false" linkedscene="scene_hh_pavyllon_salon" tooltip="Pavyllon Monte-Carlo - Salon"/>
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="170.148" atv="-0.750" distorted="false" zoom="false" linkedscene="scene_hh_pavyllon_terrace2" tooltip="Pavyllon Monte-Carlo - Terrace"/>
+
+	</scene>
+	
+	<scene name="scene_hh_pavyllon_salon"  nameid="scene_hh_pavyllon_terrace" title="Pavyllon Monte-Carlo, a restaurant by Yannick Alléno - Salon" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="oui" infourl= "HH-Pavyllon-Monte-Carlo.htm" onstart="" thumburl="thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="../hh_pavyllon_salon.tiles/preview.jpg" />
+
+		<image>
+			<cube url="../hh_pavyllon_salon.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="../hh_pavyllon_salon.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="44.579" atv="-1.378" distorted="false" zoom="false" linkedscene="scene_hh_pavyllon_terrace"  tooltip="Pavyllon Monte-Carlo"/>
+
+	</scene>
+
+	
+
+	<scene name="scene_hh_pavyllon_terrace2"  nameid="scene_hh_pavyllon_terrace" title="Pavyllon Monte-Carlo, a restaurant by Yannick Alléno - Terrace" etablissement="Hôtel Hermitage Monte-Carlo" dossier="hh" galeriephoto="oui" galerievideo="non" info="oui" infourl= "HH-Pavyllon-Monte-Carlo.htm" onstart="" thumburl="thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="../hh_pavyllon_terrace2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="../hh_pavyllon_terrace2.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="../hh_pavyllon_terrace2.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="166.705" atv="-1.593" distorted="false" zoom="false" linkedscene="scene_hh_pavyllon_terrace" tooltip="Pavyllon Monte-Carlo"/>
+
+	</scene>
+
+
+</krpano>

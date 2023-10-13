@@ -1,0 +1,34 @@
+<GALERIE_PHOTO>
+
+
+
+
+<GALERIE>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/lobby-facades/img/01.Facade.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/lobby-facades/img/02.Facade.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/lobby-facades/img/03.BeaumarchaisLobby.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Titre image 1</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/lobby-facades/img/04.JardindHiverLobby.jpg</URLIMAGE>
+    </PHOTO>
+</GALERIE>
+<VIDEOPLAYER>
+    <TITREVIDEO>Titre video 1</TITREVIDEO>
+    <URLVIDEOMP4>hdp/cavecouloir/video/video.mp4</URLVIDEOMP4>
+    <URLVIDEOWEBM>hdp/cavecouloir/video/video.webm</URLVIDEOWEBM>
+</VIDEOPLAYER>
+        
+          
+
+
+
+</GALERIE_PHOTO>

@@ -1,0 +1,32 @@
+<krpano  title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" />
+    
+
+    <action name="startup">
+        loadscene(scene_renaissance, null, MERGE, BLEND(1));
+    </action>
+	<events onloadcomplete="action(loader); js(hotelcasinos());"/>
+	
+	<scene name="scene_renaissance" nameid="renaissance" etablissement="Casino de Monte-Carlo"  dossier="casinos" galeriephoto="oui" galerievideo="non" info="non" title="Salle Renaissance" onstart="" thumburl="panos/renaissance.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="358.265" vlookat="-0.861" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/renaissance.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/renaissance.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/renaissance.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-91.773" atv="-3.138" onclick="action(atrium)" tooltip="Atrium" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="88.778" atv="-9.064" onclick="action(europe)" tooltip="Salle Europe"/>
+
+	</scene>
+
+
+</krpano>

@@ -1,0 +1,43 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_elsa_terrace, null, MERGE, BLEND(1));
+
+    </action>
+
+
+
+    <events onloadcomplete="action(loader); js(hotelbeach());"/>
+
+	
+	<scene name="scene_elsa_terrace" nameid="scene_elsa_terrace" etablissement="Monte-Carlo Beach" dossier="beach" galeriephoto="oui" galerievideo="non" info="oui" infourl= "MCBeach-ElsaTerrace.pdf" title="Elsa - Terrace" onstart="" thumburl="panos/elsa_terrace.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="9.392" vlookat="2.277" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/elsa_terrace.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/elsa_terrace.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/elsa_terrace.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<hotspot name="beach150m" style="skin_hotspotstyle" ath="-161.156" atv="-34.885" onclick="action(beach150m)" tooltip="Monte-Carlo Beach Seaside View" />
+		<hotspot name="olympic" style="skin_hotspotstyle" ath="-117.273" atv="-3.773" onclick="action(olympic)" tooltip="Olympic-Size Pool" />
+		<hotspot name="lobby" style="skin_hotspotstyle" ath="-45.570" atv="-5.929" onclick="action(beach_lobby)" tooltip="Lobby" />
+		<hotspot name="elsa" style="skin_hotspotstyle" ath="-29.476" atv="-5.349" onclick="action(elsa)" tooltip="Elsa" />
+		<hotspot name="mcbay_lobby" style="skin_hotspotstyle" ath="114.906" atv="-1.588" onclick="action(mcbay_lobby);" tooltip="Monte-Carlo Bay Hotel &amp; Resort" />
+		<hotspot name="vigie_resto" style="skin_hotspotstyle" ath="27.966" atv="-1.748" onclick="action(vigie_resto)" tooltip="La Vigie Lounge &amp; Restaurant" />
+		
+
+		
+		
+
+		
+	</scene>
+
+
+</krpano>

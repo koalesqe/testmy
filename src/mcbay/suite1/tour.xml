@@ -1,0 +1,54 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%"><include url="../../skin.xml" /> 
+ <action name="startup">
+
+        loadscene(scene_suite1, null, MERGE, BLEND(1));
+
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+
+<action name="lobby">
+  js(loadpano('hdp/lobby_hdp/tour.xml')); js(timeraspectvignette()); js(resethotel()); js(timer5());
+    </action> <events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+
+    
+
+    
+
+
+
+    <scene name="scene_suite1" nameid="scene_suite1" title="Suite 1" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="non"  onstart="" thumburl="thumb.jpg" lat="" lng="" heading="">
+
+
+
+        <view hlookat="-353.701" vlookat="15.629" fovtype="MFOV" fov="111.826" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto"  />
+
+
+
+        <preview url="panos/suite1.tiles/preview.jpg" />
+
+
+
+        <image>
+
+            <cube url="panos/suite1.tiles/pano_%s.jpg" />
+
+            <mobile>
+
+                <cube url="panos/suite1.tiles/mobile_%s.jpg" />
+
+            </mobile>
+
+        </image>
+
+
+
+        <!--<hotspot name="spot1" style="skin_hotspotstyle" ath="-44.308" atv="1.751" onclick="action(lobby);" />-->
+		
+
+    </scene>
+
+
+
+
+
+</krpano>

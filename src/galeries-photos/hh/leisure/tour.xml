@@ -1,0 +1,72 @@
+<GALERIE_PHOTO>
+
+
+
+
+<GALERIE>
+    <PHOTO>
+        <TITREIMAGE>Thermes Marins Monte-Carlo - Solarium</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/leisure/img/01.ThermesMarinsMonte-Carlo-Solarium.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Thermes Marins Monte-Carlo - Pool</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/leisure/img/02.ThermesMarinsMonte-Carlo-Pool.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Thermes Marins Monte-Carlo - Fitness Center</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/leisure/img/03.ThermesMarinsMonte-Carlo-FitnessCenter.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Monte-Carlo Beach Club - Olympic Pool</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/leisure/img/04.Monte-CarloBeachClub-OlympicPool.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Monte-Carlo Beach Club - Private Beach - Water Sports</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/leisure/img/05.Monte-CarloBeachClub-PrivateBeachWaterSports.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Monte-Carlo Beach Club - Cabanas</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/leisure/img/06.Monte-CarloBeachClub-Cabanas.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Casino de Monte-Carlo</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/leisure/img/07.CasinodeMonte-Carlo.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Monte-Carlo Country Club</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/leisure/img/08.Monte-CarloCountryClub.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Monte-Carlo Golf Club</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/leisure/img/09.Monte-CarloGolfClub.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Buddha Bar Monte-Carlo</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/leisure/img/10.BuddhaBarMonte-Carlo.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>La Rascasse</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/leisure/img/11.LaRascasse.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Jimmy'z Monte-Carlo</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/leisure/img/12.JimmyzMonte-Carlo.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Salle des Etoiles</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/leisure/img/13.SalledesEtoiles.jpg</URLIMAGE>
+    </PHOTO>
+    
+    
+</GALERIE>
+<VIDEOPLAYER>
+    <TITREVIDEO>Titre video 1</TITREVIDEO>
+    <URLVIDEOMP4>hdp/cavecouloir/video/video.mp4</URLVIDEOMP4>
+    <URLVIDEOWEBM>hdp/cavecouloir/video/video.webm</URLVIDEOWEBM>
+</VIDEOPLAYER>
+        
+          
+
+
+
+</GALERIE_PHOTO>

@@ -1,0 +1,267 @@
+<krpano title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+<include url="../../skin.xml" /> 
+
+	<action name="startup">
+    loadscene(scene_jardins_mediterraneens, null, MERGE, BLEND(1));
+	</action> 
+	
+	<events onloadcomplete="action(loader);  js(hotelmcbay());"/>
+	
+	
+	
+	
+	
+	<scene name="scene_lagon_jour_haut" nameid="scene_lagon_jour_haut" title="Sandy-Bottom Lagoon 1" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui"  onstart="" thumburl="panos/lagon_jour_haut.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/lagon_jour_haut.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/lagon_jour_haut.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/lagon_jour_haut.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+			<plugin name="trait" url="trait.jpg" align="middletop" y="75" x="-40" keep="false" scaleX="0.8"/>
+
+<plugin name="jour" url="sun.png" align="middletop" scale="0.8" y="10" x="-40" keep="false" handcursor="false" />
+
+<plugin name="moon" url="moon.png" align="middletop" scale="0.8" y="15" x="40" keep="false" onclick=" loadscene(scene_lagon_nuit_haut, null, KEEPVIEW , SLIDEBLEND(1.0, 90.0, 0.5, linear)); tween(plugin[trait].x,40);" />
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="38.823" atv="7.685" linkedscene="scene_lagonresto" tooltip="Sandy-Bottom Lagoon 4" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="152.516" atv="2.322" linkedscene="scene_lagonjour" tooltip="Sandy-Bottom Lagoon 3" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); tween(plugin[trait].x,-40); );"/>
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-19.350" atv="-0.810" onclick="action(pool_out)"  tooltip="Outdoor Swimming Pool" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="54.547" atv="-4.370" onclick="action(bluebay)" tooltip="Blue Bay" />
+		<hotspot name="spot6" style="skin_hotspotstyle" ath="-4.116" atv="-3.050" onclick="action(mcbay_lobby)" tooltip="Lobby" />
+		<!--<hotspot name="spot7" style="skin_hotspotstyle" ath="92.205" atv="-40.565" onclick="action(lagon_air)" tooltip="Sandy-Bottom Lagoon - Aerial View"/>-->
+		<hotspot name="spot8" style="skin_hotspotstyle" ath="-137.904" atv="-24.786" onclick="action(sporting_air)" tooltip="Sporting Monte-Carlo - Aerial View"/>
+
+		<hotspot name="spot9" style="skin_hotspotstyle" ath="163.933" atv="-6.904" linkedscene="scene_jardins_mediterraneens" tooltip="Jardin Méditerranéen" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+		
+		<hotspot name="spot10" style="skin_hotspotstyle" ath="125" atv="-6" linkedscene="scene_mcbay_lagon-mat" tooltip="Sandy-Bottom Lagoon 2" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+
+	</scene>
+
+	<scene name="scene_lagon_nuit_haut" nameid="scene_lagon_jour_haut" title="Sandy-Bottom Lagoon 1" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui"  onstart="" thumburl="panos/lagon_nuit_haut.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/lagon_nuit_haut.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/lagon_nuit_haut.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/lagon_nuit_haut.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<plugin name="trait" url="trait.jpg" align="middletop" y="75" x="40" keep="false" scaleX="0.8"/>
+
+<plugin name="jour" url="sun.png" align="middletop" scale="0.8" y="10" x="-40" keep="false" onclick="loadscene(scene_lagon_jour_haut,null, KEEPVIEW , SLIDEBLEND(1.0, -90.0, 0.5, linear)); tween(plugin[trait].x,-40);" />
+
+<plugin name="moon" url="moon.png" align="middletop" scale="0.8" y="15" x="40" keep="false" handcursor="false"/>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="38.823" atv="7.685" linkedscene="scene_lagonresto" tooltip="Sandy-Bottom Lagoon 4" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="152.516" atv="2.322" linkedscene="scene_lagonHB1" tooltip="Sandy-Bottom Lagoon 3" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); tween(plugin[trait].x,40);); "/>
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-27.019" atv="-1.409" onclick="action(pool_in)"  tooltip="Swimming Pool" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="54.547" atv="-4.370" onclick="action(bluebay)" tooltip="Blue Bay" />
+		<hotspot name="spot6" style="skin_hotspotstyle" ath="-4.116" atv="-3.050" onclick="action(mcbay_lobby)" tooltip="Lobby" />
+		<!--<hotspot name="spot7" style="skin_hotspotstyle" ath="92.205" atv="-40.565" onclick="action(lagon_air)" tooltip="Sandy-Bottom Lagoon - Aerial View"/>-->
+		<hotspot name="spot8" style="skin_hotspotstyle" ath="-137.904" atv="-24.786" onclick="action(sporting_air)" tooltip="Sporting Monte-Carlo - Aerial View"/>
+		<!--<hotspot name="spot9" style="skin_hotspotstyle" ath="163.933" atv="-6.904" onclick="action(mediterraneen)" tooltip="Jardin Méditerranéenn" />-->
+		<hotspot name="spot9" style="skin_hotspotstyle" ath="163.933" atv="-6.904" linkedscene="scene_jardins_mediterraneens" tooltip="Jardin Méditerranéenn" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+		<hotspot name="spot10" style="skin_hotspotstyle" ath="125" atv="-6" linkedscene="scene_mcbay_lagon-mat" tooltip="Sandy-Bottom Lagoon 2" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+		
+	</scene>
+
+	<scene name="scene_lagonjour" nameid="scene_lagon_jour_haut" title="Sandy-Bottom Lagoon 3" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui"  onstart="" thumburl="panos/lagonjour.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/lagonjour.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/lagonjour.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/lagonjour.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		
+		<plugin name="trait" url="trait.jpg" align="middletop" y="75" x="-40" keep="false" scaleX="0.8"/>
+		
+		<plugin name="jour" url="sun.png" align="middletop" scale="0.8" y="10" x="-40" keep="false" handcursor="false"/>
+
+<plugin name="moon" url="moon.png" align="middletop" scale="0.8" y="15" x="40" keep="false" onclick=" loadscene(scene_lagonHB1,null, KEEPVIEW , SLIDEBLEND(1.0, 90.0, 0.5, linear)); tween(plugin[trait].x,40);" />
+		 
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-11.424" atv="-6.857" linkedscene="scene_lagon_jour_haut" tooltip="Sandy-Bottom Lagoon 1" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="0.207" atv="-3.304" linkedscene="scene_lagonresto" tooltip="Sandy-Bottom Lagoon 4" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );"/>
+		<!--<hotspot name="spot3" style="skin_hotspotstyle" ath="25.072" atv="-24.260" onclick="action(lagon_air)"  tooltip="Sandy-Bottom Lagoon - Aerial View"/>-->
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="-104.421" atv="-33.844" onclick="action(sporting_air)" tooltip="Sporting Monte-Carlo - Aerial View" />
+		<hotspot name="spot9" style="skin_hotspotstyle" ath="174.685" atv="-14.907" linkedscene="scene_jardins_mediterraneens" tooltip="Jardin Méditerranéen" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+		<hotspot name="spot10" style="skin_hotspotstyle" ath="80" atv="-12" linkedscene="scene_mcbay_lagon-mat" tooltip="Sandy-Bottom Lagoon 2" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+	</scene>
+
+	<scene name="scene_lagonHB1" nameid="scene_lagon_jour_haut" title="Sandy-Bottom Lagoon 3" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui"  onstart="" thumburl="panos/lagonHB1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/lagonHB1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/lagonHB1.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/lagonHB1.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<plugin name="trait" url="trait.jpg" align="middletop" y="75" x="40" keep="false" scaleX="0.8"/>
+		
+		<plugin name="jour" url="sun.png" align="middletop" scale="0.8" y="10" x="-40" keep="false" onclick="loadscene(scene_lagonjour,null, KEEPVIEW , SLIDEBLEND(1.0, -90.0, 0.5, linear)); tween(plugin[trait].x,-40);" />
+
+<plugin name="moon" url="moon.png" align="middletop" scale="0.8" y="15" x="40" keep="false" handcursor="false" />
+
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-11.424" atv="-6.857" linkedscene="scene_lagon_nuit_haut" tooltip="Sandy-Bottom Lagoon 1" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); tween(plugin[trait].x,40); ); "/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="0.207" atv="-3.304" linkedscene="scene_lagonresto" tooltip="Sandy-Bottom Lagoon 4" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );"/>
+		<!--<hotspot name="spot3" style="skin_hotspotstyle" ath="25.072" atv="-24.260" onclick="action(lagon_air)"  tooltip="Sandy-Bottom Lagoon - Aerial View"/>-->
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="-104.421" atv="-33.844" onclick="action(sporting_air)" tooltip="Sporting Monte-Carlo - Aerial View" />
+		<hotspot name="spot9" style="skin_hotspotstyle" ath="174.685" atv="-14.907" linkedscene="scene_jardins_mediterraneens" tooltip="Jardin Méditerranéen" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+		<hotspot name="spot10" style="skin_hotspotstyle" ath="80" atv="-12" linkedscene="scene_mcbay_lagon-mat" tooltip="Sandy-Bottom Lagoon 2" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+	</scene>
+
+
+	<scene name="scene_lagonresto" nameid="scene_lagon_jour_haut" title="Sandy-Bottom Lagoon 4" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui"  onstart="" thumburl="panos/lagonresto.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="131.103" vlookat="2.188" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/lagonresto.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/lagonresto.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/lagonresto.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="172.221" atv="-17.414" linkedscene="scene_lagon_nuit_haut" tooltip="Sandy-Bottom Lagoon 1" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); tween(plugin[trait].x,40);" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="129.041" atv="-2.555" linkedscene="scene_lagonHB1" tooltip="Sandy-Bottom Lagoon 3" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); tween(plugin[trait].x,40);"/>
+
+	</scene>
+	
+	
+	<scene name="scene_jardin_medit_jour" nameid="scene_jardins_mediterraneens" title="Jardin Méditérranéen" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui"  infourl= "MCBay-Jardin-mediterraneen.pdf" onstart="" thumburl="panos/jardin_medit_jour.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="7.566" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/jardin_medit_jour.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/jardin_medit_jour.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/jardin_medit_jour.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->	
+		<plugin name="trait" url="trait.jpg" align="middletop" y="75" x="-40" keep="false" scaleX="0.8"/>
+		<plugin name="jour" url="sun.png" align="middletop" scale="0.8" y="10" x="-40" keep="false" handcursor="false" />
+		<plugin name="moon" url="moon.png" align="middletop" scale="0.8" y="15" x="40" keep="false" onclick=" loadscene(scene_jardin_medit_nuit, null, KEEPVIEW , SLIDEBLEND(1.0, 90.0, 0.5, linear)); tween(plugin[trait].x,40);" />
+		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-116.994" atv="-30.678" onclick="action(sporting_air)" tooltip="Sporting Monte-Carlo - Aerial View" />
+		<!--<hotspot name="spot2" style="skin_hotspotstyle" ath="5.251" atv="-6.265" onclick="action(lagon_air)"  tooltip="Sandy-Bottom Lagoon - Aerial View" />-->
+		
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="-2" atv="-2" linkedscene="scene_jardins_mediterraneens" tooltip="Jardin Méditerranéen" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+		
+
+	</scene>
+
+	<scene name="scene_jardin_medit_nuit"  nameid="scene_jardins_mediterraneens" title="Jardin Méditérranéen" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui"  infourl= "MCBay-Jardin-mediterraneen.pdf" onstart="" thumburl="panos/jardin_medit_nuit.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="7.566" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/jardin_medit_nuit.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/jardin_medit_nuit.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/jardin_medit_nuit.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<plugin name="trait" url="trait.jpg" align="middletop" y="75" x="40" keep="false" scaleX="0.8"/>		
+		<plugin name="jour" url="sun.png" align="middletop" scale="0.8" y="10" x="-40" keep="false" onclick="loadscene(scene_jardin_medit_jour,null, KEEPVIEW , SLIDEBLEND(1.0, -90.0, 0.5, linear)); tween(plugin[trait].x,-40);" />
+		<plugin name="moon" url="moon.png" align="middletop" scale="0.8" y="15" x="40" keep="false" handcursor="false" />
+		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-116.994" atv="-30.678" onclick="action(sporting_air)" tooltip="Sporting Monte-Carlo - Aerial View" />
+		<!--<hotspot name="spot2" style="skin_hotspotstyle" ath="5.251" atv="-6.265" onclick="action(lagon_air)"  tooltip="Sandy-Bottom Lagoon - Aerial View" />-->
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="-2" atv="-2" linkedscene="scene_jardins_mediterraneens" tooltip="Jardin Méditerranéen" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+
+	</scene>
+	
+	<scene name="scene_jardins_mediterraneens"  nameid="scene_jardins_mediterraneens" title="Jardin Méditérranéen" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui" infourl= "MCBay-Jardin-mediterraneen.pdf" onstart="" thumburl="panos/jardins_mediterraneens.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="8.260" vlookat="21.720" fovtype="MFOV" fov="123.898" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/jardins_mediterraneens.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/jardins_mediterraneens.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/jardins_mediterraneens.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<!--<hotspot name="spot1" style="skin_hotspotstyle" ath="-163.036" atv="-8.537" onclick="action(lagon_air)"  tooltip="Sandy-Bottom Lagoon - Aerial View" />-->
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="175.292" atv="3.289" linkedscene="scene_lagon_jour_haut" tooltip="Sandy-Bottom Lagoon 1" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="175.981" atv="10.835" linkedscene="scene_lagonjour" tooltip="Sandy-Bottom Lagoon 3" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="-179.501" atv="-1.080"  onclick="action(mcbay_lobby)" tooltip="Lobby" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="52.042" atv="-35.699"  onclick="action(sporting_air)" tooltip="Sporting Monte-Carlo - Aerial View" />
+		<hotspot name="spot6" style="skin_hotspotstyle" ath="123.040" atv="-1.009" onclick="sporting_out()" tooltip="Sporting Monte-Carlo - Entrance" />
+		<hotspot name="spot7" style="skin_hotspotstyle" ath="-125.842" atv="-17.324" onclick="action(beach150m);" tooltip="Monte-Carlo Beach Seaside view" />
+		<hotspot name="spot8" style="skin_hotspotstyle" ath="7" atv="-5" linkedscene="scene_jardin_medit_jour" tooltip="Jardin Méditérranéen" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+		<hotspot name="spot10" style="skin_hotspotstyle" ath="-155" atv="0" linkedscene="scene_mcbay_lagon-mat" tooltip="Sandy-Bottom Lagoon 2" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+
+	</scene>
+	
+	
+	<scene name="scene_mcbay_lagon-mat"  nameid="scene_lagon_jour_haut" title="Sandy-Bottom Lagoon 2" etablissement="Monte-Carlo Bay Hotel &amp; Resort" dossier="mcbay" galeriephoto="oui" galerievideo="non" info="oui"  onstart="" thumburl="panos/mcbay_lagon-mat.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-100" vlookat="5" fovtype="MFOV" fov="123.898" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/mcbay_lagon-mat.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/mcbay_lagon-mat.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/mcbay_lagon-mat.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<!--<hotspot name="spot1" style="skin_hotspotstyle" ath="15" atv="-15" onclick="action(lagon_air)"  tooltip="Sandy-Bottom Lagoon - Aerial View" />-->
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-15" atv="3.289" linkedscene="scene_lagon_jour_haut" tooltip="Sandy-Bottom Lagoon 1" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-57" atv="10.835" linkedscene="scene_lagonjour" tooltip="Sandy-Bottom Lagoon 3" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="22" atv="-1.080"  onclick="action(mcbay_lobby)" tooltip="Lobby" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="-90" atv="-35.699"  onclick="action(sporting_air)" tooltip="Sporting Monte-Carlo - Aerial View" />
+		<hotspot name="spot6" style="skin_hotspotstyle" ath="-35" atv="-2" onclick="sporting_out()" tooltip="Sporting Monte-Carlo - Entrance" />
+		<hotspot name="spot7" style="skin_hotspotstyle" ath="108" atv="-17.324" onclick="action(beach150m);" tooltip="Monte-Carlo Beach Seaside view" />
+		<hotspot name="spot8" style="skin_hotspotstyle" ath="-107" atv="-5" linkedscene="scene_jardin_medit_jour" tooltip="Jardin Méditérranéen" onclick="loadscene(get(linkedscene), null, MERGE, BLEND(1)); );" />
+		<hotspot name="bluebayterrace" style="skin_hotspotstyle" ath="35" atv="-1.080"  onclick="action(bluebayterrace)" tooltip="Blue Bay - Terrace" />
+		
+
+	</scene>
+
+
+</krpano>

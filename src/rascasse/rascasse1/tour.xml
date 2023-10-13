@@ -1,0 +1,33 @@
+<krpano version="1.17.1" title="Virtual Tour" onstart="startup();" basedir="%HTMLPATH%">
+
+
+<include url="../../skin.xml" />
+    
+
+    <action name="startup">
+        loadscene(scene_rascasse1, null, MERGE, BLEND(1));
+    </action>
+	
+<events onloadcomplete="action(loader); js(hotelrascasse());"/>
+	
+	<scene name="scene_rascasse1" nameid="scene_rascasse1" etablissement="La Rascasse" dossier="rascasse" galeriephoto="oui" galerievideo="non" info="oui" title="Ground Floor" onstart="" thumburl="panos/rascasse1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/rascasse1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/rascasse1.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/rascasse1.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="exterieur" style="skin_hotspotstyle" ath="19.051" atv="-1.484" onclick="action(rascasseext)" tooltip="Terrace"/>
+		<hotspot name="floor" style="skin_hotspotstyle" ath="-43.222" atv="-0.023"  onclick="action(rascasse)"  tooltip="First Floor" />
+
+	</scene>
+
+
+</krpano>

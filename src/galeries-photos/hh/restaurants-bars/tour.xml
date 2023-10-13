@@ -1,0 +1,38 @@
+<GALERIE_PHOTO>
+
+
+
+
+<GALERIE>
+    <PHOTO>
+        <TITREIMAGE>Le Vistamar - 1 Michelin Star</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/restaurants-bars/img/01.LeVistamar-1MichelinStar.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Le Vistamar Terrace - 1 Michelin Star</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/restaurants-bars/img/02.LeVistamarTerrace-1MichelinStar.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Crystal Bar</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/restaurants-bars/img/03.CrystalBar.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Crystal Bar Terrace</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/restaurants-bars/img/04.CrystalBarTerrace.jpg</URLIMAGE>
+    </PHOTO>
+    <PHOTO>
+        <TITREIMAGE>Le Limùn- Lobby Bar</TITREIMAGE>
+        <URLIMAGE>galeries-photos/hh/restaurants-bars/img/05.LeLimon-LobbyBar.jpg</URLIMAGE>
+    </PHOTO>
+</GALERIE>
+<VIDEOPLAYER>
+    <TITREVIDEO>Titre video 1</TITREVIDEO>
+    <URLVIDEOMP4>hdp/cavecouloir/video/video.mp4</URLVIDEOMP4>
+    <URLVIDEOWEBM>hdp/cavecouloir/video/video.webm</URLVIDEOWEBM>
+</VIDEOPLAYER>
+        
+          
+
+
+
+</GALERIE_PHOTO>
